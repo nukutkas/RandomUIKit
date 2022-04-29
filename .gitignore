@@ -1,9 +1,43 @@
+# Xcode
+
+Swift.gitignore
+
+## OS X
+
+*.DS_Store
 .DS_Store
-/.build
-/Packages
-/*.xcodeproj
-xcuserdata/
+
+## Build generated
+
+build/
 DerivedData/
-.swiftpm/config/registries.json
-.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
-.netrc
+Build
+Index
+
+## Various settings
+
+## Other
+
+## Obj-C/Swift specific
+
+*.hmap
+*.ipa
+
+## Playgrounds
+
+playground.xcworkspace
+
+# Swift Package Manager
+
+/.build
+
+# CocoaPods
+Pods/
+
+# Carthage
+
+
+# fastlane
+
+# Swift Package Manager generated
+/.swiftpm
