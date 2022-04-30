@@ -42,6 +42,18 @@
 			name = Packages;
 			sourceTree = "<group>";
 		};
+		1B92E0ED281DB46A00398966 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				1BB57063281C4F7B00AAF8BD /* Info.plist */,
+				1BB57055281C4F7A00AAF8BD /* AppDelegate.swift */,
+				1BB57057281C4F7A00AAF8BD /* SceneDelegate.swift */,
+				1BB5705E281C4F7B00AAF8BD /* Assets.xcassets */,
+				1BB57060281C4F7B00AAF8BD /* LaunchScreen.storyboard */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
 		1BB57049281C4F7A00AAF8BD = {
 			isa = PBXGroup;
 			children = (
@@ -62,11 +74,7 @@
 		1BB57054281C4F7A00AAF8BD /* RandomUIKitExample */ = {
 			isa = PBXGroup;
 			children = (
-				1BB57055281C4F7A00AAF8BD /* AppDelegate.swift */,
-				1BB57057281C4F7A00AAF8BD /* SceneDelegate.swift */,
-				1BB5705E281C4F7B00AAF8BD /* Assets.xcassets */,
-				1BB57060281C4F7B00AAF8BD /* LaunchScreen.storyboard */,
-				1BB57063281C4F7B00AAF8BD /* Info.plist */,
+				1B92E0ED281DB46A00398966 /* System */,
 			);
 			path = RandomUIKitExample;
 			sourceTree = "<group>";
@@ -287,7 +295,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 34VDSPZYU9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RandomUIKitExample/Info.plist;
+				INFOPLIST_FILE = RandomUIKitExample/System/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -315,7 +323,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 34VDSPZYU9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RandomUIKitExample/Info.plist;
+				INFOPLIST_FILE = RandomUIKitExample/System/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
