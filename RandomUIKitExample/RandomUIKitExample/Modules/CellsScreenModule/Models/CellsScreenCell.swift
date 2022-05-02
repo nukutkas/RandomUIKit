@@ -19,6 +19,9 @@ enum CellsScreenCell: String {
     /// Рекламный лайбл
     case labelGradientView
     
+    /// Основная кнопка
+    case button
+    
     var reuseIdentifier: String {
         return cellClass.description()
     }
@@ -29,6 +32,8 @@ enum CellsScreenCell: String {
             return MainCardTableViewCell.self
         case .labelGradientView:
             return LabelGradientTableViewCell.self
+        case .button:
+            return ButtonTableViewCell.self
         }
     }
     
@@ -38,6 +43,8 @@ enum CellsScreenCell: String {
             return CellsScreenDataSource.makeForMainCard()
         case .labelGradientView:
             return CellsScreenDataSource.makeForLabelGradient()
+        case .button:
+            return CellsScreenDataSource.makeForButton()
         }
     }
 }

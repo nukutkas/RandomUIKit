@@ -47,6 +47,8 @@
 		1B046171281F596D001141B4 /* CellsScreenDataSource+MainCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046170281F596D001141B4 /* CellsScreenDataSource+MainCard.swift */; };
 		1B96E0C4281FEE8800A23880 /* LabelGradientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0C3281FEE8800A23880 /* LabelGradientTableViewCell.swift */; };
 		1B96E0C6281FEEC600A23880 /* CellsScreenDataSource+LabelGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0C5281FEEC600A23880 /* CellsScreenDataSource+LabelGradient.swift */; };
+		1B96E0CB281FFB8900A23880 /* CellsScreenDataSource+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0CA281FFB8900A23880 /* CellsScreenDataSource+Button.swift */; };
+		1B96E0CD281FFBA700A23880 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0CC281FFBA700A23880 /* ButtonTableViewCell.swift */; };
 		1BB57056281C4F7A00AAF8BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB57055281C4F7A00AAF8BD /* AppDelegate.swift */; };
 		1BB57058281C4F7A00AAF8BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB57057281C4F7A00AAF8BD /* SceneDelegate.swift */; };
 		1BB5705F281C4F7B00AAF8BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BB5705E281C4F7B00AAF8BD /* Assets.xcassets */; };
@@ -94,6 +96,8 @@
 		1B2D4DCF281C69AE003C201D /* RandomUIKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = RandomUIKit; path = ..; sourceTree = "<group>"; };
 		1B96E0C3281FEE8800A23880 /* LabelGradientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelGradientTableViewCell.swift; sourceTree = "<group>"; };
 		1B96E0C5281FEEC600A23880 /* CellsScreenDataSource+LabelGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+LabelGradient.swift"; sourceTree = "<group>"; };
+		1B96E0CA281FFB8900A23880 /* CellsScreenDataSource+Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+Button.swift"; sourceTree = "<group>"; };
+		1B96E0CC281FFBA700A23880 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		1BB57052281C4F7A00AAF8BD /* RandomUIKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUIKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BB57055281C4F7A00AAF8BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BB57057281C4F7A00AAF8BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -444,6 +448,7 @@
 		1B04616F281F5942001141B4 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
+				1B96E0C9281FFB6D00A23880 /* Button */,
 				1B96E0C2281FEE5800A23880 /* LabelGradient */,
 				1B96E0C1281FE45800A23880 /* MainCard */,
 			);
@@ -486,6 +491,15 @@
 				1B96E0C3281FEE8800A23880 /* LabelGradientTableViewCell.swift */,
 			);
 			path = LabelGradient;
+			sourceTree = "<group>";
+		};
+		1B96E0C9281FFB6D00A23880 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				1B96E0CA281FFB8900A23880 /* CellsScreenDataSource+Button.swift */,
+				1B96E0CC281FFBA700A23880 /* ButtonTableViewCell.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		1BB57049281C4F7A00AAF8BD = {
@@ -610,10 +624,12 @@
 				1B04613C281F40B9001141B4 /* ColorsScreenCell.swift in Sources */,
 				1B046106281EE842001141B4 /* MainCardTableViewCell.swift in Sources */,
 				1B046108281EF87B001141B4 /* ComposableTableDataSource.swift in Sources */,
+				1B96E0CB281FFB8900A23880 /* CellsScreenDataSource+Button.swift in Sources */,
 				1B04612D281F3E5E001141B4 /* ColorsScreenFactory.swift in Sources */,
 				1B04615D281F51C5001141B4 /* CellsScreenFactory.swift in Sources */,
 				1BB57056281C4F7A00AAF8BD /* AppDelegate.swift in Sources */,
 				1B046169281F5263001141B4 /* CellsScreenCoordinator.swift in Sources */,
+				1B96E0CD281FFBA700A23880 /* ButtonTableViewCell.swift in Sources */,
 				1B046156281F4CFB001141B4 /* FontsScreenViewCell.swift in Sources */,
 				1B96E0C4281FEE8800A23880 /* LabelGradientTableViewCell.swift in Sources */,
 				1BB57058281C4F7A00AAF8BD /* SceneDelegate.swift in Sources */,
