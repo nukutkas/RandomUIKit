@@ -8,6 +8,9 @@
 import UIKit
 
 public extension UIImageView {
+    
+    /// Меняем цвет картинки на свой
+    ///  - Parameter color: Выбираем цвет изображения
     func setImageColor(color: UIColor) {
         let templateImage = self.image?.withRenderingMode(.alwaysTemplate)
         self.image = templateImage
