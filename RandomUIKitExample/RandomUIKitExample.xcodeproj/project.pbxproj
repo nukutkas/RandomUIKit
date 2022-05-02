@@ -7,6 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B0460DB281EB1C1001141B4 /* RandomUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1B0460DA281EB1C1001141B4 /* RandomUIKit */; };
+		1B046101281EE58C001141B4 /* MainCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046100281EE58C001141B4 /* MainCardView.swift */; };
+		1B046106281EE842001141B4 /* MainCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046105281EE842001141B4 /* MainCardTableViewCell.swift */; };
+		1B046108281EF87B001141B4 /* ComposableTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046107281EF87B001141B4 /* ComposableTableDataSource.swift */; };
+		1B04610D281F0443001141B4 /* MainScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B04610A281F0443001141B4 /* MainScreenCoordinator.swift */; };
+		1B04610E281F0443001141B4 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B04610B281F0443001141B4 /* RootCoordinator.swift */; };
+		1B04610F281F0443001141B4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B04610C281F0443001141B4 /* Coordinator.swift */; };
+		1B046117281F1754001141B4 /* MainScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046112281F1754001141B4 /* MainScreenFactory.swift */; };
+		1B046118281F1754001141B4 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046113281F1754001141B4 /* MainScreenViewController.swift */; };
+		1B046119281F1754001141B4 /* MainScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046114281F1754001141B4 /* MainScreenAssembly.swift */; };
+		1B04611A281F1754001141B4 /* MainScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046115281F1754001141B4 /* MainScreenInteractor.swift */; };
+		1B04611B281F1754001141B4 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046116281F1754001141B4 /* MainScreenView.swift */; };
+		1B046123281F1B50001141B4 /* MainScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046122281F1B50001141B4 /* MainScreenCollectionViewCell.swift */; };
+		1B046125281F1E54001141B4 /* MainScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046124281F1E54001141B4 /* MainScreenCell.swift */; };
+		1B04612D281F3E5E001141B4 /* ColorsScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046128281F3E5E001141B4 /* ColorsScreenFactory.swift */; };
+		1B04612E281F3E5E001141B4 /* ColorsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046129281F3E5E001141B4 /* ColorsScreenViewController.swift */; };
+		1B04612F281F3E5E001141B4 /* ColorsScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B04612A281F3E5E001141B4 /* ColorsScreenAssembly.swift */; };
+		1B046130281F3E5E001141B4 /* ColorsScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B04612B281F3E5E001141B4 /* ColorsScreenInteractor.swift */; };
+		1B046131281F3E5E001141B4 /* ColorsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B04612C281F3E5E001141B4 /* ColorsScreenView.swift */; };
+		1B046139281F3EDD001141B4 /* ColorsScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046138281F3EDD001141B4 /* ColorsScreenCoordinator.swift */; };
+		1B04613C281F40B9001141B4 /* ColorsScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B04613B281F40B9001141B4 /* ColorsScreenCell.swift */; };
+		1B04613E281F42D0001141B4 /* ColorsScreenViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B04613D281F42D0001141B4 /* ColorsScreenViewCell.swift */; };
+		1B046145281F494A001141B4 /* FontsScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046140281F494A001141B4 /* FontsScreenFactory.swift */; };
+		1B046146281F494A001141B4 /* FontsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046141281F494A001141B4 /* FontsScreenViewController.swift */; };
+		1B046147281F494A001141B4 /* FontsScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046142281F494A001141B4 /* FontsScreenAssembly.swift */; };
+		1B046148281F494A001141B4 /* FontsScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046143281F494A001141B4 /* FontsScreenInteractor.swift */; };
+		1B046149281F494A001141B4 /* FontsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046144281F494A001141B4 /* FontsScreenView.swift */; };
+		1B046151281F49A4001141B4 /* FontsScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046150281F49A4001141B4 /* FontsScreenCell.swift */; };
+		1B046154281F4A77001141B4 /* FontsScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046153281F4A77001141B4 /* FontsScreenCoordinator.swift */; };
+		1B046156281F4CFB001141B4 /* FontsScreenViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046155281F4CFB001141B4 /* FontsScreenViewCell.swift */; };
+		1B04615D281F51C5001141B4 /* CellsScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046158281F51C5001141B4 /* CellsScreenFactory.swift */; };
+		1B04615E281F51C5001141B4 /* CellsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046159281F51C5001141B4 /* CellsScreenViewController.swift */; };
+		1B04615F281F51C5001141B4 /* CellsScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B04615A281F51C5001141B4 /* CellsScreenAssembly.swift */; };
+		1B046160281F51C5001141B4 /* CellsScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B04615B281F51C5001141B4 /* CellsScreenInteractor.swift */; };
+		1B046161281F51C5001141B4 /* CellsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B04615C281F51C5001141B4 /* CellsScreenView.swift */; };
+		1B046169281F5263001141B4 /* CellsScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046168281F5263001141B4 /* CellsScreenCoordinator.swift */; };
+		1B04616C281F55A9001141B4 /* CellsScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B04616B281F55A9001141B4 /* CellsScreenCell.swift */; };
+		1B04616E281F5868001141B4 /* CellsScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B04616D281F5868001141B4 /* CellsScreenDataSource.swift */; };
+		1B046171281F596D001141B4 /* CellsScreenDataSource+MainCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046170281F596D001141B4 /* CellsScreenDataSource+MainCard.swift */; };
 		1BB57056281C4F7A00AAF8BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB57055281C4F7A00AAF8BD /* AppDelegate.swift */; };
 		1BB57058281C4F7A00AAF8BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB57057281C4F7A00AAF8BD /* SceneDelegate.swift */; };
 		1BB5705F281C4F7B00AAF8BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BB5705E281C4F7B00AAF8BD /* Assets.xcassets */; };
@@ -14,6 +53,44 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B046100281EE58C001141B4 /* MainCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCardView.swift; sourceTree = "<group>"; };
+		1B046105281EE842001141B4 /* MainCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCardTableViewCell.swift; sourceTree = "<group>"; };
+		1B046107281EF87B001141B4 /* ComposableTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableTableDataSource.swift; sourceTree = "<group>"; };
+		1B04610A281F0443001141B4 /* MainScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCoordinator.swift; sourceTree = "<group>"; };
+		1B04610B281F0443001141B4 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
+		1B04610C281F0443001141B4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		1B046112281F1754001141B4 /* MainScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenFactory.swift; sourceTree = "<group>"; };
+		1B046113281F1754001141B4 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		1B046114281F1754001141B4 /* MainScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenAssembly.swift; sourceTree = "<group>"; };
+		1B046115281F1754001141B4 /* MainScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenInteractor.swift; sourceTree = "<group>"; };
+		1B046116281F1754001141B4 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
+		1B046122281F1B50001141B4 /* MainScreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCollectionViewCell.swift; sourceTree = "<group>"; };
+		1B046124281F1E54001141B4 /* MainScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCell.swift; sourceTree = "<group>"; };
+		1B046128281F3E5E001141B4 /* ColorsScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsScreenFactory.swift; sourceTree = "<group>"; };
+		1B046129281F3E5E001141B4 /* ColorsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsScreenViewController.swift; sourceTree = "<group>"; };
+		1B04612A281F3E5E001141B4 /* ColorsScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsScreenAssembly.swift; sourceTree = "<group>"; };
+		1B04612B281F3E5E001141B4 /* ColorsScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsScreenInteractor.swift; sourceTree = "<group>"; };
+		1B04612C281F3E5E001141B4 /* ColorsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsScreenView.swift; sourceTree = "<group>"; };
+		1B046138281F3EDD001141B4 /* ColorsScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsScreenCoordinator.swift; sourceTree = "<group>"; };
+		1B04613B281F40B9001141B4 /* ColorsScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsScreenCell.swift; sourceTree = "<group>"; };
+		1B04613D281F42D0001141B4 /* ColorsScreenViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsScreenViewCell.swift; sourceTree = "<group>"; };
+		1B046140281F494A001141B4 /* FontsScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsScreenFactory.swift; sourceTree = "<group>"; };
+		1B046141281F494A001141B4 /* FontsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsScreenViewController.swift; sourceTree = "<group>"; };
+		1B046142281F494A001141B4 /* FontsScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsScreenAssembly.swift; sourceTree = "<group>"; };
+		1B046143281F494A001141B4 /* FontsScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsScreenInteractor.swift; sourceTree = "<group>"; };
+		1B046144281F494A001141B4 /* FontsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsScreenView.swift; sourceTree = "<group>"; };
+		1B046150281F49A4001141B4 /* FontsScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsScreenCell.swift; sourceTree = "<group>"; };
+		1B046153281F4A77001141B4 /* FontsScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsScreenCoordinator.swift; sourceTree = "<group>"; };
+		1B046155281F4CFB001141B4 /* FontsScreenViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsScreenViewCell.swift; sourceTree = "<group>"; };
+		1B046158281F51C5001141B4 /* CellsScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellsScreenFactory.swift; sourceTree = "<group>"; };
+		1B046159281F51C5001141B4 /* CellsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellsScreenViewController.swift; sourceTree = "<group>"; };
+		1B04615A281F51C5001141B4 /* CellsScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellsScreenAssembly.swift; sourceTree = "<group>"; };
+		1B04615B281F51C5001141B4 /* CellsScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellsScreenInteractor.swift; sourceTree = "<group>"; };
+		1B04615C281F51C5001141B4 /* CellsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellsScreenView.swift; sourceTree = "<group>"; };
+		1B046168281F5263001141B4 /* CellsScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellsScreenCoordinator.swift; sourceTree = "<group>"; };
+		1B04616B281F55A9001141B4 /* CellsScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellsScreenCell.swift; sourceTree = "<group>"; };
+		1B04616D281F5868001141B4 /* CellsScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellsScreenDataSource.swift; sourceTree = "<group>"; };
+		1B046170281F596D001141B4 /* CellsScreenDataSource+MainCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+MainCard.swift"; sourceTree = "<group>"; };
 		1B2D4DCF281C69AE003C201D /* RandomUIKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = RandomUIKit; path = ..; sourceTree = "<group>"; };
 		1BB57052281C4F7A00AAF8BD /* RandomUIKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUIKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BB57055281C4F7A00AAF8BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -28,12 +105,350 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B0460DB281EB1C1001141B4 /* RandomUIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B0460D9281EB1C1001141B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1B0460FD281EE4F9001141B4 /* TestUIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				1B046100281EE58C001141B4 /* MainCardView.swift */,
+				1B046105281EE842001141B4 /* MainCardTableViewCell.swift */,
+			);
+			path = TestUIComponent;
+			sourceTree = "<group>";
+		};
+		1B046102281EE649001141B4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1B046107281EF87B001141B4 /* ComposableTableDataSource.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		1B046109281F042C001141B4 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				1B046126281F3DF8001141B4 /* MainScreenCoordinator */,
+				1B04610B281F0443001141B4 /* RootCoordinator.swift */,
+				1B04610C281F0443001141B4 /* Coordinator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		1B046110281F1711001141B4 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				1B046157281F51AF001141B4 /* CellsScreenModule */,
+				1B04613F281F493A001141B4 /* FontsScreenModule */,
+				1B046127281F3E4A001141B4 /* ColorsScreenModule */,
+				1B046111281F171B001141B4 /* MainScreenModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		1B046111281F171B001141B4 /* MainScreenModule */ = {
+			isa = PBXGroup;
+			children = (
+				1B046121281F1848001141B4 /* Models */,
+				1B046120281F1784001141B4 /* Interactor */,
+				1B04611F281F176F001141B4 /* Assembly */,
+				1B04611E281F1767001141B4 /* Factory */,
+				1B04611D281F1760001141B4 /* Presenter */,
+				1B04611C281F1758001141B4 /* View */,
+			);
+			path = MainScreenModule;
+			sourceTree = "<group>";
+		};
+		1B04611C281F1758001141B4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1B046116281F1754001141B4 /* MainScreenView.swift */,
+				1B046122281F1B50001141B4 /* MainScreenCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1B04611D281F1760001141B4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1B046113281F1754001141B4 /* MainScreenViewController.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1B04611E281F1767001141B4 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				1B046112281F1754001141B4 /* MainScreenFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		1B04611F281F176F001141B4 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				1B046114281F1754001141B4 /* MainScreenAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		1B046120281F1784001141B4 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				1B046115281F1754001141B4 /* MainScreenInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		1B046121281F1848001141B4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1B046124281F1E54001141B4 /* MainScreenCell.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1B046126281F3DF8001141B4 /* MainScreenCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1B04610A281F0443001141B4 /* MainScreenCoordinator.swift */,
+				1B046167281F522F001141B4 /* CellsScreenCoordinator */,
+				1B046152281F4A57001141B4 /* FontsScreenCoordinator */,
+				1B046137281F3EBD001141B4 /* ColorsScreenCoordinator */,
+			);
+			path = MainScreenCoordinator;
+			sourceTree = "<group>";
+		};
+		1B046127281F3E4A001141B4 /* ColorsScreenModule */ = {
+			isa = PBXGroup;
+			children = (
+				1B04613A281F4065001141B4 /* Models */,
+				1B046136281F3E83001141B4 /* Assembly */,
+				1B046135281F3E7A001141B4 /* Factory */,
+				1B046134281F3E72001141B4 /* Presentor */,
+				1B046133281F3E69001141B4 /* Interactor */,
+				1B046132281F3E63001141B4 /* View */,
+			);
+			path = ColorsScreenModule;
+			sourceTree = "<group>";
+		};
+		1B046132281F3E63001141B4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1B04612C281F3E5E001141B4 /* ColorsScreenView.swift */,
+				1B04613D281F42D0001141B4 /* ColorsScreenViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1B046133281F3E69001141B4 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				1B04612B281F3E5E001141B4 /* ColorsScreenInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		1B046134281F3E72001141B4 /* Presentor */ = {
+			isa = PBXGroup;
+			children = (
+				1B046129281F3E5E001141B4 /* ColorsScreenViewController.swift */,
+			);
+			path = Presentor;
+			sourceTree = "<group>";
+		};
+		1B046135281F3E7A001141B4 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				1B046128281F3E5E001141B4 /* ColorsScreenFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		1B046136281F3E83001141B4 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				1B04612A281F3E5E001141B4 /* ColorsScreenAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		1B046137281F3EBD001141B4 /* ColorsScreenCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1B046138281F3EDD001141B4 /* ColorsScreenCoordinator.swift */,
+			);
+			path = ColorsScreenCoordinator;
+			sourceTree = "<group>";
+		};
+		1B04613A281F4065001141B4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1B04613B281F40B9001141B4 /* ColorsScreenCell.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1B04613F281F493A001141B4 /* FontsScreenModule */ = {
+			isa = PBXGroup;
+			children = (
+				1B04614F281F498E001141B4 /* Models */,
+				1B04614E281F496C001141B4 /* Assembly */,
+				1B04614D281F4965001141B4 /* Factory */,
+				1B04614C281F495A001141B4 /* Interactor */,
+				1B04614B281F4954001141B4 /* Presenter */,
+				1B04614A281F494E001141B4 /* View */,
+			);
+			path = FontsScreenModule;
+			sourceTree = "<group>";
+		};
+		1B04614A281F494E001141B4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1B046144281F494A001141B4 /* FontsScreenView.swift */,
+				1B046155281F4CFB001141B4 /* FontsScreenViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1B04614B281F4954001141B4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1B046141281F494A001141B4 /* FontsScreenViewController.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1B04614C281F495A001141B4 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				1B046143281F494A001141B4 /* FontsScreenInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		1B04614D281F4965001141B4 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				1B046140281F494A001141B4 /* FontsScreenFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		1B04614E281F496C001141B4 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				1B046142281F494A001141B4 /* FontsScreenAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		1B04614F281F498E001141B4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1B046150281F49A4001141B4 /* FontsScreenCell.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1B046152281F4A57001141B4 /* FontsScreenCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1B046153281F4A77001141B4 /* FontsScreenCoordinator.swift */,
+			);
+			path = FontsScreenCoordinator;
+			sourceTree = "<group>";
+		};
+		1B046157281F51AF001141B4 /* CellsScreenModule */ = {
+			isa = PBXGroup;
+			children = (
+				1B04616A281F5585001141B4 /* Models */,
+				1B046166281F5200001141B4 /* Assembly */,
+				1B046165281F51F2001141B4 /* Factory */,
+				1B046164281F51DD001141B4 /* Presenter */,
+				1B046163281F51D2001141B4 /* Interactor */,
+				1B046162281F51CD001141B4 /* View */,
+			);
+			path = CellsScreenModule;
+			sourceTree = "<group>";
+		};
+		1B046162281F51CD001141B4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1B04615C281F51C5001141B4 /* CellsScreenView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1B046163281F51D2001141B4 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				1B04615B281F51C5001141B4 /* CellsScreenInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		1B046164281F51DD001141B4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1B046159281F51C5001141B4 /* CellsScreenViewController.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1B046165281F51F2001141B4 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				1B04616F281F5942001141B4 /* CustomCells */,
+				1B046158281F51C5001141B4 /* CellsScreenFactory.swift */,
+				1B04616D281F5868001141B4 /* CellsScreenDataSource.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		1B046166281F5200001141B4 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				1B04615A281F51C5001141B4 /* CellsScreenAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		1B046167281F522F001141B4 /* CellsScreenCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1B046168281F5263001141B4 /* CellsScreenCoordinator.swift */,
+			);
+			path = CellsScreenCoordinator;
+			sourceTree = "<group>";
+		};
+		1B04616A281F5585001141B4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1B04616B281F55A9001141B4 /* CellsScreenCell.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1B04616F281F5942001141B4 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				1B046170281F596D001141B4 /* CellsScreenDataSource+MainCard.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
 		1B2D4DCE281C69AE003C201D /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +475,7 @@
 				1B2D4DCE281C69AE003C201D /* Packages */,
 				1BB57054281C4F7A00AAF8BD /* RandomUIKitExample */,
 				1BB57053281C4F7A00AAF8BD /* Products */,
+				1B0460D9281EB1C1001141B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +490,10 @@
 		1BB57054281C4F7A00AAF8BD /* RandomUIKitExample */ = {
 			isa = PBXGroup;
 			children = (
+				1B0460FD281EE4F9001141B4 /* TestUIComponent */,
+				1B046102281EE649001141B4 /* Extension */,
+				1B046110281F1711001141B4 /* Modules */,
+				1B046109281F042C001141B4 /* Navigation */,
 				1B92E0ED281DB46A00398966 /* System */,
 			);
 			path = RandomUIKitExample;
@@ -96,6 +516,7 @@
 			);
 			name = RandomUIKitExample;
 			packageProductDependencies = (
+				1B0460DA281EB1C1001141B4 /* RandomUIKit */,
 			);
 			productName = RandomUIKitExample;
 			productReference = 1BB57052281C4F7A00AAF8BD /* RandomUIKitExample.app */;
@@ -153,8 +574,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B046119281F1754001141B4 /* MainScreenAssembly.swift in Sources */,
+				1B04611B281F1754001141B4 /* MainScreenView.swift in Sources */,
+				1B046123281F1B50001141B4 /* MainScreenCollectionViewCell.swift in Sources */,
+				1B04611A281F1754001141B4 /* MainScreenInteractor.swift in Sources */,
+				1B04612F281F3E5E001141B4 /* ColorsScreenAssembly.swift in Sources */,
+				1B04615F281F51C5001141B4 /* CellsScreenAssembly.swift in Sources */,
+				1B046139281F3EDD001141B4 /* ColorsScreenCoordinator.swift in Sources */,
+				1B046149281F494A001141B4 /* FontsScreenView.swift in Sources */,
+				1B046131281F3E5E001141B4 /* ColorsScreenView.swift in Sources */,
+				1B046151281F49A4001141B4 /* FontsScreenCell.swift in Sources */,
+				1B046147281F494A001141B4 /* FontsScreenAssembly.swift in Sources */,
+				1B046154281F4A77001141B4 /* FontsScreenCoordinator.swift in Sources */,
+				1B046161281F51C5001141B4 /* CellsScreenView.swift in Sources */,
+				1B04610D281F0443001141B4 /* MainScreenCoordinator.swift in Sources */,
+				1B04613C281F40B9001141B4 /* ColorsScreenCell.swift in Sources */,
+				1B046106281EE842001141B4 /* MainCardTableViewCell.swift in Sources */,
+				1B046108281EF87B001141B4 /* ComposableTableDataSource.swift in Sources */,
+				1B04612D281F3E5E001141B4 /* ColorsScreenFactory.swift in Sources */,
+				1B04615D281F51C5001141B4 /* CellsScreenFactory.swift in Sources */,
 				1BB57056281C4F7A00AAF8BD /* AppDelegate.swift in Sources */,
+				1B046169281F5263001141B4 /* CellsScreenCoordinator.swift in Sources */,
+				1B046156281F4CFB001141B4 /* FontsScreenViewCell.swift in Sources */,
 				1BB57058281C4F7A00AAF8BD /* SceneDelegate.swift in Sources */,
+				1B04615E281F51C5001141B4 /* CellsScreenViewController.swift in Sources */,
+				1B046125281F1E54001141B4 /* MainScreenCell.swift in Sources */,
+				1B046130281F3E5E001141B4 /* ColorsScreenInteractor.swift in Sources */,
+				1B04610E281F0443001141B4 /* RootCoordinator.swift in Sources */,
+				1B046160281F51C5001141B4 /* CellsScreenInteractor.swift in Sources */,
+				1B04612E281F3E5E001141B4 /* ColorsScreenViewController.swift in Sources */,
+				1B04616E281F5868001141B4 /* CellsScreenDataSource.swift in Sources */,
+				1B046118281F1754001141B4 /* MainScreenViewController.swift in Sources */,
+				1B04616C281F55A9001141B4 /* CellsScreenCell.swift in Sources */,
+				1B046117281F1754001141B4 /* MainScreenFactory.swift in Sources */,
+				1B046171281F596D001141B4 /* CellsScreenDataSource+MainCard.swift in Sources */,
+				1B046148281F494A001141B4 /* FontsScreenInteractor.swift in Sources */,
+				1B04613E281F42D0001141B4 /* ColorsScreenViewCell.swift in Sources */,
+				1B046146281F494A001141B4 /* FontsScreenViewController.swift in Sources */,
+				1B046145281F494A001141B4 /* FontsScreenFactory.swift in Sources */,
+				1B04610F281F0443001141B4 /* Coordinator.swift in Sources */,
+				1B046101281EE58C001141B4 /* MainCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +823,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1B0460DA281EB1C1001141B4 /* RandomUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RandomUIKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1BB5704A281C4F7A00AAF8BD /* Project object */;
 }
