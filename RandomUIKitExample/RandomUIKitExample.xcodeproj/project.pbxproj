@@ -47,7 +47,6 @@
 		1B04616E281F5868001141B4 /* CellsScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B04616D281F5868001141B4 /* CellsScreenDataSource.swift */; };
 		1B046171281F596D001141B4 /* CellsScreenDataSource+MainCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046170281F596D001141B4 /* CellsScreenDataSource+MainCard.swift */; };
 		1B046173281F6998001141B4 /* UIImageView+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046172281F6998001141B4 /* UIImageView+Color.swift */; };
-		1B046175281F6ABB001141B4 /* UIView+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046174281F6ABB001141B4 /* UIView+Gradient.swift */; };
 		1B046177281F6E06001141B4 /* LabelGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046176281F6E06001141B4 /* LabelGradientView.swift */; };
 		1BB57056281C4F7A00AAF8BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB57055281C4F7A00AAF8BD /* AppDelegate.swift */; };
 		1BB57058281C4F7A00AAF8BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB57057281C4F7A00AAF8BD /* SceneDelegate.swift */; };
@@ -95,7 +94,6 @@
 		1B04616D281F5868001141B4 /* CellsScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellsScreenDataSource.swift; sourceTree = "<group>"; };
 		1B046170281F596D001141B4 /* CellsScreenDataSource+MainCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+MainCard.swift"; sourceTree = "<group>"; };
 		1B046172281F6998001141B4 /* UIImageView+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Color.swift"; sourceTree = "<group>"; };
-		1B046174281F6ABB001141B4 /* UIView+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Gradient.swift"; sourceTree = "<group>"; };
 		1B046176281F6E06001141B4 /* LabelGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelGradientView.swift; sourceTree = "<group>"; };
 		1B2D4DCF281C69AE003C201D /* RandomUIKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = RandomUIKit; path = ..; sourceTree = "<group>"; };
 		1BB57052281C4F7A00AAF8BD /* RandomUIKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUIKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,7 +138,6 @@
 			children = (
 				1B046107281EF87B001141B4 /* ComposableTableDataSource.swift */,
 				1B046172281F6998001141B4 /* UIImageView+Color.swift */,
-				1B046174281F6ABB001141B4 /* UIView+Gradient.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -611,7 +608,6 @@
 				1B046130281F3E5E001141B4 /* ColorsScreenInteractor.swift in Sources */,
 				1B04610E281F0443001141B4 /* RootCoordinator.swift in Sources */,
 				1B046160281F51C5001141B4 /* CellsScreenInteractor.swift in Sources */,
-				1B046175281F6ABB001141B4 /* UIView+Gradient.swift in Sources */,
 				1B04612E281F3E5E001141B4 /* ColorsScreenViewController.swift in Sources */,
 				1B04616E281F5868001141B4 /* CellsScreenDataSource.swift in Sources */,
 				1B046118281F1754001141B4 /* MainScreenViewController.swift in Sources */,
