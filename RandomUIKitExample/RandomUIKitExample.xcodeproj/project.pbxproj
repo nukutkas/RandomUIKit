@@ -49,6 +49,9 @@
 		1B96E0C6281FEEC600A23880 /* CellsScreenDataSource+LabelGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0C5281FEEC600A23880 /* CellsScreenDataSource+LabelGradient.swift */; };
 		1B96E0CB281FFB8900A23880 /* CellsScreenDataSource+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0CA281FFB8900A23880 /* CellsScreenDataSource+Button.swift */; };
 		1B96E0CD281FFBA700A23880 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0CC281FFBA700A23880 /* ButtonTableViewCell.swift */; };
+		1B96E0D22820131500A23880 /* CellsScreenDataSource+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0D12820131500A23880 /* CellsScreenDataSource+TextField.swift */; };
+		1B96E0D42820133E00A23880 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0D32820133E00A23880 /* TextFieldTableViewCell.swift */; };
+		1B96E0D8282015F000A23880 /* KeyboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0D7282015F000A23880 /* KeyboardService.swift */; };
 		1BB57056281C4F7A00AAF8BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB57055281C4F7A00AAF8BD /* AppDelegate.swift */; };
 		1BB57058281C4F7A00AAF8BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB57057281C4F7A00AAF8BD /* SceneDelegate.swift */; };
 		1BB5705F281C4F7B00AAF8BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BB5705E281C4F7B00AAF8BD /* Assets.xcassets */; };
@@ -98,6 +101,9 @@
 		1B96E0C5281FEEC600A23880 /* CellsScreenDataSource+LabelGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+LabelGradient.swift"; sourceTree = "<group>"; };
 		1B96E0CA281FFB8900A23880 /* CellsScreenDataSource+Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+Button.swift"; sourceTree = "<group>"; };
 		1B96E0CC281FFBA700A23880 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
+		1B96E0D12820131500A23880 /* CellsScreenDataSource+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+TextField.swift"; sourceTree = "<group>"; };
+		1B96E0D32820133E00A23880 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		1B96E0D7282015F000A23880 /* KeyboardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardService.swift; sourceTree = "<group>"; };
 		1BB57052281C4F7A00AAF8BD /* RandomUIKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUIKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BB57055281C4F7A00AAF8BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BB57057281C4F7A00AAF8BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -448,6 +454,7 @@
 		1B04616F281F5942001141B4 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
+				1B96E0D0282012FB00A23880 /* TextField */,
 				1B96E0C9281FFB6D00A23880 /* Button */,
 				1B96E0C2281FEE5800A23880 /* LabelGradient */,
 				1B96E0C1281FE45800A23880 /* MainCard */,
@@ -502,6 +509,31 @@
 			path = Button;
 			sourceTree = "<group>";
 		};
+		1B96E0D0282012FB00A23880 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				1B96E0D12820131500A23880 /* CellsScreenDataSource+TextField.swift */,
+				1B96E0D32820133E00A23880 /* TextFieldTableViewCell.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		1B96E0D5282015D200A23880 /* ApplicationServices */ = {
+			isa = PBXGroup;
+			children = (
+				1B96E0D6282015E100A23880 /* KeyboardService */,
+			);
+			path = ApplicationServices;
+			sourceTree = "<group>";
+		};
+		1B96E0D6282015E100A23880 /* KeyboardService */ = {
+			isa = PBXGroup;
+			children = (
+				1B96E0D7282015F000A23880 /* KeyboardService.swift */,
+			);
+			path = KeyboardService;
+			sourceTree = "<group>";
+		};
 		1BB57049281C4F7A00AAF8BD = {
 			isa = PBXGroup;
 			children = (
@@ -524,6 +556,7 @@
 			isa = PBXGroup;
 			children = (
 				1B0460FD281EE4F9001141B4 /* TestUIComponent */,
+				1B96E0D5282015D200A23880 /* ApplicationServices */,
 				1B046102281EE649001141B4 /* Extension */,
 				1B046110281F1711001141B4 /* Modules */,
 				1B046109281F042C001141B4 /* Navigation */,
@@ -629,6 +662,7 @@
 				1B04615D281F51C5001141B4 /* CellsScreenFactory.swift in Sources */,
 				1BB57056281C4F7A00AAF8BD /* AppDelegate.swift in Sources */,
 				1B046169281F5263001141B4 /* CellsScreenCoordinator.swift in Sources */,
+				1B96E0D42820133E00A23880 /* TextFieldTableViewCell.swift in Sources */,
 				1B96E0CD281FFBA700A23880 /* ButtonTableViewCell.swift in Sources */,
 				1B046156281F4CFB001141B4 /* FontsScreenViewCell.swift in Sources */,
 				1B96E0C4281FEE8800A23880 /* LabelGradientTableViewCell.swift in Sources */,
@@ -641,8 +675,10 @@
 				1B04612E281F3E5E001141B4 /* ColorsScreenViewController.swift in Sources */,
 				1B04616E281F5868001141B4 /* CellsScreenDataSource.swift in Sources */,
 				1B046118281F1754001141B4 /* MainScreenViewController.swift in Sources */,
+				1B96E0D22820131500A23880 /* CellsScreenDataSource+TextField.swift in Sources */,
 				1B04616C281F55A9001141B4 /* CellsScreenCell.swift in Sources */,
 				1B046117281F1754001141B4 /* MainScreenFactory.swift in Sources */,
+				1B96E0D8282015F000A23880 /* KeyboardService.swift in Sources */,
 				1B96E0C6281FEEC600A23880 /* CellsScreenDataSource+LabelGradient.swift in Sources */,
 				1B046171281F596D001141B4 /* CellsScreenDataSource+MainCard.swift in Sources */,
 				1B046148281F494A001141B4 /* FontsScreenInteractor.swift in Sources */,

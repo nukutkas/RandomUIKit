@@ -14,6 +14,7 @@ final class RootCoordinator: Coordinator {
     private let window: UIWindow
     private let navigationController = UINavigationController()
     private var mainScreenCoordinator: Coordinator?
+    private let keyboardService: KeyboardService = DefaultKeyboardService()
     
     // MARK: - Initialization
     
@@ -25,7 +26,8 @@ final class RootCoordinator: Coordinator {
     // MARK: - Internal func
     
     func start() {
-        let mainScreenCoordinator: Coordinator = MainScreenCoordinator(navigationController)
+        let mainScreenCoordinator: Coordinator = MainScreenCoordinator(navigationController,
+                                                                       keyboardService: keyboardService)
         self.mainScreenCoordinator = mainScreenCoordinator
         mainScreenCoordinator.start()
         
