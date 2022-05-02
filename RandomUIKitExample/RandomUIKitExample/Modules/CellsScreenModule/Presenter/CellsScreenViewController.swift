@@ -93,6 +93,6 @@ extension CellsScreenViewController: CellsScreenFactoryOutput {
 
 private extension CellsScreenViewController {
     struct Appearance {
-        let title = "Ячейки для Таблички"
+        let title = "Кастомные View"
     }
 }
