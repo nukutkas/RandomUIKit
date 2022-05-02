@@ -24,6 +24,10 @@ final class MainCardView: UIView {
     
     // MARK: - Private properties
     
+    private let imageView = UIImageView()
+    private let titleLabel = UILabel()
+    private let advLabelView = LabelGradientView()
+    
     // MARK: - Initialization
     
     override init(frame: CGRect) {
@@ -39,16 +43,43 @@ final class MainCardView: UIView {
     
     // MARK: - Public func
     
-    // MARK: - Internal func
+    public func configureWith(image: UIImage?, titleText: String?, advText: String?) {
+        imageView.image = image
+        imageView.setImageColor(color: RandomColor.primaryWhite)
+        titleLabel.text = titleText
+        advLabelView.configureWith(titleText: "ХИТ",
+                                   primaryColor: RandomColor.primaryRed,
+                                   secondaryColor: RandomColor.secondaryRed)
+    }
     
     // MARK: - Private func
     
     private func configureLayout() {
+        [imageView, titleLabel, advLabelView].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            addSubview($0)
+        }
         
+        NSLayoutConstraint.activate([
+            imageView.widthAnchor.constraint(equalToConstant: 32),
+            imageView.heightAnchor.constraint(equalToConstant: 32),
+            
+            imageView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+            imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            
+            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+            
+            advLabelView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+            advLabelView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8)
+        ])
     }
     
     private func applyDefaultBehavior() {
         let appearance = Appearance()
+        
+        titleLabel.textColor = RandomColor.primaryWhite
+        titleLabel.font = RandomFont.primaryMedium18
         
         layer.cornerRadius = appearance.cornerRadius
         applyGradient(colors: [

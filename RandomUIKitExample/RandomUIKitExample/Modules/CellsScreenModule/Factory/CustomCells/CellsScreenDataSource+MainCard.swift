@@ -12,25 +12,19 @@ import Foundation
 /// Моделька для ячейки
 struct MainCardModel: CellModel {
     var titleView: String
-    var titleTableViewCell: String
-    var titleCollectionViewCell: String
     var reuseIdentifier = CellsScreenCell.mainCardTableViewCell.reuseIdentifier
 }
 
 extension CellsScreenDataSource where Model == MainCardModel {
     static func makeForMainCard() -> CellsScreenDataSource {
         let models = [
-            MainCardModel(titleView: "MainCardView - ✅\n",
-                          titleTableViewCell: "MainCardTableViewCell - ❌\n",
-                          titleCollectionViewCell: "MainCardCollectionViewCell - ❌")
+            MainCardModel(titleView: "MainCardView")
         ]
         return CellsScreenDataSource(models: models) { (model, cell) in
             guard let cell = cell as? MainCardTableViewCell else {
                 return
             }
-            cell.configureCellWith(text: model.titleView +
-                                   model.titleTableViewCell +
-                                   model.titleCollectionViewCell)
+            cell.configureCellWith(text: model.titleView)
         }
     }
 }
