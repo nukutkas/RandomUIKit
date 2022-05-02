@@ -11,14 +11,8 @@ import UIKit
 
 protocol CellModel {
     
-    /// Пишем есть ли `View` в библиотеке, например `MainCardView - ✅\n`
+    /// Название текущей View, например  `MainCardView`
     var titleView: String { get set }
-    
-    /// Пишем есть ли `TableViewCell` в библиотеке, например `MainCardTableViewCell - ✅\n`
-    var titleTableViewCell: String { get set }
-    
-    /// Пишем есть ли `CollectionViewCell` в библиотеке, например `MainCardCollectionViewCell - ✅`
-    var titleCollectionViewCell: String { get set }
     
     /// Идентификация
     var reuseIdentifier: String { get set }

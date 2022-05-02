@@ -34,6 +34,12 @@ public final class MainCardTableViewCell: UITableViewCell {
     /// Настройка ячейки
     public func configureCellWith(text: String?) {
         titleLabel.text = text
+        
+        cardView.configureWith(
+            image: UIImage(systemName: "film"),
+            titleText: "Фильмы",
+            advText: "ХИТ"
+        )
     }
     
     // MARK: - Private func
@@ -62,7 +68,6 @@ public final class MainCardTableViewCell: UITableViewCell {
         selectionStyle = .none
         
         titleLabel.textColor = .black
-        titleLabel.numberOfLines = 3
     }
 }
 
