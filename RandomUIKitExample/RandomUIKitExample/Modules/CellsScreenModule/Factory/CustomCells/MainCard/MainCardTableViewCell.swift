@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RandomUIKit
 
 // MARK: - MainCardTableViewCell
 
@@ -31,15 +32,24 @@ public final class MainCardTableViewCell: UITableViewCell {
     
     // MARK: - Public func
     
-    /// Настройка ячейки
-    public func configureCellWith(text: String?) {
-        titleLabel.text = text
+    /// Настраиваем ячейку
+    /// - Parameters:
+    ///  - titleCell: Заголовок для ячейки
+    ///  - imageCard: Иконка на карточке
+    ///  - titleCard: Заголовок на карточке
+    ///  - isShowADVLabel: Включить рекламный лайбл
+    ///  - titleADVText: Заголовок на рекламном лайбле
+    public func configureCellWith(titleCell: String?,
+                                  imageCard: UIImage?,
+                                  titleCard: String?,
+                                  isShowADVLabel: Bool,
+                                  titleADVText: String?) {
+        titleLabel.text = titleCell
         
-        cardView.configureWith(
-            image: UIImage(systemName: "film"),
-            titleText: "Фильмы",
-            advText: "ХИТ"
-        )
+        cardView.configureWith(imageCard: imageCard,
+                               titleCard: titleCard,
+                               isShowADVLabel: isShowADVLabel,
+                               titleADVText: titleADVText)
     }
     
     // MARK: - Private func
@@ -53,7 +63,7 @@ public final class MainCardTableViewCell: UITableViewCell {
         }
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: appearance.insets),
+            titleLabel.topAnchor.constraint(greaterThanOrEqualTo: contentView.topAnchor, constant: appearance.insets),
             titleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             
             cardView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: appearance.insets),
