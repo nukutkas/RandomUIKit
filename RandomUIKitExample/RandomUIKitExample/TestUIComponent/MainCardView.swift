@@ -10,8 +10,6 @@ import RandomUIKit
 /// View для экрана
 final class MainCardView: UIView {
     
-    // MARK: - Public properties
-    
     // MARK: - Internal properties
     
     override class var layerClass: AnyClass {
