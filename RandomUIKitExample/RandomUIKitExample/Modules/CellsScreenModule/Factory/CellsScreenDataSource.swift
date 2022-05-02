@@ -11,8 +11,8 @@ import UIKit
 
 protocol CellModel {
     
-    /// Название текущей View, например  `MainCardView`
-    var titleView: String { get set }
+    /// Название текущей Cell, например  `MainCardView`
+    var titleCell: String { get set }
     
     /// Идентификация
     var reuseIdentifier: String { get set }

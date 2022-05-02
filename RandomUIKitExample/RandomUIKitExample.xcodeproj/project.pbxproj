@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1B0460DB281EB1C1001141B4 /* RandomUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1B0460DA281EB1C1001141B4 /* RandomUIKit */; };
-		1B046101281EE58C001141B4 /* MainCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046100281EE58C001141B4 /* MainCardView.swift */; };
 		1B046106281EE842001141B4 /* MainCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046105281EE842001141B4 /* MainCardTableViewCell.swift */; };
 		1B046108281EF87B001141B4 /* ComposableTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046107281EF87B001141B4 /* ComposableTableDataSource.swift */; };
 		1B04610D281F0443001141B4 /* MainScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B04610A281F0443001141B4 /* MainScreenCoordinator.swift */; };
@@ -46,8 +45,8 @@
 		1B04616C281F55A9001141B4 /* CellsScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B04616B281F55A9001141B4 /* CellsScreenCell.swift */; };
 		1B04616E281F5868001141B4 /* CellsScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B04616D281F5868001141B4 /* CellsScreenDataSource.swift */; };
 		1B046171281F596D001141B4 /* CellsScreenDataSource+MainCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046170281F596D001141B4 /* CellsScreenDataSource+MainCard.swift */; };
-		1B046173281F6998001141B4 /* UIImageView+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046172281F6998001141B4 /* UIImageView+Color.swift */; };
-		1B046177281F6E06001141B4 /* LabelGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046176281F6E06001141B4 /* LabelGradientView.swift */; };
+		1B96E0C4281FEE8800A23880 /* LabelGradientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0C3281FEE8800A23880 /* LabelGradientTableViewCell.swift */; };
+		1B96E0C6281FEEC600A23880 /* CellsScreenDataSource+LabelGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0C5281FEEC600A23880 /* CellsScreenDataSource+LabelGradient.swift */; };
 		1BB57056281C4F7A00AAF8BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB57055281C4F7A00AAF8BD /* AppDelegate.swift */; };
 		1BB57058281C4F7A00AAF8BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB57057281C4F7A00AAF8BD /* SceneDelegate.swift */; };
 		1BB5705F281C4F7B00AAF8BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BB5705E281C4F7B00AAF8BD /* Assets.xcassets */; };
@@ -55,7 +54,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1B046100281EE58C001141B4 /* MainCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCardView.swift; sourceTree = "<group>"; };
 		1B046105281EE842001141B4 /* MainCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCardTableViewCell.swift; sourceTree = "<group>"; };
 		1B046107281EF87B001141B4 /* ComposableTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableTableDataSource.swift; sourceTree = "<group>"; };
 		1B04610A281F0443001141B4 /* MainScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCoordinator.swift; sourceTree = "<group>"; };
@@ -93,9 +91,9 @@
 		1B04616B281F55A9001141B4 /* CellsScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellsScreenCell.swift; sourceTree = "<group>"; };
 		1B04616D281F5868001141B4 /* CellsScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellsScreenDataSource.swift; sourceTree = "<group>"; };
 		1B046170281F596D001141B4 /* CellsScreenDataSource+MainCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+MainCard.swift"; sourceTree = "<group>"; };
-		1B046172281F6998001141B4 /* UIImageView+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Color.swift"; sourceTree = "<group>"; };
-		1B046176281F6E06001141B4 /* LabelGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelGradientView.swift; sourceTree = "<group>"; };
 		1B2D4DCF281C69AE003C201D /* RandomUIKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = RandomUIKit; path = ..; sourceTree = "<group>"; };
+		1B96E0C3281FEE8800A23880 /* LabelGradientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelGradientTableViewCell.swift; sourceTree = "<group>"; };
+		1B96E0C5281FEEC600A23880 /* CellsScreenDataSource+LabelGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+LabelGradient.swift"; sourceTree = "<group>"; };
 		1BB57052281C4F7A00AAF8BD /* RandomUIKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUIKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BB57055281C4F7A00AAF8BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BB57057281C4F7A00AAF8BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,9 +124,6 @@
 		1B0460FD281EE4F9001141B4 /* TestUIComponent */ = {
 			isa = PBXGroup;
 			children = (
-				1B046176281F6E06001141B4 /* LabelGradientView.swift */,
-				1B046100281EE58C001141B4 /* MainCardView.swift */,
-				1B046105281EE842001141B4 /* MainCardTableViewCell.swift */,
 			);
 			path = TestUIComponent;
 			sourceTree = "<group>";
@@ -137,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				1B046107281EF87B001141B4 /* ComposableTableDataSource.swift */,
-				1B046172281F6998001141B4 /* UIImageView+Color.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -450,7 +444,8 @@
 		1B04616F281F5942001141B4 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
-				1B046170281F596D001141B4 /* CellsScreenDataSource+MainCard.swift */,
+				1B96E0C2281FEE5800A23880 /* LabelGradient */,
+				1B96E0C1281FE45800A23880 /* MainCard */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -473,6 +468,24 @@
 				1BB57060281C4F7B00AAF8BD /* LaunchScreen.storyboard */,
 			);
 			path = System;
+			sourceTree = "<group>";
+		};
+		1B96E0C1281FE45800A23880 /* MainCard */ = {
+			isa = PBXGroup;
+			children = (
+				1B046170281F596D001141B4 /* CellsScreenDataSource+MainCard.swift */,
+				1B046105281EE842001141B4 /* MainCardTableViewCell.swift */,
+			);
+			path = MainCard;
+			sourceTree = "<group>";
+		};
+		1B96E0C2281FEE5800A23880 /* LabelGradient */ = {
+			isa = PBXGroup;
+			children = (
+				1B96E0C5281FEEC600A23880 /* CellsScreenDataSource+LabelGradient.swift */,
+				1B96E0C3281FEE8800A23880 /* LabelGradientTableViewCell.swift */,
+			);
+			path = LabelGradient;
 			sourceTree = "<group>";
 		};
 		1BB57049281C4F7A00AAF8BD = {
@@ -602,6 +615,7 @@
 				1BB57056281C4F7A00AAF8BD /* AppDelegate.swift in Sources */,
 				1B046169281F5263001141B4 /* CellsScreenCoordinator.swift in Sources */,
 				1B046156281F4CFB001141B4 /* FontsScreenViewCell.swift in Sources */,
+				1B96E0C4281FEE8800A23880 /* LabelGradientTableViewCell.swift in Sources */,
 				1BB57058281C4F7A00AAF8BD /* SceneDelegate.swift in Sources */,
 				1B04615E281F51C5001141B4 /* CellsScreenViewController.swift in Sources */,
 				1B046125281F1E54001141B4 /* MainScreenCell.swift in Sources */,
@@ -611,17 +625,15 @@
 				1B04612E281F3E5E001141B4 /* ColorsScreenViewController.swift in Sources */,
 				1B04616E281F5868001141B4 /* CellsScreenDataSource.swift in Sources */,
 				1B046118281F1754001141B4 /* MainScreenViewController.swift in Sources */,
-				1B046177281F6E06001141B4 /* LabelGradientView.swift in Sources */,
-				1B046173281F6998001141B4 /* UIImageView+Color.swift in Sources */,
 				1B04616C281F55A9001141B4 /* CellsScreenCell.swift in Sources */,
 				1B046117281F1754001141B4 /* MainScreenFactory.swift in Sources */,
+				1B96E0C6281FEEC600A23880 /* CellsScreenDataSource+LabelGradient.swift in Sources */,
 				1B046171281F596D001141B4 /* CellsScreenDataSource+MainCard.swift in Sources */,
 				1B046148281F494A001141B4 /* FontsScreenInteractor.swift in Sources */,
 				1B04613E281F42D0001141B4 /* ColorsScreenViewCell.swift in Sources */,
 				1B046146281F494A001141B4 /* FontsScreenViewController.swift in Sources */,
 				1B046145281F494A001141B4 /* FontsScreenFactory.swift in Sources */,
 				1B04610F281F0443001141B4 /* Coordinator.swift in Sources */,
-				1B046101281EE58C001141B4 /* MainCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

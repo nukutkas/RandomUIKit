@@ -13,7 +13,11 @@ enum CellsScreenCell: String {
     
     // MARK: - Cases
     
+    /// Основная карточка на главном экране
     case mainCardTableViewCell
+    
+    /// Рекламный лайбл
+    case labelGradientView
     
     var reuseIdentifier: String {
         return cellClass.description()
@@ -23,6 +27,8 @@ enum CellsScreenCell: String {
         switch self {
         case .mainCardTableViewCell:
             return MainCardTableViewCell.self
+        case .labelGradientView:
+            return LabelGradientTableViewCell.self
         }
     }
     
@@ -30,6 +36,8 @@ enum CellsScreenCell: String {
         switch self {
         case .mainCardTableViewCell:
             return CellsScreenDataSource.makeForMainCard()
+        case .labelGradientView:
+            return CellsScreenDataSource.makeForLabelGradient()
         }
     }
 }

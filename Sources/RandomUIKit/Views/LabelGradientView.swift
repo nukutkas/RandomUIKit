@@ -6,14 +6,13 @@
 //
 
 import UIKit
-import RandomUIKit
 
 /// View для экрана
-final class LabelGradientView: UIView {
+public final class LabelGradientView: UIView {
     
-    // MARK: - Internal properties
+    // MARK: - Public properties
     
-    override class var layerClass: AnyClass {
+    public override class var layerClass: AnyClass {
         return CAGradientLayer.self
     }
     
@@ -35,30 +34,31 @@ final class LabelGradientView: UIView {
     
     // MARK: - Public func
     
+    /// Настраиваем ячейку
+    /// - Parameters:
+    ///  - titleText: Заголовок на рекламном лайбле
+    ///  - gradientDVLabel: Градиент цветов для рекламного лайбла
     public func configureWith(titleText: String?,
-                              primaryColor: UIColor,
-                              secondaryColor: UIColor) {
+                              gradientDVLabel: [UIColor]) {
         titleLabel.text = titleText
-        
-        applyGradient(colors: [
-            primaryColor,
-            secondaryColor
-        ])
+        applyGradient(colors: gradientDVLabel)
     }
     
     // MARK: - Private func
     
     private func configureLayout() {
+        let appearance = Appearance()
+        
         [titleLabel].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
         }
         
         NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 2),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
-            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -2)
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: appearance.inset.left),
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: appearance.inset.top),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -appearance.inset.right),
+            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -appearance.inset.bottom)
         ])
     }
     
@@ -80,5 +80,9 @@ final class LabelGradientView: UIView {
 private extension LabelGradientView {
     struct Appearance {
         let cornerRadius: CGFloat = 6
+        let inset = UIEdgeInsets(top: 2,
+                                 left: 8,
+                                 bottom: 2,
+                                 right: 8)
     }
 }
