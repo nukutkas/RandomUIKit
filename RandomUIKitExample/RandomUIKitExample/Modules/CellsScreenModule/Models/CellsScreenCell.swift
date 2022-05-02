@@ -25,6 +25,9 @@ enum CellsScreenCell: String {
     /// Текстовое поле
     case textField
     
+    /// Список элементов в формате `String`
+    case scrollLabelGradientView
+    
     var reuseIdentifier: String {
         return cellClass.description()
     }
@@ -39,6 +42,8 @@ enum CellsScreenCell: String {
             return ButtonTableViewCell.self
         case .textField:
             return TextFieldTableViewCell.self
+        case .scrollLabelGradientView:
+            return ScrollLabelGradientTableViewCell.self
         }
     }
     
@@ -52,6 +57,8 @@ enum CellsScreenCell: String {
             return CellsScreenDataSource.makeForButton()
         case .textField:
             return CellsScreenDataSource.makeForTextField()
+        case .scrollLabelGradientView:
+            return CellsScreenDataSource.makeForScrollLabelGradient()
         }
     }
 }
