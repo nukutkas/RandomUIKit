@@ -29,6 +29,16 @@ final class CellsScreenView: CellsScreenViewProtocol {
     // MARK: - Internal properties
     
     weak var output: CellsScreenViewOutput?
+    var keyboardService: KeyboardService? {
+        didSet {
+            keyboardService?.keyboardHeightChangeAction = { [weak self] keyboardHeight in
+                self?.tableView.contentInset = UIEdgeInsets(top: .zero,
+                                                            left: .zero,
+                                                            bottom: keyboardHeight,
+                                                            right: .zero)
+            }
+        }
+    }
     
     // MARK: - Private properties
     
@@ -108,7 +118,9 @@ final class CellsScreenView: CellsScreenViewProtocol {
 // MARK: - UITableViewDelegate
 
 extension CellsScreenView: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        endEditing(true)
+    }
 }
 
 // MARK: - Appearance

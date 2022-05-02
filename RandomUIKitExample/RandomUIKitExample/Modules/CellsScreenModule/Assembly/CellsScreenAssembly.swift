@@ -11,8 +11,9 @@ import UIKit
 final class CellsScreenAssembly {
     
     /// Собирает модуль `CellsScreen`
+    ///  - Parameter keyboardService: Сервис "Слушатель клавиатуры"
     /// - Returns: Cобранный модуль `CellsScreen`
-    func createModule() -> CellsScreenModule {
+    func createModule(keyboardService: KeyboardService) -> CellsScreenModule {
         
         let interactor = CellsScreenInteractor()
         let view = CellsScreenView()
@@ -21,6 +22,7 @@ final class CellsScreenAssembly {
         let presenter = CellsScreenViewController(interactor: interactor, moduleView: view, factory: factory)
         
         view.output = presenter
+        view.keyboardService = keyboardService
         interactor.output = presenter
         factory.output = presenter
         return presenter

@@ -13,19 +13,23 @@ final class CellsScreenCoordinator: Coordinator {
     
     private let navigationController: UINavigationController
     private var cellsScreenModule: CellsScreenModule?
+    private let keyboardService: KeyboardService
     
     // MARK: - Initialization
     
     /// - Parameters:
     ///   - navigationController: UINavigationController
-    init(_ navigationController: UINavigationController) {
+    ///   - keyboardService: Сервис "Слушатель клавиатуры"
+    init(_ navigationController: UINavigationController,
+         keyboardService: KeyboardService) {
         self.navigationController = navigationController
+        self.keyboardService = keyboardService
     }
     
     // MARK: - Internal func
     
     func start() {
-        let cellsScreenModule = CellsScreenAssembly().createModule()
+        let cellsScreenModule = CellsScreenAssembly().createModule(keyboardService: keyboardService)
         self.cellsScreenModule = cellsScreenModule
         self.cellsScreenModule?.moduleOutput = self
         navigationController.pushViewController(cellsScreenModule, animated: true)

@@ -16,13 +16,17 @@ final class MainScreenCoordinator: Coordinator {
     private var colorsScreenCoordinator: Coordinator?
     private var fontsScreenCoordinator: Coordinator?
     private var cellsScreenCoordinator: Coordinator?
+    private let keyboardService: KeyboardService
     
     // MARK: - Initialization
     
     /// - Parameters:
     ///   - navigationController: UINavigationController
-    init(_ navigationController: UINavigationController) {
+    ///   - keyboardService: Сервис "Слушатель клавиатуры"
+    init(_ navigationController: UINavigationController,
+         keyboardService: KeyboardService) {
         self.navigationController = navigationController
+        self.keyboardService = keyboardService
     }
     
     // MARK: - Internal func
@@ -51,7 +55,8 @@ private extension MainScreenCoordinator {
     }
     
     func presentCellsScreenCoordinator() {
-        let cellsScreenCoordinator: Coordinator = CellsScreenCoordinator(navigationController)
+        let cellsScreenCoordinator: Coordinator = CellsScreenCoordinator(navigationController,
+                                                                         keyboardService: keyboardService)
         self.cellsScreenCoordinator = cellsScreenCoordinator
         cellsScreenCoordinator.start()
     }
