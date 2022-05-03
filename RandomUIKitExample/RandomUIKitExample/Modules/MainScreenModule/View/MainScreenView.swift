@@ -89,6 +89,7 @@ final class MainScreenView: MainScreenViewProtocol {
         backgroundColor = appearance.backgroundColor
         collectionView.backgroundColor = appearance.backgroundColor
         
+        collectionView.alwaysBounceVertical = true
         collectionView.register(MainScreenCollectionViewCell.self,
                                 forCellWithReuseIdentifier: MainScreenCollectionViewCell.reuseIdentifier)
         
@@ -101,7 +102,6 @@ final class MainScreenView: MainScreenViewProtocol {
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        
     }
 }
 
