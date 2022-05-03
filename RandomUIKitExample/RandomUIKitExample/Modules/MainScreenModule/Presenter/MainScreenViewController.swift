@@ -73,6 +73,7 @@ final class MainScreenViewController: MainScreenModule {
         super.viewDidLoad()
         
         title = Appearance().title
+        navigationController?.navigationBar.prefersLargeTitles = true
         interactor.getCells()
     }
 }
