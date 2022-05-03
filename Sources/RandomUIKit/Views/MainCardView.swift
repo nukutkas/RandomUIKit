@@ -62,6 +62,19 @@ public final class MainCardView: UIView {
         imageView.setImageColor(color: RandomColor.primaryWhite)
     }
     
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        applyGradient(colors: [RandomColor.primaryGreen,
+                               RandomColor.secondaryGreen],
+                      alpha: Appearance().alphaCard)
+    }
+    
+    public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        applyGradient(colors: [RandomColor.primaryGreen,
+                               RandomColor.secondaryGreen])
+    }
+    
     // MARK: - Private func
     
     private func configureLayout() {
@@ -102,9 +115,9 @@ public final class MainCardView: UIView {
         ])
     }
     
-    private func applyGradient(colors: [UIColor]) {
+    private func applyGradient(colors: [UIColor], alpha: CGFloat = 1) {
         guard let gradientLayer = layer as? CAGradientLayer else { return }
-        gradientLayer.colors = colors.map { $0.cgColor }
+        gradientLayer.colors = colors.map { $0.withAlphaComponent(alpha).cgColor }
     }
 }
 
@@ -116,5 +129,6 @@ private extension MainCardView {
         let cornerRadius: CGFloat = 8
         let imageViewSize: CGSize = CGSize(width: 32, height: 32)
         let inset: CGFloat = 8
+        let alphaCard: CGFloat = 0.9
     }
 }
