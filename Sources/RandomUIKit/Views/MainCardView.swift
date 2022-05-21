@@ -26,6 +26,7 @@ public final class MainCardView: UIView {
     private let imageView = UIImageView()
     private let titleLabel = UILabel()
     private let advLabelView = LabelGradientView()
+    private let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
     
     // MARK: - Initialization
     
@@ -71,6 +72,7 @@ public final class MainCardView: UIView {
     
     public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
+        impactFeedback.impactOccurred()
         applyGradient(colors: [RandomColor.primaryGreen,
                                RandomColor.secondaryGreen])
     }
