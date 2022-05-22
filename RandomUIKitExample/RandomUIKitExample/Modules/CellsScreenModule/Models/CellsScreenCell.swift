@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RandomUIKit
 
 // MARK: - CellsScreenCell
 
@@ -28,6 +29,18 @@ enum CellsScreenCell: String {
     /// Список элементов в формате `String`
     case scrollLabelGradientView
     
+    /// Ячейка с текстом и переключателем
+    case labelAndSwitchCell
+    
+    /// Ячейка с двумя заголовками
+    case doubleTitleCell
+    
+    /// Ячейка с текстом и иконкой
+    case labelAndImageCell
+    
+    /// Ячейка с маленькой кнопкой
+    case smallButtonCell
+    
     var reuseIdentifier: String {
         return cellClass.description()
     }
@@ -44,6 +57,14 @@ enum CellsScreenCell: String {
             return TextFieldTableViewCell.self
         case .scrollLabelGradientView:
             return ScrollLabelGradientTableViewCell.self
+        case .labelAndSwitchCell:
+            return LabelAndSwitchCell.self
+        case .doubleTitleCell:
+            return DoubleTitleCell.self
+        case .labelAndImageCell:
+            return LabelAndImageCell.self
+        case .smallButtonCell:
+            return SmallButtonCell.self
         }
     }
     
@@ -59,6 +80,14 @@ enum CellsScreenCell: String {
             return CellsScreenDataSource.makeForTextField()
         case .scrollLabelGradientView:
             return CellsScreenDataSource.makeForScrollLabelGradient()
+        case .labelAndSwitchCell:
+            return CellsScreenDataSource.makeForLabelAndSwitch()
+        case .doubleTitleCell:
+            return CellsScreenDataSource.makeForDoubleTitle()
+        case .labelAndImageCell:
+            return CellsScreenDataSource.makeForLabelAndImage()
+        case .smallButtonCell:
+            return CellsScreenDataSource.makeForSmallButton()
         }
     }
 }
