@@ -11,6 +11,11 @@ import UIKit
 
 public final class LabelAndImageCell: UITableViewCell {
     
+    // MARK: - Public property
+    
+    /// Identifier для ячейки
+    public static let reuseIdentifier = LabelAndImageCell.description()
+    
     // MARK: - Private property
     
     private let titleLable = UILabel()

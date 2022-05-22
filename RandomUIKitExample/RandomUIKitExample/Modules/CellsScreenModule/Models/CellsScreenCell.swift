@@ -41,6 +41,9 @@ enum CellsScreenCell: String {
     /// Ячейка с маленькой кнопкой
     case smallButtonCell
     
+    /// Ячейка с настраиваемым текстом
+    case customTextCell
+    
     var reuseIdentifier: String {
         return cellClass.description()
     }
@@ -65,6 +68,8 @@ enum CellsScreenCell: String {
             return LabelAndImageCell.self
         case .smallButtonCell:
             return SmallButtonCell.self
+        case .customTextCell:
+            return CustomTextCell.self
         }
     }
     
@@ -88,6 +93,8 @@ enum CellsScreenCell: String {
             return CellsScreenDataSource.makeForLabelAndImage()
         case .smallButtonCell:
             return CellsScreenDataSource.makeForSmallButton()
+        case .customTextCell:
+            return CellsScreenDataSource.makeForCustomText()
         }
     }
 }

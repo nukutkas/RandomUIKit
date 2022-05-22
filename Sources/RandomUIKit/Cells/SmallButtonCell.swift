@@ -16,6 +16,9 @@ public final class SmallButtonCell: UITableViewCell {
     /// Акшен по нажатию на кнопку
     public var action: (() -> Void)?
     
+    /// Identifier для ячейки
+    public static let reuseIdentifier = SmallButtonCell.description()
+    
     // MARK: - Private property
     
     private let button = UIButton(type: .system)
@@ -88,6 +91,5 @@ public final class SmallButtonCell: UITableViewCell {
 private extension SmallButtonCell {
     struct Appearance {
         let insets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
-        let imageAsideSize = CGSize(width: 24, height: 24)
     }
 }

@@ -11,6 +11,11 @@ import UIKit
 
 public final class DoubleTitleCell: UITableViewCell {
     
+    // MARK: - Public property
+    
+    /// Identifier для ячейки
+    public static let reuseIdentifier = DoubleTitleCell.description()
+    
     // MARK: - Private property
     
     private let primaryLable = UILabel()
