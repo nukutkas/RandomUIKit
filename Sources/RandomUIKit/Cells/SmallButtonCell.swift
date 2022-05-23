@@ -74,7 +74,7 @@ public final class SmallButtonCell: UITableViewCell {
         backgroundColor = RandomColor.secondaryWhite
         selectionStyle = .none
         
-        button.titleLabel?.font = RandomFont.primaryMedium18
+        button.titleLabel?.font = RandomFont.primaryRegular18
         button.setTitleColor(RandomColor.primaryBlue, for: .normal)
         button.titleLabel?.textAlignment = .center
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
