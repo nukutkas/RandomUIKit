@@ -9,7 +9,7 @@ import UIKit
 
 // MARK: - CustomPaddingCell
 
-public final class CustomPaddingCell: UITableViewCell {
+final class CustomPaddingCell: UITableViewCell {
     
     // MARK: - Public property
     
