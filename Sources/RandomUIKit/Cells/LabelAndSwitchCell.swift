@@ -78,7 +78,7 @@ public final class LabelAndSwitchCell: UITableViewCell {
         backgroundColor = RandomColor.secondaryWhite
         selectionStyle = .none
         
-        titleLabel.font = RandomFont.primaryMedium18
+        titleLabel.font = RandomFont.primaryRegular18
         titleLabel.textColor = RandomColor.primaryGray
         
         resultSwitch.addTarget(self, action: #selector(resultSwitchAction(_:)), for: .valueChanged)

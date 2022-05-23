@@ -70,7 +70,7 @@ public final class CustomTextCell: UITableViewCell {
         backgroundColor = RandomColor.secondaryWhite
         selectionStyle = .none
         
-        titleLabel.font = RandomFont.primaryMedium18
+        titleLabel.font = RandomFont.primaryRegular18
         titleLabel.textColor = RandomColor.primaryGray
         titleLabel.textAlignment = .center
     }

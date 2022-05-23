@@ -75,7 +75,7 @@ public final class LabelAndImageCell: UITableViewCell {
         backgroundColor = RandomColor.secondaryWhite
         selectionStyle = .none
         
-        titleLable.font = RandomFont.primaryMedium18
+        titleLable.font = RandomFont.primaryRegular18
         titleLable.textColor = RandomColor.primaryGray
         
         imageAsideView.setImageColor(color: RandomColor.primaryGray)

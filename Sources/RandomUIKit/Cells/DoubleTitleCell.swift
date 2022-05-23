@@ -75,12 +75,12 @@ public final class DoubleTitleCell: UITableViewCell {
         backgroundColor = RandomColor.secondaryWhite
         selectionStyle = .none
         
-        secondaryLabel.font = RandomFont.primaryMedium18
+        secondaryLabel.font = RandomFont.primaryRegular18
         secondaryLabel.textColor = RandomColor.primaryGray
         secondaryLabel.textAlignment = .right
         secondaryLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
         
-        primaryLable.font = RandomFont.primaryMedium18
+        primaryLable.font = RandomFont.primaryRegular18
         primaryLable.textColor = RandomColor.primaryGray
         primaryLable.setContentHuggingPriority(.defaultHigh, for: .horizontal)
     }
