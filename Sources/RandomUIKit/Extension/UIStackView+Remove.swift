@@ -1,6 +1,5 @@
 //
 //  UIStackView+Remove.swift
-//  RandomUIKitExample
 //
 //  Created by Vitalii Sosin on 02.05.2022.
 //

@@ -1,6 +1,5 @@
 //
 //  DoubleTitleCell.swift
-//  RandomUIKitExample
 //
 //  Created by Tatiana Sosina on 22.05.2022.
 //
@@ -79,9 +78,11 @@ public final class DoubleTitleCell: UITableViewCell {
         secondaryLabel.font = RandomFont.primaryMedium18
         secondaryLabel.textColor = RandomColor.primaryGray
         secondaryLabel.textAlignment = .right
+        secondaryLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
         
         primaryLable.font = RandomFont.primaryMedium18
         primaryLable.textColor = RandomColor.primaryGray
+        primaryLable.setContentHuggingPriority(.defaultHigh, for: .horizontal)
     }
 }
 

@@ -44,6 +44,9 @@ enum CellsScreenCell: String {
     /// Ячейка с настраиваемым текстом
     case customTextCell
     
+    /// Ячейка с настраиваемой высотой
+    case customPaddingCell
+    
     var reuseIdentifier: String {
         return cellClass.description()
     }
@@ -70,6 +73,8 @@ enum CellsScreenCell: String {
             return SmallButtonCell.self
         case .customTextCell:
             return CustomTextCell.self
+        case .customPaddingCell:
+            return CustomPaddingCell.self
         }
     }
     
@@ -95,6 +100,8 @@ enum CellsScreenCell: String {
             return CellsScreenDataSource.makeForSmallButton()
         case .customTextCell:
             return CellsScreenDataSource.makeForCustomText()
+        case .customPaddingCell:
+            return CellsScreenDataSource.makeForCustomPadding()
         }
     }
 }

@@ -1,6 +1,5 @@
 //
 //  LabelAndImageCell.swift
-//  RandomUIKitExample
 //
 //  Created by Tatiana Sosina on 22.05.2022.
 //

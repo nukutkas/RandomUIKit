@@ -1,6 +1,5 @@
 //
 //  CustomTextCell.swift
-//  RandomUIKitExample
 //
 //  Created by Vitalii Sosin on 22.05.2022.
 //
