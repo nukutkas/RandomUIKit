@@ -24,7 +24,7 @@ extension CellsScreenDataSource where Model == LabelAndImageCellModel {
     static func makeForLabelAndImage() -> CellsScreenDataSource {
         let models = [
             LabelAndImageCellModel(titleText: "LabelAndImageCell",
-                                   image: UIImage(systemName: "arrow.turn.up.right"),
+                                   image: UIImage(systemName: "chevron.compact.right"),
                                    titleCell: "")
         ]
         return CellsScreenDataSource(models: models) { (model, cell) in

@@ -8,9 +8,9 @@ import UIKit
 
 /// Расширение для `UIFont`
 public extension UIFont {
-    
-    /// Список цветов `RandomFont`
-    class var randomFont: FontGuide { fontGuide }
+  
+  /// Список цветов `RandomFont`
+  class var randomFont: FontGuide { fontGuide }
 }
 
 // MARK: - Public property

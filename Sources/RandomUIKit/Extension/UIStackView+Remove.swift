@@ -8,17 +8,17 @@ import UIKit
 
 /// Удаление View из UIStackView
 extension UIStackView {
-    
-    /// Удаляет конкретную UIView из UIStackView
-    func removeFully(view: UIView) {
-        removeArrangedSubview(view)
-        view.removeFromSuperview()
+  
+  /// Удаляет конкретную UIView из UIStackView
+  func removeFully(view: UIView) {
+    removeArrangedSubview(view)
+    view.removeFromSuperview()
+  }
+  
+  /// Удаляет все UIView из UIStackView
+  func removeFullyAllArrangedSubviews() {
+    arrangedSubviews.forEach { (view) in
+      removeFully(view: view)
     }
-    
-    /// Удаляет все UIView из UIStackView
-    func removeFullyAllArrangedSubviews() {
-        arrangedSubviews.forEach { (view) in
-            removeFully(view: view)
-        }
-    }
+  }
 }

@@ -9,9 +9,9 @@ import UIKit
 
 /// Расширение для `UIColor`
 public extension UIColor {
-    
-    /// Список цветов `RandomColor`
-    class var randomColor: ColorGuide { colorGuide }
+  
+  /// Список цветов `RandomColor`
+  class var randomColor: ColorGuide { colorGuide }
 }
 
 // MARK: - Public property
