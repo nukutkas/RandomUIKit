@@ -47,6 +47,11 @@ public final class LabelAndImageCell: UITableViewCell {
     impactFeedback.impactOccurred()
   }
   
+  public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+    super.touchesCancelled(touches, with: event)
+    backgroundColor = RandomColor.secondaryWhite
+  }
+  
   /// Настраиваем ячейку
   /// - Parameters:
   ///  - titleText: Заголовок

@@ -39,6 +39,11 @@ public final class ButtonView: UIButton {
     applyGradient(colors: gradientBackground)
   }
   
+  public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+    super.touchesCancelled(touches, with: event)
+    applyGradient(colors: gradientBackground)
+  }
+  
   // MARK: - Private properties
   
   private let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
