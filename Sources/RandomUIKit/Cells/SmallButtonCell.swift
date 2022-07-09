@@ -21,7 +21,7 @@ public final class SmallButtonCell: UITableViewCell {
   // MARK: - Private property
   
   private let button = UIButton(type: .system)
-  private let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
+  private let impactFeedback = UIImpactFeedbackGenerator(style: .light)
   
   // MARK: - Initilisation
   

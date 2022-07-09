@@ -26,7 +26,7 @@ public final class MainCardView: UIView {
   private let imageView = UIImageView()
   private let titleLabel = UILabel()
   private let advLabelView = LabelGradientView()
-  private let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
+  private let impactFeedback = UIImpactFeedbackGenerator(style: .light)
   
   // MARK: - Initialization
   
