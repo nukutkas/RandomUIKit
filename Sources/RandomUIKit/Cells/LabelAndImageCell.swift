@@ -19,7 +19,7 @@ public final class LabelAndImageCell: UITableViewCell {
   
   private let titleLable = UILabel()
   private let imageAsideView = UIImageView()
-  private let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
+  private let impactFeedback = UIImpactFeedbackGenerator(style: .light)
   
   // MARK: - Initilisation
   

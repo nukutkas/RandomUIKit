@@ -46,7 +46,7 @@ public final class ButtonView: UIButton {
   
   // MARK: - Private properties
   
-  private let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
+  private let impactFeedback = UIImpactFeedbackGenerator(style: .light)
   
   // MARK: - Initialization
   
