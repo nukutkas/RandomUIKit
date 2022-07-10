@@ -78,11 +78,11 @@ public final class DoubleTitleCell: UITableViewCell {
     secondaryLabel.font = RandomFont.primaryRegular18
     secondaryLabel.textColor = RandomColor.primaryGray
     secondaryLabel.textAlignment = .right
-    secondaryLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
+    secondaryLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     
     primaryLable.font = RandomFont.primaryRegular18
     primaryLable.textColor = RandomColor.primaryGray
-    primaryLable.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+    primaryLable.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
   }
 }
 
