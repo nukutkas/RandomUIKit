@@ -46,6 +46,9 @@ enum CellsScreenCell: String {
     
     /// Ячейка с настраиваемой высотой
     case customPaddingCell
+  
+  /// Список элементов в формате `Segmented`
+  case scrollLabelSegmentedControlCell
     
     var reuseIdentifier: String {
         return cellClass.description()
@@ -75,6 +78,8 @@ enum CellsScreenCell: String {
             return CustomTextCell.self
         case .customPaddingCell:
             return CustomPaddingCell.self
+        case .scrollLabelSegmentedControlCell:
+          return ScrollLabelSegmentedControlCell.self
         }
     }
     
@@ -102,6 +107,8 @@ enum CellsScreenCell: String {
             return CellsScreenDataSource.makeForCustomText()
         case .customPaddingCell:
             return CellsScreenDataSource.makeForCustomPadding()
+        case .scrollLabelSegmentedControlCell:
+          return CellsScreenDataSource.makeForScrollLabelSegmented()
         }
     }
 }

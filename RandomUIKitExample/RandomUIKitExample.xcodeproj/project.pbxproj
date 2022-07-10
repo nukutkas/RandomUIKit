@@ -45,6 +45,7 @@
 		1B04616C281F55A9001141B4 /* CellsScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B04616B281F55A9001141B4 /* CellsScreenCell.swift */; };
 		1B04616E281F5868001141B4 /* CellsScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B04616D281F5868001141B4 /* CellsScreenDataSource.swift */; };
 		1B046171281F596D001141B4 /* CellsScreenDataSource+MainCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046170281F596D001141B4 /* CellsScreenDataSource+MainCard.swift */; };
+		1B3EF12F287AF6D700D667E1 /* CellsScreenDataSource+ScrollLabelSegmented.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3EF12E287AF6D700D667E1 /* CellsScreenDataSource+ScrollLabelSegmented.swift */; };
 		1B96E0C4281FEE8800A23880 /* LabelGradientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0C3281FEE8800A23880 /* LabelGradientTableViewCell.swift */; };
 		1B96E0C6281FEEC600A23880 /* CellsScreenDataSource+LabelGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0C5281FEEC600A23880 /* CellsScreenDataSource+LabelGradient.swift */; };
 		1B96E0CB281FFB8900A23880 /* CellsScreenDataSource+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0CA281FFB8900A23880 /* CellsScreenDataSource+Button.swift */; };
@@ -106,6 +107,7 @@
 		1B04616D281F5868001141B4 /* CellsScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellsScreenDataSource.swift; sourceTree = "<group>"; };
 		1B046170281F596D001141B4 /* CellsScreenDataSource+MainCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+MainCard.swift"; sourceTree = "<group>"; };
 		1B2D4DCF281C69AE003C201D /* RandomUIKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = RandomUIKit; path = ..; sourceTree = "<group>"; };
+		1B3EF12E287AF6D700D667E1 /* CellsScreenDataSource+ScrollLabelSegmented.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+ScrollLabelSegmented.swift"; sourceTree = "<group>"; };
 		1B96E0C3281FEE8800A23880 /* LabelGradientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelGradientTableViewCell.swift; sourceTree = "<group>"; };
 		1B96E0C5281FEEC600A23880 /* CellsScreenDataSource+LabelGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+LabelGradient.swift"; sourceTree = "<group>"; };
 		1B96E0CA281FFB8900A23880 /* CellsScreenDataSource+Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+Button.swift"; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		1B046110281F1711001141B4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				1B3EF128287AF03300D667E1 /* Dev */,
 				1B046157281F51AF001141B4 /* CellsScreenModule */,
 				1B04613F281F493A001141B4 /* FontsScreenModule */,
 				1B046127281F3E4A001141B4 /* ColorsScreenModule */,
@@ -465,13 +468,14 @@
 		1B04616F281F5942001141B4 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
+				1B96E0DD2820295B00A23880 /* ScrollLabelGradient */,
+				1B3EF12D287AF6B900D667E1 /* ScrollLabelSegmented */,
 				1B9D4569283C36D600A85F25 /* CustomPadding */,
 				1BABD3ED283AC95800816B8C /* CustomText */,
 				6C18DB51283AC2240031CC05 /* SmallButton */,
 				6C18DB4C283ABE1B0031CC05 /* LabelAndImage */,
 				6C18DB47283AB6360031CC05 /* DoubleTitleCell */,
 				6C18DB42283AA6090031CC05 /* LabelAndSwitch */,
-				1B96E0DD2820295B00A23880 /* ScrollLabelGradient */,
 				1B96E0D0282012FB00A23880 /* TextField */,
 				1B96E0C9281FFB6D00A23880 /* Button */,
 				1B96E0C2281FEE5800A23880 /* LabelGradient */,
@@ -486,6 +490,21 @@
 				1B2D4DCF281C69AE003C201D /* RandomUIKit */,
 			);
 			name = Packages;
+			sourceTree = "<group>";
+		};
+		1B3EF128287AF03300D667E1 /* Dev */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Dev;
+			sourceTree = "<group>";
+		};
+		1B3EF12D287AF6B900D667E1 /* ScrollLabelSegmented */ = {
+			isa = PBXGroup;
+			children = (
+				1B3EF12E287AF6D700D667E1 /* CellsScreenDataSource+ScrollLabelSegmented.swift */,
+			);
+			path = ScrollLabelSegmented;
 			sourceTree = "<group>";
 		};
 		1B92E0ED281DB46A00398966 /* System */ = {
@@ -748,6 +767,7 @@
 				1B96E0CD281FFBA700A23880 /* ButtonTableViewCell.swift in Sources */,
 				1B046156281F4CFB001141B4 /* FontsScreenViewCell.swift in Sources */,
 				1B96E0C4281FEE8800A23880 /* LabelGradientTableViewCell.swift in Sources */,
+				1B3EF12F287AF6D700D667E1 /* CellsScreenDataSource+ScrollLabelSegmented.swift in Sources */,
 				1BB57058281C4F7A00AAF8BD /* SceneDelegate.swift in Sources */,
 				6C18DB50283AC04D0031CC05 /* CellsScreenDataSource+LabelAndImageCell.swift in Sources */,
 				1B04615E281F51C5001141B4 /* CellsScreenViewController.swift in Sources */,
