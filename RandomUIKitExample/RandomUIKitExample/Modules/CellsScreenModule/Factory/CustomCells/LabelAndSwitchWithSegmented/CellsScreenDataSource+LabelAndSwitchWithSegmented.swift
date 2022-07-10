@@ -25,6 +25,7 @@ extension CellsScreenDataSource where Model == LabelAndSwitchWithSegmentedModel 
             guard let cell = cell as? LabelAndSwitchWithSegmentedCell else {
                 return
             }
+          cell.removeAllSegments()
           cell.insertSegment(withTitle: "hit", at: 0, animated: false)
           cell.insertSegment(withTitle: "new", at: 1, animated: false)
           cell.insertSegment(withTitle: "premium", at: 2, animated: false)

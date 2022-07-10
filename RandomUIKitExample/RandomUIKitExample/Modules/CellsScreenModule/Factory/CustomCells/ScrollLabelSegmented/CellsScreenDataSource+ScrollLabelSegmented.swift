@@ -25,6 +25,7 @@ extension CellsScreenDataSource where Model == ScrollLabelSegmentedModel {
             guard let cell = cell as? ScrollLabelSegmentedControlCell else {
                 return
             }
+          cell.removeAllSegments()
           cell.insertSegment(withTitle: model.titleCell, at: 0, animated: false)
           cell.insertSegment(withTitle: model.titleCell, at: 1, animated: false)
           cell.insertSegment(withTitle: model.titleCell, at: 2, animated: false)

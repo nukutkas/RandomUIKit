@@ -132,7 +132,7 @@ public final class LabelAndSwitchWithSegmentedCell: UITableViewCell {
 
 private extension LabelAndSwitchWithSegmentedCell {
   struct Appearance {
-    let defaultInset: CGFloat = 16
+    let defaultInset: CGFloat = 24
     let insets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
   }
 }
