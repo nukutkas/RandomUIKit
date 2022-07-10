@@ -108,7 +108,7 @@ public final class LabelAndSwitchWithSegmentedCell: UITableViewCell {
                                                            constant: appearance.insets.top),
       scrollLabelSegmentedControlView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
       scrollLabelSegmentedControlView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,
-                                                              constant: -appearance.defaultInset)
+                                                              constant: -appearance.insets.bottom)
     ])
   }
   
@@ -132,7 +132,6 @@ public final class LabelAndSwitchWithSegmentedCell: UITableViewCell {
 
 private extension LabelAndSwitchWithSegmentedCell {
   struct Appearance {
-    let defaultInset: CGFloat = 24
     let insets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
   }
 }
