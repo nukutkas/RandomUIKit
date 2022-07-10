@@ -1,17 +1,20 @@
 //
-//  ScrollLabelSegmentedControlCell.swift
-//
+//  LabelAndSwitchWithSegmentedCell.swift
+//  RandomUIKitExample
 //
 //  Created by Vitalii Sosin on 10.07.2022.
 //
 
 import UIKit
 
-// MARK: - ScrollLabelSegmentedControlCell
+// MARK: - LabelAndSwitchWithSegmentedCell
 
-public final class ScrollLabelSegmentedControlCell: UITableViewCell {
+public final class LabelAndSwitchWithSegmentedCell: UITableViewCell {
   
   // MARK: - Public properties
+  
+  /// Action на изменение переключателя
+  public var switchAction: ((Bool) -> Void)?
   
   /// Акшен (Значение было изменено)
   public var valueChanged: (() -> Void)? {
@@ -30,11 +33,14 @@ public final class ScrollLabelSegmentedControlCell: UITableViewCell {
   }
   
   /// Identifier для ячейки
-  public static let reuseIdentifier = ScrollLabelSegmentedControlCell.description()
+  public static let reuseIdentifier = LabelAndSwitchWithSegmentedCell.description()
   
   // MARK: - Private property
   
   private let scrollLabelSegmentedControlView = ScrollLabelSegmentedControlView()
+  private let titleLabel = UILabel()
+  private let resultSwitch = UISwitch()
+  private let horizontalStack = UIStackView()
   
   // MARK: - Initilisation
   
@@ -60,18 +66,40 @@ public final class ScrollLabelSegmentedControlCell: UITableViewCell {
     scrollLabelSegmentedControlView.insertSegment(withTitle: title, at: segment, animated: animated)
   }
   
+  /// Настраиваем ячейку
+  /// - Parameters:
+  ///  - titleText: Заголовок у ячейки
+  ///  - isResultSwitch: Значение у переключателя
+  public func configureCellWith(titleText: String?, isResultSwitch: Bool) {
+    titleLabel.text = titleText
+    resultSwitch.isOn = isResultSwitch
+  }
+  
   // MARK: - Private func
   
   private func configureLayout() {
     let appearance = Appearance()
     
-    [scrollLabelSegmentedControlView].forEach {
+    [horizontalStack, scrollLabelSegmentedControlView].forEach {
       $0.translatesAutoresizingMaskIntoConstraints = false
       contentView.addSubview($0)
     }
+    
+    [titleLabel, resultSwitch].forEach {
+      $0.translatesAutoresizingMaskIntoConstraints = false
+      horizontalStack.addArrangedSubview($0)
+    }
+    
     NSLayoutConstraint.activate([
+      horizontalStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
+                                               constant: appearance.insets.left),
+      horizontalStack.topAnchor.constraint(equalTo: contentView.topAnchor,
+                                           constant: appearance.insets.top),
+      horizontalStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
+                                                constant: -appearance.insets.right),
+      
       scrollLabelSegmentedControlView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-      scrollLabelSegmentedControlView.topAnchor.constraint(equalTo: contentView.topAnchor,
+      scrollLabelSegmentedControlView.topAnchor.constraint(equalTo: horizontalStack.bottomAnchor,
                                                            constant: appearance.insets.top),
       scrollLabelSegmentedControlView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
       scrollLabelSegmentedControlView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,
@@ -82,12 +110,22 @@ public final class ScrollLabelSegmentedControlCell: UITableViewCell {
   private func applyDefaultBehavior() {
     backgroundColor = RandomColor.secondaryWhite
     selectionStyle = .none
+    
+    titleLabel.font = RandomFont.primaryRegular18
+    titleLabel.textColor = RandomColor.primaryGray
+    
+    resultSwitch.addTarget(self, action: #selector(resultSwitchAction(_:)), for: .valueChanged)
+  }
+  
+  @objc
+  private func resultSwitchAction(_ sender: UISwitch) {
+    switchAction?(sender.isOn)
   }
 }
 
 // MARK: - Appearance
 
-private extension ScrollLabelSegmentedControlCell {
+private extension LabelAndSwitchWithSegmentedCell {
   struct Appearance {
     let insets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
   }

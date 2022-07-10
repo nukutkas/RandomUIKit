@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RandomUIKit
 
 /// События которые отправляем из View в Presenter
 protocol CellsScreenViewOutput: AnyObject {
@@ -87,7 +88,7 @@ final class CellsScreenView: CellsScreenViewProtocol {
     
     private func applyDefaultBehavior() {
         let appearance = Appearance()
-        backgroundColor = .white
+        backgroundColor = RandomColor.secondaryWhite
         
         tableView.contentInset = appearance.tableViewInsets
         tableView.delegate = self

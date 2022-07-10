@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RandomUIKit
 
 /// События которые отправляем из View в Presenter
 protocol FontsScreenViewOutput: AnyObject {
@@ -75,7 +76,7 @@ final class FontsScreenView: FontsScreenViewProtocol {
     
     private func applyDefaultBehavior() {
         let appearance = Appearance()
-        backgroundColor = .white
+        backgroundColor = RandomColor.secondaryWhite
         
         tableView.contentInset = appearance.tableViewInsets
         tableView.delegate = self

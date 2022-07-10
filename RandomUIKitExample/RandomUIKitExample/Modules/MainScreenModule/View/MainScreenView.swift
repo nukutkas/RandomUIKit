@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RandomUIKit
 
 /// События которые отправляем из View в Presenter
 protocol MainScreenViewOutput: AnyObject {
@@ -145,7 +146,7 @@ extension MainScreenView: UICollectionViewDataSource {
 private extension MainScreenView {
     struct Appearance {
         let collectionViewInsets: UIEdgeInsets = .zero
-        let backgroundColor = UIColor.white
+        let backgroundColor = RandomColor.secondaryWhite
         let estimatedRowHeight: CGFloat = 95
         let sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         let cellWidthHeightConstant = UIScreen.main.bounds.width * 0.4

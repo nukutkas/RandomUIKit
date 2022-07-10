@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RandomUIKit
 
 /// ViewCell для экрана
 final class FontsScreenViewCell: UITableViewCell {
@@ -55,8 +56,8 @@ final class FontsScreenViewCell: UITableViewCell {
     }
     
     private func applyDefaultBehavior() {
-        backgroundColor = .white
-        contentView.backgroundColor = .white
+        backgroundColor = RandomColor.secondaryWhite
+        contentView.backgroundColor = RandomColor.secondaryWhite
         selectionStyle = .none
         
         titleLabel.textAlignment = .center

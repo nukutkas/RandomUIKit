@@ -74,7 +74,7 @@ public final class MainCardTableViewCell: UITableViewCell {
     }
     
     private func applyDefaultBehavior() {
-        backgroundColor = .white
+        backgroundColor = RandomColor.secondaryWhite
         selectionStyle = .none
         
         titleLabel.textColor = .black

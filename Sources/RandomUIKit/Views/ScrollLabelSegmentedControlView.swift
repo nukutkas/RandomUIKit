@@ -91,7 +91,7 @@ public final class ScrollLabelSegmentedControlView: UIView {
   
   private func applyDefaultBehavior() {
     let appearance = Appearance()
-    backgroundColor = .white
+    backgroundColor = RandomColor.secondaryWhite
     
     scrollView.keyboardDismissMode = .interactive
     scrollView.showsHorizontalScrollIndicator = false

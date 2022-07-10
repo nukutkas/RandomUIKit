@@ -68,7 +68,7 @@ public final class TextFieldTableViewCell: UITableViewCell {
     }
     
     private func applyDefaultBehavior() {
-        backgroundColor = .white
+        backgroundColor = RandomColor.secondaryWhite
         selectionStyle = .none
         
         titleLabel.textColor = .black

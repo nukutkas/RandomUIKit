@@ -71,7 +71,7 @@ public final class ButtonTableViewCell: UITableViewCell {
     }
     
     private func applyDefaultBehavior() {
-        backgroundColor = .white
+        backgroundColor = RandomColor.secondaryWhite
         selectionStyle = .none
         
         titleLabel.textColor = .black
