@@ -75,6 +75,11 @@ public final class LabelAndSwitchWithSegmentedCell: UITableViewCell {
     resultSwitch.isOn = isResultSwitch
   }
   
+  /// Удалить все элементы в сегменте
+  public func removeAllSegments() {
+    scrollLabelSegmentedControlView.removeAllSegments()
+  }
+  
   // MARK: - Private func
   
   private func configureLayout() {
@@ -103,7 +108,7 @@ public final class LabelAndSwitchWithSegmentedCell: UITableViewCell {
                                                            constant: appearance.insets.top),
       scrollLabelSegmentedControlView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
       scrollLabelSegmentedControlView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,
-                                                              constant: -appearance.insets.bottom)
+                                                              constant: -appearance.defaultInset)
     ])
   }
   
@@ -127,6 +132,7 @@ public final class LabelAndSwitchWithSegmentedCell: UITableViewCell {
 
 private extension LabelAndSwitchWithSegmentedCell {
   struct Appearance {
+    let defaultInset: CGFloat = 16
     let insets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
   }
 }

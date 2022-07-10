@@ -60,6 +60,11 @@ public final class ScrollLabelSegmentedControlView: UIView {
     segmentedControlView.insertSegment(withTitle: title, at: segment, animated: animated)
   }
   
+  /// Удалить все элементы в сегменте
+  public func removeAllSegments() {
+    segmentedControlView.removeAllSegments()
+  }
+  
   // MARK: - Private func
   
   private func configureLayout() {

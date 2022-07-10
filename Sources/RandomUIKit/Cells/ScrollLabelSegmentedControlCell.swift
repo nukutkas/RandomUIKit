@@ -60,6 +60,11 @@ public final class ScrollLabelSegmentedControlCell: UITableViewCell {
     scrollLabelSegmentedControlView.insertSegment(withTitle: title, at: segment, animated: animated)
   }
   
+  /// Удалить все элементы в сегменте
+  public func removeAllSegments() {
+    scrollLabelSegmentedControlView.removeAllSegments()
+  }
+  
   // MARK: - Private func
   
   private func configureLayout() {
