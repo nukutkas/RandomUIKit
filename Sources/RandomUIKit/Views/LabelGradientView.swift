@@ -36,11 +36,32 @@ public final class LabelGradientView: UIView {
   /// Настраиваем ячейку
   /// - Parameters:
   ///  - titleText: Заголовок на рекламном лайбле
+  ///  - font: Шрифт на рекламном лайбле
+  ///  - textColor: Цвет рекламного лейбла
+  ///  - borderWidth: Ширина границы компонента
+  ///  - borderColor: Цвет границы компонента
   ///  - gradientDVLabel: Градиент цветов для рекламного лайбла
   public func configureWith(titleText: String?,
+                            font: UIFont? = nil,
+                            textColor: UIColor? = nil,
+                            borderWidth: CGFloat? = nil,
+                            borderColor: UIColor? = nil,
                             gradientDVLabel: [UIColor]) {
     titleLabel.text = titleText
     applyGradient(colors: gradientDVLabel)
+    
+    if let font = font {
+      titleLabel.font = font
+    }
+    
+    if let textColor = textColor {
+      titleLabel.textColor = textColor
+    }
+    
+    if let borderWidth = borderWidth {
+      layer.borderWidth = borderWidth
+      layer.borderColor = borderColor?.cgColor
+    }
   }
   
   // MARK: - Private func

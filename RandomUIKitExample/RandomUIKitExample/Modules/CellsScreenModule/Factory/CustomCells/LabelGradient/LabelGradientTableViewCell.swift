@@ -11,73 +11,86 @@ import RandomUIKit
 // MARK: - LabelGradientTableViewCell
 
 public final class LabelGradientTableViewCell: UITableViewCell {
+  
+  // MARK: - Private properties
+  
+  private let labelGradientView = LabelGradientView()
+  private let titleLabel = UILabel()
+  
+  // MARK: - Initilisation
+  
+  public override init(style: CellStyle, reuseIdentifier: String?) {
+    super.init(style: style, reuseIdentifier: reuseIdentifier)
     
-    // MARK: - Private properties
+    configureLayout()
+    applyDefaultBehavior()
+  }
+  
+  public required init?(coder aDecoder: NSCoder) {
+    fatalError()
+  }
+  
+  // MARK: - Public func
+  
+  /// Настраиваем ячейку
+  /// - Parameters:
+  ///  - titleText: Заголовок на рекламном лайбле
+  ///  - font: Шрифт на рекламном лайбле
+  ///  - textColor: Цвет рекламного лейбла
+  ///  - borderWidth: Ширина границы компонента
+  ///  - borderColor: Цвет границы компонента
+  ///  - gradientDVLabel: Градиент цветов для рекламного лайбла
+  public func configureCellWith(titleCell: String?,
+                                titleText: String?,
+                                font: UIFont? = nil,
+                                textColor: UIColor? = nil,
+                                borderWidth: CGFloat? = nil,
+                                borderColor: UIColor? = nil,
+                                gradientDVLabel: [UIColor]) {
+    titleLabel.text = titleCell
+    labelGradientView.configureWith(
+      titleText: titleText,
+      font: font,
+      textColor: textColor,
+      borderWidth: borderWidth,
+      borderColor: borderColor,
+      gradientDVLabel: gradientDVLabel
+    )
+  }
+  
+  // MARK: - Private func
+  
+  private func configureLayout() {
+    let appearance = Appearance()
     
-    private let labelGradientView = LabelGradientView()
-    private let titleLabel = UILabel()
-    
-    // MARK: - Initilisation
-    
-    public override init(style: CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        configureLayout()
-        applyDefaultBehavior()
+    [labelGradientView, titleLabel].forEach {
+      $0.translatesAutoresizingMaskIntoConstraints = false
+      contentView.addSubview($0)
     }
     
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError()
-    }
+    NSLayoutConstraint.activate([
+      titleLabel.topAnchor.constraint(greaterThanOrEqualTo: contentView.topAnchor, constant: appearance.insets),
+      titleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+      
+      labelGradientView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: appearance.insets),
+      labelGradientView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+      labelGradientView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -appearance.insets)
+    ])
     
-    // MARK: - Public func
+  }
+  
+  private func applyDefaultBehavior() {
+    backgroundColor = RandomColor.secondaryWhite
+    selectionStyle = .none
     
-    /// Настраиваем ячейку
-    /// - Parameters:
-    ///  - titleCell: Заголовок для ячейки
-    ///  - titleADVText: Заголовок на рекламном лайбле
-    ///  - gradientDVLabel: Градиент рекламного лайбла
-    public func configureCellWith(titleCell: String?,
-                                  titleADVText: String?,
-                                  gradientDVLabel: [UIColor]) {
-        titleLabel.text = titleCell
-        labelGradientView.configureWith(titleText: titleADVText,
-                                        gradientDVLabel: gradientDVLabel)
-    }
-    
-    // MARK: - Private func
-    
-    private func configureLayout() {
-        let appearance = Appearance()
-        
-        [labelGradientView, titleLabel].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            contentView.addSubview($0)
-        }
-        
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(greaterThanOrEqualTo: contentView.topAnchor, constant: appearance.insets),
-            titleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            
-            labelGradientView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: appearance.insets),
-            labelGradientView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            labelGradientView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -appearance.insets)
-        ])
-        
-    }
-    
-    private func applyDefaultBehavior() {
-        backgroundColor = RandomColor.secondaryWhite
-        selectionStyle = .none
-        
-        titleLabel.textColor = .black
-    }
+    titleLabel.textColor = .black
+  }
 }
 
 // MARK: - Appearance
 
 private extension LabelGradientTableViewCell {
-    struct Appearance {
-        let insets: CGFloat = 16
-    }
+  struct Appearance {
+    let insets: CGFloat = 16
+  }
 }
