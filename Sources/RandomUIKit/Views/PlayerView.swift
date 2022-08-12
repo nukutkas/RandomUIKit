@@ -97,6 +97,12 @@ public final class PlayerView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
   
+  public override func layoutSubviews() {
+     super.layoutSubviews()
+    
+    clipsToBounds = true
+  }
+  
   // MARK: - Public func
   
   /// Настраиваем ячейку
@@ -141,8 +147,6 @@ public final class PlayerView: UIView {
       layer.shadowRadius = appearance.shadowRadius
       layer.shadowOpacity = appearance.shadowOpacity
     }
-    clipsToBounds = !isShadow
-    layoutIfNeeded()
   }
   
   // MARK: - Private func
