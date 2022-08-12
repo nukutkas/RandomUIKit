@@ -221,8 +221,8 @@ private extension PlayerView {
     let cornerRadius: CGFloat = 16
     let cardSize = CGSize(width: 90, height: 100)
     let borderWidth: CGFloat = 1
-    let shadowRadius: CGFloat = 8
-    let shadowOpacity: Float = 0.3
+    let shadowRadius: CGFloat = 4
+    let shadowOpacity: Float = 0.2
     let minInsets: CGFloat = 4
     let middleInsets: CGFloat = 8
     let numberOfLines = 2
