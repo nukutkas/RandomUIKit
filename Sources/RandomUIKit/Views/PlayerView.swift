@@ -142,7 +142,7 @@ public final class PlayerView: UIView {
       layer.shadowOpacity = appearance.shadowOpacity
     }
     clipsToBounds = !isShadow
-    setNeedsLayout()
+    layoutIfNeeded()
   }
   
   // MARK: - Private func
