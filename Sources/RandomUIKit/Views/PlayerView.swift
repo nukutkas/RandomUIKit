@@ -141,7 +141,8 @@ public final class PlayerView: UIView {
       layer.shadowRadius = appearance.shadowRadius
       layer.shadowOpacity = appearance.shadowOpacity
     }
-    clipsToBounds = !isShadow
+    clipsToBounds = true
+//    layer.masksToBounds = true
   }
   
   // MARK: - Private func
@@ -182,7 +183,6 @@ public final class PlayerView: UIView {
     let appearance = Appearance()
     backgroundColor = RandomColor.primaryWhite
     layer.cornerRadius = appearance.cornerRadius
-    layer.masksToBounds = false
     
     emojiLabel.font = RandomFont.primaryMedium18
     
