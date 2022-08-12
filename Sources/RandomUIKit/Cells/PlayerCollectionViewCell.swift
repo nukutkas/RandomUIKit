@@ -83,7 +83,7 @@ public final class PlayerCollectionViewCell: UICollectionViewCell {
   }
   
   private func applyDefaultBehavior() {
-    backgroundColor = RandomColor.secondaryWhite
+    backgroundColor = RandomColor.primaryWhite
   }
 }
 
