@@ -184,7 +184,6 @@ public final class PlayerView: UIView {
     layer.cornerRadius = appearance.cornerRadius
     
     emojiLabel.font = RandomFont.primaryMedium18
-    emojiLabel.shadowColor = RandomColor.primaryBlack
     
     nameLabel.font = RandomFont.primaryBold10
     nameLabel.textColor = RandomColor.primaryGray

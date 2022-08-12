@@ -77,14 +77,10 @@ public final class PlayerCollectionViewCell: UICollectionViewCell {
     }
     
     NSLayoutConstraint.activate([
-      playerView.topAnchor.constraint(equalTo: contentView.topAnchor,
-                                      constant: appearance.inset),
-      playerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,
-                                         constant: -appearance.inset),
-      playerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
-                                          constant: appearance.inset),
-      playerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
-                                           constant: -appearance.inset)
+      playerView.topAnchor.constraint(equalTo: contentView.topAnchor),
+      playerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+      playerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+      playerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
     ])
   }
   
