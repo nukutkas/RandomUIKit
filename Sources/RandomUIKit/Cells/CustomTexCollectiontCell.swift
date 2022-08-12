@@ -40,10 +40,15 @@ public final class CustomTexCollectiontCell: UICollectionReusableView {
   /// - Parameters:
   ///  - titleText: Текст заголовка
   ///  - textColor: Цвет текста
+  ///  - textFont: Шрифт текста
   ///  - textAlignment: Выравнивание текста
-  public func configureCellWith(titleText: String?, textColor: UIColor?, textAlignment: NSTextAlignment) {
+  public func configureCellWith(titleText: String?,
+                                textColor: UIColor?,
+                                textFont: UIFont? = RandomFont.primaryRegular18,
+                                textAlignment: NSTextAlignment) {
     titleLabel.text = titleText
     titleLabel.textColor = textColor
+    titleLabel.font = textFont
     titleLabel.textAlignment = textAlignment
   }
   
