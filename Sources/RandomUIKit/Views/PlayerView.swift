@@ -182,6 +182,7 @@ public final class PlayerView: UIView {
     let appearance = Appearance()
     backgroundColor = RandomColor.primaryWhite
     layer.cornerRadius = appearance.cornerRadius
+    layer.masksToBounds = false
     
     emojiLabel.font = RandomFont.primaryMedium18
     
