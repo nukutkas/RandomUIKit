@@ -20,14 +20,14 @@ public final class PlayerCollectionViewCell: UICollectionViewCell {
   
   // MARK: - Initialization
   
-  override init(frame: CGRect) {
+  public override init(frame: CGRect) {
     super.init(frame: frame)
     
     configureLayout()
     applyDefaultBehavior()
   }
   
-  required init?(coder: NSCoder) {
+  public required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
   
@@ -69,8 +69,6 @@ public final class PlayerCollectionViewCell: UICollectionViewCell {
   // MARK: - Private func
   
   private func configureLayout() {
-    let appearance = Appearance()
-    
     [playerView].forEach {
       $0.translatesAutoresizingMaskIntoConstraints = false
       contentView.addSubview($0)
@@ -92,7 +90,5 @@ public final class PlayerCollectionViewCell: UICollectionViewCell {
 // MARK: - Appearance
 
 private extension PlayerCollectionViewCell {
-  struct Appearance {
-    let inset: CGFloat = 8
-  }
+  struct Appearance {}
 }
