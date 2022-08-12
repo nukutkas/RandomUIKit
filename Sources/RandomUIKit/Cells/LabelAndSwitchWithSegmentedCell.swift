@@ -17,18 +17,14 @@ public final class LabelAndSwitchWithSegmentedCell: UITableViewCell {
   public var switchAction: ((Bool) -> Void)?
   
   /// Акшен (Значение было изменено)
-  public var valueChanged: (() -> Void)? {
-    didSet {
-      scrollLabelSegmentedControlView.valueChanged = valueChanged
-    }
-  }
+  public var segmentValueChanged: (() -> Void)?
   
   /// Индекс выбранного значения
   public var selectedSegmentIndex: Int {
     get {
-      scrollLabelSegmentedControlView.selectedSegmentIndex
+      segmentedControlView.selectedSegmentIndex
     } set {
-      scrollLabelSegmentedControlView.selectedSegmentIndex = newValue
+      segmentedControlView.selectedSegmentIndex = newValue
     }
   }
   
@@ -37,7 +33,7 @@ public final class LabelAndSwitchWithSegmentedCell: UITableViewCell {
   
   // MARK: - Private property
   
-  private let scrollLabelSegmentedControlView = ScrollLabelSegmentedControlView()
+  private let segmentedControlView = UISegmentedControl()
   private let titleLabel = UILabel()
   private let resultSwitch = UISwitch()
   private let horizontalStack = UIStackView()
@@ -63,7 +59,7 @@ public final class LabelAndSwitchWithSegmentedCell: UITableViewCell {
   ///   - at: Индекс сегмента
   ///   - animated: Добавление с анимацией
   public func insertSegment(withTitle title: String?, at segment: Int, animated: Bool) {
-    scrollLabelSegmentedControlView.insertSegment(withTitle: title, at: segment, animated: animated)
+    segmentedControlView.insertSegment(withTitle: title, at: segment, animated: animated)
   }
   
   /// Настраиваем ячейку
@@ -77,7 +73,7 @@ public final class LabelAndSwitchWithSegmentedCell: UITableViewCell {
   
   /// Удалить все элементы в сегменте
   public func removeAllSegments() {
-    scrollLabelSegmentedControlView.removeAllSegments()
+    segmentedControlView.removeAllSegments()
   }
   
   // MARK: - Private func
@@ -85,7 +81,7 @@ public final class LabelAndSwitchWithSegmentedCell: UITableViewCell {
   private func configureLayout() {
     let appearance = Appearance()
     
-    [horizontalStack, scrollLabelSegmentedControlView].forEach {
+    [horizontalStack, segmentedControlView].forEach {
       $0.translatesAutoresizingMaskIntoConstraints = false
       contentView.addSubview($0)
     }
@@ -103,28 +99,38 @@ public final class LabelAndSwitchWithSegmentedCell: UITableViewCell {
       horizontalStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
                                                 constant: -appearance.insets.right),
       
-      scrollLabelSegmentedControlView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-      scrollLabelSegmentedControlView.topAnchor.constraint(equalTo: horizontalStack.bottomAnchor,
-                                                           constant: appearance.insets.top),
-      scrollLabelSegmentedControlView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-      scrollLabelSegmentedControlView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,
-                                                              constant: -appearance.insets.bottom)
+      segmentedControlView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
+                                                    constant: appearance.insets.left),
+      segmentedControlView.topAnchor.constraint(equalTo: horizontalStack.bottomAnchor,
+                                                constant: appearance.insets.top),
+      segmentedControlView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
+                                                     constant: -appearance.insets.right),
+      segmentedControlView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,
+                                                   constant: -appearance.insets.bottom)
     ])
   }
   
   private func applyDefaultBehavior() {
-    backgroundColor = RandomColor.secondaryWhite
+    backgroundColor = RandomColor.primaryWhite
     selectionStyle = .none
     
     titleLabel.font = RandomFont.primaryRegular18
     titleLabel.textColor = RandomColor.primaryGray
     
     resultSwitch.addTarget(self, action: #selector(resultSwitchAction(_:)), for: .valueChanged)
+    segmentedControlView.addTarget(self, action: #selector(segmentedControlViewAction), for: .valueChanged)
   }
+  
+  // MARK: - Private func
   
   @objc
   private func resultSwitchAction(_ sender: UISwitch) {
     switchAction?(sender.isOn)
+  }
+  
+  @objc
+  private func segmentedControlViewAction() {
+    segmentValueChanged?()
   }
 }
 

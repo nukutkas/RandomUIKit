@@ -16,11 +16,17 @@ public struct ColorGuide {
   /// Светло-серый цвет
   public let secondaryGray = UIColor(light: .secondaryGray, dark: .secondaryGray)
   
+  /// Очень светло-серый цвет
+  public let tertiaryGray = UIColor(light: .tertiaryGray, dark: .tertiaryGray)
+  
   /// Темно-зеленый цвет
   public let primaryGreen = UIColor(light: .primaryGreen, dark: .primaryGreen)
   
   /// Светло-зеленый цвет
   public let secondaryGreen = UIColor(light: .secondaryGreen, dark: .secondaryGreen)
+  
+  /// Очень светло-зеленый цвет
+  public let tertiaryGreen = UIColor(light: .tertiaryGreen, dark: .tertiaryGreen)
   
   /// Основной синий цвет
   public let primaryBlue = UIColor(light: .primaryBlue, dark: .primaryBlue)
@@ -31,10 +37,10 @@ public struct ColorGuide {
   /// Светло-красный цвет
   public let secondaryRed = UIColor(light: .secondaryRed, dark: .secondaryRed)
   
-  /// Темно-белый цвет
+  /// Светло-белый цвет
   public let primaryWhite = UIColor(light: .primaryWhite, dark: .primaryWhite)
   
-  /// Светло-белый цвет
+  /// Темно-белый цвет
   public let secondaryWhite = UIColor(light: .secondaryWhite, dark: .secondaryWhite)
   
   /// Основной черный цвет

@@ -72,7 +72,7 @@ public final class DoubleTitleCell: UITableViewCell {
   }
   
   private func applyDefaultBehavior() {
-    backgroundColor = RandomColor.secondaryWhite
+    backgroundColor = RandomColor.primaryWhite
     selectionStyle = .none
     
     secondaryLabel.font = RandomFont.primaryRegular18

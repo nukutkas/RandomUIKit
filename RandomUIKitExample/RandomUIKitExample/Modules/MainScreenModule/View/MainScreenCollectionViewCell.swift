@@ -61,7 +61,7 @@ final class MainScreenCollectionViewCell: UICollectionViewCell {
     
     private func applyDefaultBehavior() {
         let appearance = Appearance()
-        backgroundColor = RandomColor.secondaryWhite
+        backgroundColor = RandomColor.primaryWhite
         
         roundedBackgroundView.layer.cornerRadius = appearance.cornerRadius
         roundedBackgroundView.layer.borderColor = RandomColor.secondaryGray.cgColor

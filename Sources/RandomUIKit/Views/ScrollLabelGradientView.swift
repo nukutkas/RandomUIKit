@@ -71,7 +71,7 @@ public final class ScrollLabelGradientView: UIView {
   
   private func applyDefaultBehavior() {
     let appearance = Appearance()
-    backgroundColor = RandomColor.secondaryWhite
+    backgroundColor = RandomColor.primaryWhite
     
     scrollView.keyboardDismissMode = .interactive
     scrollView.showsHorizontalScrollIndicator = false

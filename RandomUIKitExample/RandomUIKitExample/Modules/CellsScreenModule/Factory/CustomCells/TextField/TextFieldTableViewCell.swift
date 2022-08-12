@@ -10,7 +10,7 @@ import RandomUIKit
 
 // MARK: - TextFieldTableViewCell
 
-public final class TextFieldTableViewCell: UITableViewCell {
+final class TextFieldTableViewCell: UITableViewCell {
     
     // MARK: - Private properties
     
@@ -68,7 +68,7 @@ public final class TextFieldTableViewCell: UITableViewCell {
     }
     
     private func applyDefaultBehavior() {
-        backgroundColor = RandomColor.secondaryWhite
+        backgroundColor = RandomColor.primaryWhite
         selectionStyle = .none
         
         titleLabel.textColor = .black

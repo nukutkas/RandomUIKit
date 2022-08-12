@@ -56,8 +56,8 @@ final class FontsScreenViewCell: UITableViewCell {
     }
     
     private func applyDefaultBehavior() {
-        backgroundColor = RandomColor.secondaryWhite
-        contentView.backgroundColor = RandomColor.secondaryWhite
+        backgroundColor = RandomColor.primaryWhite
+        contentView.backgroundColor = RandomColor.primaryWhite
         selectionStyle = .none
         
         titleLabel.textAlignment = .center

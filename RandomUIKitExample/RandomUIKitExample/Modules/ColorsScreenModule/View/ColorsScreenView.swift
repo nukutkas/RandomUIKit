@@ -76,7 +76,7 @@ final class ColorsScreenView: ColorsScreenViewProtocol {
     
     private func applyDefaultBehavior() {
         let appearance = Appearance()
-        backgroundColor = RandomColor.secondaryWhite
+        backgroundColor = RandomColor.primaryWhite
         
         tableView.contentInset = appearance.tableViewInsets
         tableView.delegate = self

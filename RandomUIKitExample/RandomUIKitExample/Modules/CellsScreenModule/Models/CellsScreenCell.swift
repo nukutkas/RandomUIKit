@@ -47,12 +47,12 @@ enum CellsScreenCell: String {
   /// Ячейка с настраиваемой высотой
   case customPaddingCell
   
-  /// Список элементов в формате `Segmented`
-  case scrollLabelSegmentedControlCell
-  
   /// Ячейка с текстом, переключателем и
   /// список элементов в формате `Segmented`
   case labelAndSwitchWithSegmentedCell
+  
+  /// Вью и ячейка для коллекции с игроком
+  case playerViewAndCell
   
   var reuseIdentifier: String {
     return cellClass.description()
@@ -82,10 +82,10 @@ enum CellsScreenCell: String {
       return CustomTextCell.self
     case .customPaddingCell:
       return CustomPaddingCell.self
-    case .scrollLabelSegmentedControlCell:
-      return ScrollLabelSegmentedControlCell.self
     case .labelAndSwitchWithSegmentedCell:
       return LabelAndSwitchWithSegmentedCell.self
+    case .playerViewAndCell:
+      return PlayerTableViewCell.self
     }
   }
   
@@ -113,10 +113,10 @@ enum CellsScreenCell: String {
       return CellsScreenDataSource.makeForCustomText()
     case .customPaddingCell:
       return CellsScreenDataSource.makeForCustomPadding()
-    case .scrollLabelSegmentedControlCell:
-      return CellsScreenDataSource.makeForScrollLabelSegmented()
     case .labelAndSwitchWithSegmentedCell:
       return CellsScreenDataSource.makeForLabelAndSwitchWithSegmented()
+    case .playerViewAndCell:
+      return CellsScreenDataSource.makeForPlayer()
     }
   }
 }

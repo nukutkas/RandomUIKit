@@ -10,7 +10,7 @@ import RandomUIKit
 
 // MARK: - MainCardTableViewCell
 
-public final class MainCardTableViewCell: UITableViewCell {
+final class MainCardTableViewCell: UITableViewCell {
     
     // MARK: - Private properties
     
@@ -74,7 +74,7 @@ public final class MainCardTableViewCell: UITableViewCell {
     }
     
     private func applyDefaultBehavior() {
-        backgroundColor = RandomColor.secondaryWhite
+        backgroundColor = RandomColor.primaryWhite
         selectionStyle = .none
         
         titleLabel.textColor = .black

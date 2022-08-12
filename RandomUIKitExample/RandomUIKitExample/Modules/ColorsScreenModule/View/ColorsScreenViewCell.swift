@@ -67,8 +67,8 @@ final class ColorsScreenViewCell: UITableViewCell {
     private func applyDefaultBehavior() {
         let appearance = Appearance()
         
-        backgroundColor = RandomColor.secondaryWhite
-        contentView.backgroundColor = RandomColor.secondaryWhite
+        backgroundColor = RandomColor.primaryWhite
+        contentView.backgroundColor = RandomColor.primaryWhite
         selectionStyle = .none
         
         titleLabel.textAlignment = .left

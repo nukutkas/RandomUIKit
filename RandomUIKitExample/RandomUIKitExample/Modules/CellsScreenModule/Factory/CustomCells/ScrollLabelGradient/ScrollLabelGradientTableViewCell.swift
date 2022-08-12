@@ -10,7 +10,7 @@ import RandomUIKit
 
 // MARK: - ScrollLabelGradientTableViewCell
 
-public final class ScrollLabelGradientTableViewCell: UITableViewCell {
+final class ScrollLabelGradientTableViewCell: UITableViewCell {
     
     // MARK: - Private properties
     
@@ -67,7 +67,7 @@ public final class ScrollLabelGradientTableViewCell: UITableViewCell {
     }
     
     private func applyDefaultBehavior() {
-        backgroundColor = RandomColor.secondaryWhite
+        backgroundColor = RandomColor.primaryWhite
         selectionStyle = .none
         
         titleLabel.textColor = .black

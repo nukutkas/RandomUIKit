@@ -10,7 +10,7 @@ import RandomUIKit
 
 // MARK: - LabelGradientTableViewCell
 
-public final class LabelGradientTableViewCell: UITableViewCell {
+final class LabelGradientTableViewCell: UITableViewCell {
   
   // MARK: - Private properties
   
@@ -80,7 +80,7 @@ public final class LabelGradientTableViewCell: UITableViewCell {
   }
   
   private func applyDefaultBehavior() {
-    backgroundColor = RandomColor.secondaryWhite
+    backgroundColor = RandomColor.primaryWhite
     selectionStyle = .none
     
     titleLabel.textColor = .black

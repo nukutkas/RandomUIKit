@@ -20,10 +20,6 @@ public final class ButtonView: UIButton {
     }
   }
   
-  public override var intrinsicContentSize: CGSize {
-    Appearance().intrinsicContentSize
-  }
-  
   public override class var layerClass: AnyClass {
     return CAGradientLayer.self
   }
@@ -53,6 +49,7 @@ public final class ButtonView: UIButton {
   override init(frame: CGRect) {
     super.init(frame: frame)
     
+    configureLayout()
     applyDefaultBehavior()
   }
   
@@ -62,8 +59,14 @@ public final class ButtonView: UIButton {
   
   // MARK: - Private func
   
+  private func configureLayout() {
+    NSLayoutConstraint.activate([
+      heightAnchor.constraint(equalToConstant: Appearance().contentHeight)
+    ])
+  }
+  
   private func applyDefaultBehavior() {
-    setTitleColor(RandomColor.secondaryWhite, for: .normal)
+    setTitleColor(RandomColor.primaryWhite, for: .normal)
     titleLabel?.font = RandomFont.primaryMedium18
     layer.cornerRadius = Appearance().cornerRadius
     
@@ -80,8 +83,7 @@ public final class ButtonView: UIButton {
 
 private extension ButtonView {
   struct Appearance {
-    let intrinsicContentSize = CGSize(width: UIView.noIntrinsicMetric,
-                                      height: 52)
+    let contentHeight: CGFloat = 52
     let cornerRadius: CGFloat = 8
     let alphaButton: CGFloat = 0.9
   }

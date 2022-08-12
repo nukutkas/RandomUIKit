@@ -10,7 +10,7 @@ import RandomUIKit
 
 // MARK: - ButtonTableViewCell
 
-public final class ButtonTableViewCell: UITableViewCell {
+final class ButtonTableViewCell: UITableViewCell {
     
     // MARK: - Private properties
     
@@ -71,7 +71,7 @@ public final class ButtonTableViewCell: UITableViewCell {
     }
     
     private func applyDefaultBehavior() {
-        backgroundColor = RandomColor.secondaryWhite
+        backgroundColor = RandomColor.primaryWhite
         selectionStyle = .none
         
         titleLabel.textColor = .black
