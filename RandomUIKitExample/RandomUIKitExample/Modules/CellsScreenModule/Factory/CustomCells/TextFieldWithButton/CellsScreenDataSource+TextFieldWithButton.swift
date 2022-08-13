@@ -12,7 +12,7 @@ import RandomUIKit
 
 /// Моделька для ячейки
 struct TextFieldWithButtonModel: CellModel {
-  let buttonImage: UIImage?
+  let buttonImageSystemName: String?
   let buttonImageColor: UIColor?
   
   var titleCell: String
@@ -23,17 +23,17 @@ extension CellsScreenDataSource where Model == TextFieldWithButtonModel {
   static func makeForTextFieldWithButton() -> CellsScreenDataSource {
     let models = [
       TextFieldWithButtonModel(
-        buttonImage: UIImage(systemName: "checkmark.circle.fill"),
+        buttonImageSystemName: "checkmark.circle.fill",
         buttonImageColor: RandomColor.primaryGreen,
         titleCell: ""
       ),
       TextFieldWithButtonModel(
-        buttonImage: UIImage(systemName: "checkmark.diamond.fill"),
+        buttonImageSystemName: "checkmark.diamond.fill",
         buttonImageColor: RandomColor.primaryRed,
         titleCell: ""
       ),
       TextFieldWithButtonModel(
-        buttonImage: UIImage(systemName: "checkmark.seal"),
+        buttonImageSystemName: "checkmark.seal",
         buttonImageColor: RandomColor.primaryBlue,
         titleCell: ""
       )
@@ -48,7 +48,7 @@ extension CellsScreenDataSource where Model == TextFieldWithButtonModel {
       
       cell.configureCellWith(
         textField: textField,
-        buttonImage: model.buttonImage,
+        buttonImageSystemName: model.buttonImageSystemName,
         buttonImageColor: model.buttonImageColor,
         buttonAction: {
           print("buttonAction")

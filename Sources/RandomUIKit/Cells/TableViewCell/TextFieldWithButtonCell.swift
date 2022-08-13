@@ -40,19 +40,26 @@ public final class TextFieldWithButtonCell: UITableViewCell {
   /// Настраиваем ячейку
   /// - Parameters:
   ///  - textField: Текстовое поле
-  ///  - buttonImage: Изображение кнопки
+  ///  - buttonImageSystemName: Название системной иконки
   ///  - buttonImageColor: Цвет изображения кнопки
   ///  - buttonAction: Действие по нажатию на кнопку
   public func configureCellWith(textField: TextFieldView,
-                                buttonImage: UIImage?,
+                                buttonImageSystemName: String?,
                                 buttonImageColor: UIColor? = RandomColor.primaryGreen,
                                 buttonAction: (() -> Void)? = nil) {
     self.textField = textField
     self.buttonAction = buttonAction
-    button.setImage(buttonImage, for: .normal)
     
     if let buttonImageColor = buttonImageColor {
       button.imageView?.setImageColor(color: buttonImageColor)
+    }
+    
+    if #available(iOS 13, *) {
+      let largeConfig = UIImage.SymbolConfiguration(pointSize: Appearance().pointSize,
+                                                    weight: .bold,
+                                                    scale: .large)
+      button.setImage(UIImage(systemName: buttonImageSystemName ?? "",
+                              withConfiguration: largeConfig), for: .normal)
     }
     configureLayout(textField: textField)
   }
@@ -88,7 +95,11 @@ public final class TextFieldWithButtonCell: UITableViewCell {
     selectionStyle = .none
     
     if #available(iOS 13, *) {
-      button.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+      let largeConfig = UIImage.SymbolConfiguration(pointSize: Appearance().pointSize,
+                                                    weight: .bold,
+                                                    scale: .large)
+      button.setImage(UIImage(systemName: "checkmark.circle.fill",
+                              withConfiguration: largeConfig), for: .normal)
     }
     
     button.contentMode = .center
@@ -113,5 +124,6 @@ private extension TextFieldWithButtonCell {
   struct Appearance {
     let insets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
     let buttonSize = CGSize(width: 44, height: 44)
+    let pointSize: CGFloat = 20
   }
 }
