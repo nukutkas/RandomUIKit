@@ -57,6 +57,9 @@ enum CellsScreenCell: String {
   /// Ячейка с информацией об игроке
   case playerInfoCell
   
+  /// Ячейка текствого поля с кнопкой
+  case textFieldWithButton
+  
   var reuseIdentifier: String {
     return cellClass.description()
   }
@@ -91,6 +94,8 @@ enum CellsScreenCell: String {
       return PlayerTableViewCell.self
     case .playerInfoCell:
       return PlayerInfoTableViewCell.self
+    case .textFieldWithButton:
+      return TextFieldWithButtonCell.self
     }
   }
   
@@ -124,6 +129,8 @@ enum CellsScreenCell: String {
       return CellsScreenDataSource.makeForPlayer()
     case .playerInfoCell:
       return CellsScreenDataSource.makeForPlayerInfo()
+    case .textFieldWithButton:
+      return CellsScreenDataSource.makeForTextFieldWithButton()
     }
   }
 }

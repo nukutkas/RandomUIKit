@@ -207,12 +207,20 @@ public final class PlayerView: UIView {
   
   @objc
   private func emojiLabelAction() {
+    guard emojiAction != nil else {
+      return
+    }
+    
     emojiAction?()
     impactFeedback.impactOccurred()
   }
   
   @objc
   private func cardViewAction() {
+    guard cardAction != nil else {
+      return
+    }
+    
     cardAction?()
     impactFeedback.impactOccurred()
   }

@@ -11,11 +11,6 @@ import UIKit
 
 public final class PlayerInfoTableViewCell: UITableViewCell {
   
-  // MARK: - Public property
-  
-  /// Action на изменение переключателя
-  public var switchAction: ((Bool) -> Void)?
-  
   /// Identifier для ячейки
   public static let reuseIdentifier = PlayerInfoTableViewCell.description()
   
@@ -162,12 +157,20 @@ public final class PlayerInfoTableViewCell: UITableViewCell {
   
   @objc
   private func emojiLabelAction() {
+    guard emojiAction != nil else {
+      return
+    }
+    
     emojiAction?()
     impactFeedback.impactOccurred()
   }
   
   @objc
   private func contentViewAction() {
+    guard contentAction != nil else {
+      return
+    }
+    
     contentAction?()
     impactFeedback.impactOccurred()
   }

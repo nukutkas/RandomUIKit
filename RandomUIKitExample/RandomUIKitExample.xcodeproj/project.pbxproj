@@ -49,6 +49,7 @@
 		1B50066C28A6CA9F009AABF2 /* CellsScreenDataSource+Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50066B28A6CA9F009AABF2 /* CellsScreenDataSource+Player.swift */; };
 		1B50066E28A6CAB2009AABF2 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50066D28A6CAB2009AABF2 /* PlayerTableViewCell.swift */; };
 		1B7431A428A7B1D500205C2C /* CellsScreenDataSource+PlayerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7431A328A7B1D500205C2C /* CellsScreenDataSource+PlayerInfo.swift */; };
+		1B7431AA28A7C83F00205C2C /* CellsScreenDataSource+TextFieldWithButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7431A928A7C83F00205C2C /* CellsScreenDataSource+TextFieldWithButton.swift */; };
 		1B96E0C4281FEE8800A23880 /* LabelGradientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0C3281FEE8800A23880 /* LabelGradientTableViewCell.swift */; };
 		1B96E0C6281FEEC600A23880 /* CellsScreenDataSource+LabelGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0C5281FEEC600A23880 /* CellsScreenDataSource+LabelGradient.swift */; };
 		1B96E0CB281FFB8900A23880 /* CellsScreenDataSource+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0CA281FFB8900A23880 /* CellsScreenDataSource+Button.swift */; };
@@ -114,6 +115,7 @@
 		1B50066B28A6CA9F009AABF2 /* CellsScreenDataSource+Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+Player.swift"; sourceTree = "<group>"; };
 		1B50066D28A6CAB2009AABF2 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		1B7431A328A7B1D500205C2C /* CellsScreenDataSource+PlayerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+PlayerInfo.swift"; sourceTree = "<group>"; };
+		1B7431A928A7C83F00205C2C /* CellsScreenDataSource+TextFieldWithButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+TextFieldWithButton.swift"; sourceTree = "<group>"; };
 		1B96E0C3281FEE8800A23880 /* LabelGradientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelGradientTableViewCell.swift; sourceTree = "<group>"; };
 		1B96E0C5281FEEC600A23880 /* CellsScreenDataSource+LabelGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+LabelGradient.swift"; sourceTree = "<group>"; };
 		1B96E0CA281FFB8900A23880 /* CellsScreenDataSource+Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+Button.swift"; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		1B046110281F1711001141B4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				1B7431A528A7C3E600205C2C /* Dev */,
 				1B046157281F51AF001141B4 /* CellsScreenModule */,
 				1B04613F281F493A001141B4 /* FontsScreenModule */,
 				1B046127281F3E4A001141B4 /* ColorsScreenModule */,
@@ -473,6 +476,7 @@
 		1B04616F281F5942001141B4 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
+				1B7431A828A7C82600205C2C /* TextFieldWithButton */,
 				1B7431A228A7B1B200205C2C /* PlayerInfo */,
 				1B96E0C9281FFB6D00A23880 /* Button */,
 				1B50066A28A6CA84009AABF2 /* Player */,
@@ -522,6 +526,21 @@
 				1B7431A328A7B1D500205C2C /* CellsScreenDataSource+PlayerInfo.swift */,
 			);
 			path = PlayerInfo;
+			sourceTree = "<group>";
+		};
+		1B7431A528A7C3E600205C2C /* Dev */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Dev;
+			sourceTree = "<group>";
+		};
+		1B7431A828A7C82600205C2C /* TextFieldWithButton */ = {
+			isa = PBXGroup;
+			children = (
+				1B7431A928A7C83F00205C2C /* CellsScreenDataSource+TextFieldWithButton.swift */,
+			);
+			path = TextFieldWithButton;
 			sourceTree = "<group>";
 		};
 		1B92E0ED281DB46A00398966 /* System */ = {
@@ -763,6 +782,7 @@
 				6C18DB4B283AB9D50031CC05 /* CellsScreenDataSource+DoubleTitleCell.swift in Sources */,
 				1B04615F281F51C5001141B4 /* CellsScreenAssembly.swift in Sources */,
 				1B046139281F3EDD001141B4 /* ColorsScreenCoordinator.swift in Sources */,
+				1B7431AA28A7C83F00205C2C /* CellsScreenDataSource+TextFieldWithButton.swift in Sources */,
 				1B046149281F494A001141B4 /* FontsScreenView.swift in Sources */,
 				1B046131281F3E5E001141B4 /* ColorsScreenView.swift in Sources */,
 				1B046151281F49A4001141B4 /* FontsScreenCell.swift in Sources */,

@@ -44,7 +44,7 @@ extension CellsScreenDataSource where Model == PlayerInfoModel {
       ),
       PlayerInfoModel(
         avatar: UIImage(named: "player3"),
-        namePlayer: "Илларионов Артур",
+        namePlayer: "PlayerInfoTableViewCell",
         nameTeam: nil,
         emoji: nil,
         titleCell: "-"
