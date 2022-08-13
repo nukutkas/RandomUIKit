@@ -47,7 +47,7 @@ final class PlayerTableViewCell: UITableViewCell {
   public func configureCellWith(titleCell: String?,
                                 avatar: UIImage?,
                                 name: String?,
-                                nameTextColor: UIColor? = RandomColor.primaryGray,
+                                nameTextColor: UIColor = RandomColor.primaryGray,
                                 styleCard: PlayerView.StyleCard,
                                 styleEmoji: PlayerView.StyleEmoji = .none,
                                 isBorder: Bool,

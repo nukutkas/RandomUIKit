@@ -12,27 +12,33 @@ import RandomUIKit
 
 /// Моделька для ячейки
 struct DoubleTitleCellModel: CellModel {
-    
-    let primaryText: String?
-    let secondaryText: String?
-    
-    var titleCell: String
-    var reuseIdentifier = CellsScreenCell.doubleTitleCell.reuseIdentifier
+  
+  let primaryText: String?
+  let secondaryText: String?
+  let secondaryTextColor: UIColor
+  let secondaryTextFont: UIFont
+  
+  var titleCell: String
+  var reuseIdentifier = CellsScreenCell.doubleTitleCell.reuseIdentifier
 }
 
 extension CellsScreenDataSource where Model == DoubleTitleCellModel {
-    static func makeForDoubleTitle() -> CellsScreenDataSource {
-        let models = [
-            DoubleTitleCellModel(primaryText: "DoubleTitleCell",
-                                 secondaryText: "10",
-                                 titleCell: "")
-        ]
-        return CellsScreenDataSource(models: models) { (model, cell) in
-            guard let cell = cell as? DoubleTitleCell else {
-                return
-            }
-            cell.configureCellWith(primaryText: model.primaryText,
-                                   secondaryText: model.secondaryText)
-        }
+  static func makeForDoubleTitle() -> CellsScreenDataSource {
+    let models = [
+      DoubleTitleCellModel(primaryText: "DoubleTitleCell",
+                           secondaryText: "10",
+                           secondaryTextColor: RandomColor.primaryRed,
+                           secondaryTextFont: RandomFont.primaryBold18,
+                           titleCell: "")
+    ]
+    return CellsScreenDataSource(models: models) { (model, cell) in
+      guard let cell = cell as? DoubleTitleCell else {
+        return
+      }
+      cell.configureCellWith(primaryText: model.primaryText,
+                             secondaryText: model.secondaryText,
+                             secondaryTextColor: model.secondaryTextColor,
+                             secondaryTextFont: model.secondaryTextFont)
     }
+  }
 }

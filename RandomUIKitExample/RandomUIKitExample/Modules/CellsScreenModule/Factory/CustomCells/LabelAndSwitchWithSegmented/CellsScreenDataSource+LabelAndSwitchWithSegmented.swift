@@ -31,7 +31,7 @@ extension CellsScreenDataSource where Model == LabelAndSwitchWithSegmentedModel 
           cell.insertSegment(withTitle: "premium", at: 2, animated: false)
           cell.insertSegment(withTitle: "none", at: 3, animated: false)
           cell.selectedSegmentIndex = .zero
-          cell.configureCellWith(titleText: "Films", isResultSwitch: true)
+          cell.configureCellWith(titleText: "LabelAndSwitchWithSegmentedCell", isResultSwitch: true)
         }
     }
 }

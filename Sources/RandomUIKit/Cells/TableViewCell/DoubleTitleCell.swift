@@ -38,10 +38,24 @@ public final class DoubleTitleCell: UITableViewCell {
   /// Настраиваем ячейку
   /// - Parameters:
   ///  - primaryText: Первичный текст
+  ///  - primaryTextColor: Первичный цвет текста
+  ///  - primaryTextFont: Первичный шрифт текста
   ///  - secondaryText: Вторичный текст
-  public func configureCellWith(primaryText: String?, secondaryText: String?) {
+  ///  - secondaryTextColor: Вторичный цвет текст
+  ///  - secondaryTextFont: Вторичный шрифт текст
+  public func configureCellWith(primaryText: String?,
+                                primaryTextColor: UIColor = RandomColor.primaryGray,
+                                primaryTextFont: UIFont = RandomFont.primaryRegular18,
+                                secondaryText: String?,
+                                secondaryTextColor: UIColor = RandomColor.primaryGray,
+                                secondaryTextFont: UIFont = RandomFont.primaryRegular18) {
     primaryLable.text = primaryText
+    primaryLable.textColor = primaryTextColor
+    primaryLable.font = primaryTextFont
+    
     secondaryLabel.text = secondaryText
+    secondaryLabel.textColor = secondaryTextColor
+    secondaryLabel.font = secondaryTextFont
   }
   
   // MARK: - Private func

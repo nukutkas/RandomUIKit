@@ -14,7 +14,7 @@ import RandomUIKit
 struct PlayerModel: CellModel {
   let avatar: UIImage?
   let name: String?
-  var nameTextColor: UIColor?
+  var nameTextColor = RandomColor.primaryGray
   let styleCard: PlayerView.StyleCard
   let styleEmoji: PlayerView.StyleEmoji
   let isBorder: Bool

@@ -46,7 +46,7 @@ public final class PlayerCollectionViewCell: UICollectionViewCell {
   ///  - cardAction: Действие по нажатию на карточку
   public func configureCellWith(avatar: UIImage?,
                                 name: String?,
-                                nameTextColor: UIColor? = RandomColor.primaryGray,
+                                nameTextColor: UIColor = RandomColor.primaryGray,
                                 styleCard: PlayerView.StyleCard,
                                 styleEmoji: PlayerView.StyleEmoji = .none,
                                 isBorder: Bool,

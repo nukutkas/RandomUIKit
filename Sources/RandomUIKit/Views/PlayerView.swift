@@ -84,6 +84,8 @@ public final class PlayerView: UIView {
   private var emojiAction: (() -> Void)?
   private var cardAction: (() -> Void)?
   
+  private let impactFeedback = UIImpactFeedbackGenerator(style: .light)
+  
   // MARK: - Initialization
   
   override init(frame: CGRect) {
@@ -112,7 +114,7 @@ public final class PlayerView: UIView {
   ///  - cardAction: Действие по нажатию на карточку
   public func configureWith(avatar: UIImage?,
                             name: String?,
-                            nameTextColor: UIColor? = RandomColor.primaryGray,
+                            nameTextColor: UIColor = RandomColor.primaryGray,
                             styleCard: StyleCard,
                             styleEmoji: StyleEmoji = .none,
                             isBorder: Bool,
@@ -206,11 +208,13 @@ public final class PlayerView: UIView {
   @objc
   private func emojiLabelAction() {
     emojiAction?()
+    impactFeedback.impactOccurred()
   }
   
   @objc
   private func cardViewAction() {
     cardAction?()
+    impactFeedback.impactOccurred()
   }
 }
 

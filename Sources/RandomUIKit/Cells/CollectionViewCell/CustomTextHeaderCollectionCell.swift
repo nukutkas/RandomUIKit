@@ -1,5 +1,5 @@
 //
-//  CustomTexCollectiontCell.swift
+//  CustomTextHeaderCollectionCell.swift
 //  
 //
 //  Created by Vitalii Sosin on 13.08.2022.
@@ -7,14 +7,14 @@
 
 import UIKit
 
-// MARK: - CustomTexCollectiontCell
+// MARK: - CustomTextHeaderCollectionCell
 
-public final class CustomTexCollectiontCell: UICollectionReusableView {
+public final class CustomTextHeaderCollectionCell: UICollectionReusableView {
   
   // MARK: - Public property
   
   /// Identifier для ячейки
-  public static let reuseIdentifier = CustomTextCell.description()
+  public static let reuseIdentifier = CustomTextHeaderCollectionCell.description()
   
   // MARK: - Private property
   
@@ -84,7 +84,7 @@ public final class CustomTexCollectiontCell: UICollectionReusableView {
 
 // MARK: - Appearance
 
-private extension CustomTexCollectiontCell {
+private extension CustomTextHeaderCollectionCell {
   struct Appearance {
     let insets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
   }
