@@ -76,10 +76,12 @@ public final class TextFieldWithButtonCell: UITableViewCell {
       textField.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
       
       buttonImageView.leadingAnchor.constraint(equalTo: textField.trailingAnchor),
-      buttonImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+      buttonImageView.topAnchor.constraint(equalTo: contentView.topAnchor,
+                                           constant: appearance.insets.top),
       buttonImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
                                                 constant: -appearance.insets.right),
-      buttonImageView.bottomAnchor.constraint(greaterThanOrEqualTo: contentView.bottomAnchor)
+      buttonImageView.bottomAnchor.constraint(greaterThanOrEqualTo: contentView.bottomAnchor,
+                                              constant: appearance.insets.bottom)
     ])
   }
   
@@ -109,7 +111,7 @@ public final class TextFieldWithButtonCell: UITableViewCell {
 
 private extension TextFieldWithButtonCell {
   struct Appearance {
-    let insets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
+    let insets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
     let buttonSize = CGSize(width: 44, height: 44)
   }
 }
