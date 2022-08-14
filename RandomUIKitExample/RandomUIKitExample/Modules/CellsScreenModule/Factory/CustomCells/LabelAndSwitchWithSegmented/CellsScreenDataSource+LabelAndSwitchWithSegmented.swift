@@ -32,6 +32,7 @@ extension CellsScreenDataSource where Model == LabelAndSwitchWithSegmentedModel 
           cell.insertSegment(withTitle: "none", at: 3, animated: false)
           cell.selectedSegmentIndex = .zero
           cell.configureCellWith(titleText: "LabelAndSwitchWithSegmentedCell", isResultSwitch: true)
+          cell.contentView.backgroundColor = .yellow
         }
     }
 }

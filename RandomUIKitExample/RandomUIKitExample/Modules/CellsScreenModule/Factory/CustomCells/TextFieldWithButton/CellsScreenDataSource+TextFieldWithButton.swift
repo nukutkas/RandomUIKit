@@ -12,7 +12,7 @@ import RandomUIKit
 
 /// Моделька для ячейки
 struct TextFieldWithButtonModel: CellModel {
-  let buttonImageSystemName: String?
+  let buttonImage: UIImage?
   let buttonImageColor: UIColor?
   
   var titleCell: String
@@ -21,19 +21,28 @@ struct TextFieldWithButtonModel: CellModel {
 
 extension CellsScreenDataSource where Model == TextFieldWithButtonModel {
   static func makeForTextFieldWithButton() -> CellsScreenDataSource {
+    
+    let largeConfig = UIImage.SymbolConfiguration(pointSize: 20,
+                                                  weight: .bold,
+                                                  scale: .large)
+    
+    let circle = UIImage(systemName: "checkmark.circle.fill", withConfiguration: largeConfig)
+    let checkmark = UIImage(systemName: "checkmark.diamond.fill", withConfiguration: largeConfig)
+    let seal = UIImage(systemName: "checkmark.seal", withConfiguration: largeConfig)
+    
     let models = [
       TextFieldWithButtonModel(
-        buttonImageSystemName: "checkmark.circle.fill",
+        buttonImage: circle,
         buttonImageColor: RandomColor.primaryGreen,
         titleCell: ""
       ),
       TextFieldWithButtonModel(
-        buttonImageSystemName: "checkmark.diamond.fill",
+        buttonImage: checkmark,
         buttonImageColor: RandomColor.primaryRed,
         titleCell: ""
       ),
       TextFieldWithButtonModel(
-        buttonImageSystemName: "checkmark.seal",
+        buttonImage: seal,
         buttonImageColor: RandomColor.primaryBlue,
         titleCell: ""
       )
@@ -48,7 +57,7 @@ extension CellsScreenDataSource where Model == TextFieldWithButtonModel {
       
       cell.configureCellWith(
         textField: textField,
-        buttonImageSystemName: model.buttonImageSystemName,
+        buttonImage: model.buttonImage,
         buttonImageColor: model.buttonImageColor,
         buttonAction: {
           print("buttonAction")
@@ -57,4 +66,3 @@ extension CellsScreenDataSource where Model == TextFieldWithButtonModel {
     }
   }
 }
-

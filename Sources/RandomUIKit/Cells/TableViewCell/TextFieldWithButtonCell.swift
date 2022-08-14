@@ -19,7 +19,7 @@ public final class TextFieldWithButtonCell: UITableViewCell {
   // MARK: - Private property
   
   private var textField: TextFieldView?
-  private let button = UIButton()
+  private let buttonImageView = UIImageView()
   private var buttonAction: (() -> Void)?
   private let impactFeedback = UIImpactFeedbackGenerator(style: .light)
   
@@ -40,26 +40,19 @@ public final class TextFieldWithButtonCell: UITableViewCell {
   /// Настраиваем ячейку
   /// - Parameters:
   ///  - textField: Текстовое поле
-  ///  - buttonImageSystemName: Название системной иконки
+  ///  - buttonImage: Иконка кнопки
   ///  - buttonImageColor: Цвет изображения кнопки
   ///  - buttonAction: Действие по нажатию на кнопку
   public func configureCellWith(textField: TextFieldView,
-                                buttonImageSystemName: String?,
+                                buttonImage: UIImage?,
                                 buttonImageColor: UIColor? = RandomColor.primaryGreen,
                                 buttonAction: (() -> Void)? = nil) {
     self.textField = textField
     self.buttonAction = buttonAction
+    buttonImageView.image = buttonImage
     
     if let buttonImageColor = buttonImageColor {
-      button.imageView?.setImageColor(color: buttonImageColor)
-    }
-    
-    if #available(iOS 13, *) {
-      let largeConfig = UIImage.SymbolConfiguration(pointSize: Appearance().pointSize,
-                                                    weight: .bold,
-                                                    scale: .large)
-      button.setImage(UIImage(systemName: buttonImageSystemName ?? "",
-                              withConfiguration: largeConfig), for: .normal)
+      buttonImageView.setImageColor(color: buttonImageColor)
     }
     configureLayout(textField: textField)
   }
@@ -69,24 +62,24 @@ public final class TextFieldWithButtonCell: UITableViewCell {
   private func configureLayout(textField: TextFieldView) {
     let appearance = Appearance()
     
-    [textField, button].forEach {
+    [textField, buttonImageView].forEach {
       $0.translatesAutoresizingMaskIntoConstraints = false
       contentView.addSubview($0)
     }
     
     NSLayoutConstraint.activate([
-      button.widthAnchor.constraint(equalToConstant: appearance.buttonSize.width),
-      button.heightAnchor.constraint(equalToConstant: appearance.buttonSize.height),
+      buttonImageView.widthAnchor.constraint(equalToConstant: appearance.buttonSize.width),
+      buttonImageView.heightAnchor.constraint(equalToConstant: appearance.buttonSize.height),
       
       textField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
                                          constant: appearance.insets.left),
       textField.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
       
-      button.leadingAnchor.constraint(equalTo: textField.trailingAnchor),
-      button.topAnchor.constraint(equalTo: contentView.topAnchor),
-      button.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
-                                       constant: -appearance.insets.right),
-      button.bottomAnchor.constraint(greaterThanOrEqualTo: contentView.bottomAnchor)
+      buttonImageView.leadingAnchor.constraint(equalTo: textField.trailingAnchor),
+      buttonImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+      buttonImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
+                                                constant: -appearance.insets.right),
+      buttonImageView.bottomAnchor.constraint(greaterThanOrEqualTo: contentView.bottomAnchor)
     ])
   }
   
@@ -94,18 +87,12 @@ public final class TextFieldWithButtonCell: UITableViewCell {
     backgroundColor = RandomColor.primaryWhite
     selectionStyle = .none
     
-    if #available(iOS 13, *) {
-      let largeConfig = UIImage.SymbolConfiguration(pointSize: Appearance().pointSize,
-                                                    weight: .bold,
-                                                    scale: .large)
-      button.setImage(UIImage(systemName: "checkmark.circle.fill",
-                              withConfiguration: largeConfig), for: .normal)
-    }
+    buttonImageView.contentMode = .right
     
-    button.contentMode = .center
-    button.imageView?.contentMode = .scaleAspectFit
-    button.imageView?.setImageColor(color: RandomColor.primaryGreen)
-    button.addTarget(self, action: #selector(buttonTappedAction), for: .touchUpInside)
+    let buttonImageTap = UITapGestureRecognizer(target: self, action: #selector(buttonTappedAction))
+    buttonImageTap.cancelsTouchesInView = false
+    buttonImageView.addGestureRecognizer(buttonImageTap)
+    buttonImageView.isUserInteractionEnabled = true
   }
   
   @objc
@@ -124,6 +111,5 @@ private extension TextFieldWithButtonCell {
   struct Appearance {
     let insets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
     let buttonSize = CGSize(width: 44, height: 44)
-    let pointSize: CGFloat = 20
   }
 }
