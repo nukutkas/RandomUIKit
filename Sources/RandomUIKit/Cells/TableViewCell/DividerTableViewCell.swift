@@ -37,7 +37,7 @@ public final class DividerTableViewCell: UITableViewCell {
   
   /// Настраиваем ячейку
   /// - Parameter isHidden: Скрыть разделитель
-  public func configureCellWith(isHidden: Bool) {
+  public func configureCellWith(isHidden: Bool = false) {
     dividerView.isHidden = isHidden
   }
   
