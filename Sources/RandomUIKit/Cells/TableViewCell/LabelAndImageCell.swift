@@ -39,17 +39,20 @@ public final class LabelAndImageCell: UITableViewCell {
   public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     super.touchesBegan(touches, with: event)
     backgroundColor = RandomColor.primaryDivider
+    contentView.backgroundColor = RandomColor.primaryDivider
   }
   
   public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
     super.touchesEnded(touches, with: event)
     backgroundColor = RandomColor.primaryWhite
+    contentView.backgroundColor = RandomColor.primaryWhite
     impactFeedback.impactOccurred()
   }
   
   public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
     super.touchesCancelled(touches, with: event)
     backgroundColor = RandomColor.primaryWhite
+    contentView.backgroundColor = RandomColor.primaryWhite
   }
   
   /// Настраиваем ячейку
