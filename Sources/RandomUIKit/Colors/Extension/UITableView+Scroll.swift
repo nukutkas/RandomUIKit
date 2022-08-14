@@ -5,7 +5,7 @@
 //  Created by Vitalii Sosin on 14.08.2022.
 //
 
-import UIKit+Scroll
+import UIKit
 
 /// Скролл в табличке
 extension UITableView {
