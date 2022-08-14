@@ -123,6 +123,7 @@ public final class PlayerInfoTableViewCell: UITableViewCell {
   private func applyDefaultBehavior() {
     let appearance = Appearance()
     backgroundColor = RandomColor.primaryWhite
+    contentView.backgroundColor = RandomColor.primaryWhite
     selectionStyle = .none
     
     avatarImageView.contentMode = .scaleAspectFit

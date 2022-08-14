@@ -76,6 +76,7 @@ public final class LabelAndSwitchCell: UITableViewCell {
   
   private func applyDefaultBehavior() {
     backgroundColor = RandomColor.primaryWhite
+    contentView.backgroundColor = RandomColor.primaryWhite
     selectionStyle = .none
     
     titleLabel.font = RandomFont.primaryRegular18

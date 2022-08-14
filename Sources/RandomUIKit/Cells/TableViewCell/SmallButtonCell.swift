@@ -73,6 +73,7 @@ public final class SmallButtonCell: UITableViewCell {
   
   private func applyDefaultBehavior() {
     backgroundColor = RandomColor.primaryWhite
+    contentView.backgroundColor = RandomColor.primaryWhite
     selectionStyle = .none
     
     button.titleLabel?.font = RandomFont.primaryRegular18

@@ -76,17 +76,16 @@ public final class TextFieldWithButtonCell: UITableViewCell {
       textField.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
       
       buttonImageView.leadingAnchor.constraint(equalTo: textField.trailingAnchor),
-      buttonImageView.topAnchor.constraint(equalTo: contentView.topAnchor,
-                                           constant: appearance.insets.top),
+      buttonImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
       buttonImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
                                                 constant: -appearance.insets.right),
-      buttonImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,
-                                              constant: -appearance.insets.bottom)
+      buttonImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
     ])
   }
   
   private func applyDefaultBehavior() {
     backgroundColor = RandomColor.primaryWhite
+    contentView.backgroundColor = RandomColor.primaryWhite
     selectionStyle = .none
     
     buttonImageView.contentMode = .right

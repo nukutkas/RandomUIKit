@@ -90,6 +90,7 @@ public final class LabelAndImageCell: UITableViewCell {
   
   private func applyDefaultBehavior() {
     backgroundColor = RandomColor.primaryWhite
+    contentView.backgroundColor = RandomColor.primaryWhite
     selectionStyle = .none
     
     titleLable.font = RandomFont.primaryRegular18

@@ -41,7 +41,8 @@ public final class CustomPaddingCell: UITableViewCell {
   // MARK: - Private func
   
   private func applyDefaultBehavior() {
-    backgroundColor = .clear
+    backgroundColor = RandomColor.primaryWhite
+    contentView.backgroundColor = RandomColor.primaryWhite
     selectionStyle = .none
   }
 }

@@ -60,6 +60,9 @@ enum CellsScreenCell: String {
   /// Ячейка текствого поля с кнопкой
   case textFieldWithButton
   
+  /// Ячейка рфзделителя
+  case divider
+  
   var reuseIdentifier: String {
     return cellClass.description()
   }
@@ -96,6 +99,8 @@ enum CellsScreenCell: String {
       return PlayerInfoTableViewCell.self
     case .textFieldWithButton:
       return TextFieldWithButtonCell.self
+    case .divider:
+      return DividerTableViewCell.self
     }
   }
   
@@ -131,6 +136,8 @@ enum CellsScreenCell: String {
       return CellsScreenDataSource.makeForPlayerInfo()
     case .textFieldWithButton:
       return CellsScreenDataSource.makeForTextFieldWithButton()
+    case .divider:
+      return CellsScreenDataSource.makeForDivider()
     }
   }
 }
