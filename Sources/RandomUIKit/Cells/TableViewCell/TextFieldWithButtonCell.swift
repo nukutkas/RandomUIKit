@@ -80,8 +80,8 @@ public final class TextFieldWithButtonCell: UITableViewCell {
                                            constant: appearance.insets.top),
       buttonImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
                                                 constant: -appearance.insets.right),
-      buttonImageView.bottomAnchor.constraint(greaterThanOrEqualTo: contentView.bottomAnchor,
-                                              constant: appearance.insets.bottom)
+      buttonImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,
+                                              constant: -appearance.insets.bottom)
     ])
   }
   
