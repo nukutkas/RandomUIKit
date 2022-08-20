@@ -21,6 +21,21 @@ struct PlayerInfoModel: CellModel {
   var nameTeamFont: UIFont = RandomFont.primaryRegular16
   let emoji: Character?
   
+  private var menuItems: [UIAction] {
+    return [
+      UIAction(title: "Standard item", image: UIImage(systemName: "sun.max"), handler: { (_) in
+      }),
+      UIAction(title: "Disabled item", image: UIImage(systemName: "moon"), attributes: .disabled, handler: { (_) in
+      }),
+      UIAction(title: "Delete..", image: UIImage(systemName: "trash"), attributes: .destructive, handler: { (_) in
+      })
+    ]
+  }
+  
+  var menu: UIMenu {
+    return UIMenu(title: "My menu", image: nil, identifier: nil, options: [], children: menuItems)
+  }
+  
   var titleCell: String
   var reuseIdentifier = CellsScreenCell.playerInfoCell.reuseIdentifier
 }
@@ -59,6 +74,12 @@ extension CellsScreenDataSource where Model == PlayerInfoModel {
         namePlayer: model.namePlayer,
         nameTeam: model.nameTeam,
         emoji: model.emoji,
+        playerInfoMenu: PlayerInfoTableViewCell.PlayerInfoMenu(
+          cellMenu: model.menu,
+          cellMenuPrimaryAction: true,
+          emojiMenu: model.menu,
+          emojiMenuPrimaryAction: true
+        ),
         emojiAction: {
           print("emojiAction")
         },

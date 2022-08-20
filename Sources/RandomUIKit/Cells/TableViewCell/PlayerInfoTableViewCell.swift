@@ -11,6 +11,22 @@ import UIKit
 
 public final class PlayerInfoTableViewCell: UITableViewCell {
   
+  /// Моделька для создания меню по нажатию на кнопку
+  public struct PlayerInfoMenu {
+    
+    /// Меню, отображаемое кнопкой.
+    var cellMenu: UIMenu?
+    
+    /// Показывает меню как основное действие
+    var cellMenuPrimaryAction = false
+    
+    /// Меню, отображаемое кнопкой.
+    var emojiMenu: UIMenu?
+    
+    /// Показывает меню как основное действие
+    var emojiMenuPrimaryAction = false
+  }
+  
   /// Identifier для ячейки
   public static let reuseIdentifier = PlayerInfoTableViewCell.description()
   
@@ -20,7 +36,8 @@ public final class PlayerInfoTableViewCell: UITableViewCell {
   private let namePlayerLabel = UILabel()
   private let nameTeamLabel = UILabel()
   private let stackView = UIStackView()
-  private let emojiLabel = UILabel()
+  private let emojiButton = UIButton()
+  private let cellButton = UIButton()
   
   private var emojiAction: (() -> Void)?
   private var contentAction: (() -> Void)?
@@ -31,7 +48,6 @@ public final class PlayerInfoTableViewCell: UITableViewCell {
   
   public override init(style: CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
-    
     configureLayout()
     applyDefaultBehavior()
   }
@@ -57,6 +73,7 @@ public final class PlayerInfoTableViewCell: UITableViewCell {
   ///  - nameTeamColor: Цвет имени команды
   ///  - nameTeamFont: Шрифт имени команды
   ///  - emoji: Смайлик
+  ///  - playerInfoMenu: Меню, отображаемое кнопкой.
   ///  - emojiAction: Действие по нажатию на смайл
   ///  - contentAction: Действие по нажатию на контент
   public func configureCellWith(avatar: UIImage?,
@@ -67,6 +84,7 @@ public final class PlayerInfoTableViewCell: UITableViewCell {
                                 nameTeamColor: UIColor = RandomColor.primaryBlue,
                                 nameTeamFont: UIFont = RandomFont.primaryRegular16,
                                 emoji: Character? = "⚪️",
+                                playerInfoMenu: PlayerInfoMenu? = nil,
                                 emojiAction: (() -> Void)? = nil,
                                 contentAction: (() -> Void)? = nil) {
     avatarImageView.image = avatar
@@ -83,7 +101,17 @@ public final class PlayerInfoTableViewCell: UITableViewCell {
     self.contentAction = contentAction
     
     if let emoji = emoji {
-      emojiLabel.text = String(emoji)
+      emojiButton.setTitle(String(emoji), for: .normal)
+    }
+    
+    if let playerInfoMenu = playerInfoMenu {
+      if #available(iOS 14.0, *) {
+        emojiButton.menu = playerInfoMenu.emojiMenu
+        emojiButton.showsMenuAsPrimaryAction = playerInfoMenu.emojiMenuPrimaryAction
+        
+        cellButton.menu = playerInfoMenu.cellMenu
+        cellButton.showsMenuAsPrimaryAction = playerInfoMenu.cellMenuPrimaryAction
+      }
     }
   }
   
@@ -97,7 +125,7 @@ public final class PlayerInfoTableViewCell: UITableViewCell {
       stackView.addArrangedSubview($0)
     }
     
-    [avatarImageView, stackView, emojiLabel].forEach {
+    [avatarImageView, stackView, cellButton, emojiButton].forEach {
       $0.translatesAutoresizingMaskIntoConstraints = false
       contentView.addSubview($0)
     }
@@ -117,11 +145,16 @@ public final class PlayerInfoTableViewCell: UITableViewCell {
                                          constant: appearance.insets.left),
       stackView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
       
-      emojiLabel.leadingAnchor.constraint(greaterThanOrEqualTo: stackView.trailingAnchor,
-                                          constant: appearance.insets.left),
-      emojiLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-      emojiLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
-                                           constant: -appearance.insets.right)
+      cellButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+      cellButton.topAnchor.constraint(equalTo: contentView.topAnchor),
+      cellButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+      cellButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+      
+      emojiButton.leadingAnchor.constraint(greaterThanOrEqualTo: stackView.trailingAnchor,
+                                           constant: appearance.insets.left),
+      emojiButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+      emojiButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
+                                            constant: -appearance.insets.right)
     ])
   }
   
@@ -143,22 +176,18 @@ public final class PlayerInfoTableViewCell: UITableViewCell {
     nameTeamLabel.numberOfLines = appearance.numberOfLines
     nameTeamLabel.textAlignment = .left
     
-    emojiLabel.font = RandomFont.primaryMedium18
-    emojiLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+    emojiButton.titleLabel?.font = RandomFont.primaryMedium18
+    emojiButton.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     
     stackView.axis = .vertical
-    stackView.spacing = 4
+    stackView.spacing = appearance.stackViewSpacing
     stackView.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
     
-    let emojiTap = UITapGestureRecognizer(target: self, action: #selector(emojiLabelAction))
-    emojiTap.cancelsTouchesInView = false
-    emojiLabel.addGestureRecognizer(emojiTap)
-    emojiLabel.isUserInteractionEnabled = true
+    emojiButton.addTarget(self, action: #selector(emojiLabelAction), for: .touchUpInside)
+    emojiButton.isUserInteractionEnabled = true
     
-    let contentTap = UITapGestureRecognizer(target: self, action: #selector(contentViewAction))
-    contentTap.cancelsTouchesInView = false
-    contentView.addGestureRecognizer(contentTap)
-    contentView.isUserInteractionEnabled = true
+    cellButton.addTarget(self, action: #selector(contentViewAction), for: .touchUpInside)
+    cellButton.isUserInteractionEnabled = true
   }
   
   @objc
@@ -189,5 +218,6 @@ private extension PlayerInfoTableViewCell {
     let insets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
     let avatarImageSize = CGSize(width: 60, height: 60)
     let numberOfLines = 1
+    let stackViewSpacing: CGFloat = 4
   }
 }
