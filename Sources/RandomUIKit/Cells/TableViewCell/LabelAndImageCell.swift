@@ -34,6 +34,11 @@ public final class LabelAndImageCell: UITableViewCell {
     fatalError()
   }
   
+  public override func prepareForReuse() {
+    super.prepareForReuse()
+    layer.cornerRadius = .zero
+  }
+  
   // MARK: - Public func
   
   public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

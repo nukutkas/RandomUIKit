@@ -40,6 +40,11 @@ public final class PlayerInfoTableViewCell: UITableViewCell {
     fatalError()
   }
   
+  public override func prepareForReuse() {
+    super.prepareForReuse()
+    layer.cornerRadius = .zero
+  }
+  
   // MARK: - Public func
   
   /// Настраиваем ячейку
