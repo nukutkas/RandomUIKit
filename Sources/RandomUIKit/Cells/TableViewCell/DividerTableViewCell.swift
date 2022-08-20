@@ -41,11 +41,6 @@ public final class DividerTableViewCell: UITableViewCell {
     dividerView.isHidden = isHidden
   }
   
-  public override func prepareForReuse() {
-    super.prepareForReuse()
-    layer.cornerRadius = .zero
-  }
-  
   // MARK: - Private func
   
   private func configureLayout() {
