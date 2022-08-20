@@ -11,38 +11,6 @@ import UIKit
 
 public final class PlayerInfoTableViewCell: UITableViewCell {
   
-  /// Моделька для создания меню по нажатию на кнопку
-  @available(iOS 13.0, *)
-  public struct PlayerInfoMenu {
-    
-    /// Меню, отображаемое кнопкой.
-    var cellMenu: UIMenu?
-    
-    /// Показывает меню как основное действие
-    var cellMenuPrimaryAction: Bool
-    
-    /// Меню, отображаемое кнопкой.
-    var emojiMenu: UIMenu?
-    
-    /// Показывает меню как основное действие
-    var emojiMenuPrimaryAction: Bool
-    
-    /// - Parameters:
-    ///  - cellMenu: Меню, отображаемое кнопкой
-    ///  - cellMenuPrimaryAction: Показывает меню как основное действие
-    ///  - emojiMenu: Меню, отображаемое кнопкой
-    ///  - emojiMenuPrimaryAction: Показывает меню как основное действие
-    public init(cellMenu: UIMenu?,
-                cellMenuPrimaryAction: Bool = false,
-                emojiMenu: UIMenu?,
-                emojiMenuPrimaryAction: Bool = false) {
-      self.cellMenu = cellMenu
-      self.cellMenuPrimaryAction = cellMenuPrimaryAction
-      self.emojiMenu = emojiMenu
-      self.emojiMenuPrimaryAction = emojiMenuPrimaryAction
-    }
-  }
-  
   /// Identifier для ячейки
   public static let reuseIdentifier = PlayerInfoTableViewCell.description()
   
@@ -72,6 +40,11 @@ public final class PlayerInfoTableViewCell: UITableViewCell {
     fatalError()
   }
   
+  public override func prepareForReuse() {
+    super.prepareForReuse()
+    layer.cornerRadius = .zero
+  }
+  
   // MARK: - Public func
   
   /// Настраиваем ячейку
@@ -84,7 +57,10 @@ public final class PlayerInfoTableViewCell: UITableViewCell {
   ///  - nameTeamColor: Цвет имени команды
   ///  - nameTeamFont: Шрифт имени команды
   ///  - emoji: Смайлик
-  ///  - playerInfoMenu: Меню, отображаемое кнопкой.
+  ///  - emojiMenu: Меню, отображаемое кнопкой.
+  ///  - emojiMenuPrimaryAction: Активировать меню
+  ///  - cellMenu: Меню, отображаемое кнопкой.
+  ///  - emojiMenuPrimaryAction: Активировать меню
   ///  - emojiAction: Действие по нажатию на смайл
   ///  - contentAction: Действие по нажатию на контент
   @available(iOS 13.0, *)
@@ -96,7 +72,10 @@ public final class PlayerInfoTableViewCell: UITableViewCell {
                                 nameTeamColor: UIColor = RandomColor.primaryBlue,
                                 nameTeamFont: UIFont = RandomFont.primaryRegular16,
                                 emoji: Character? = "⚪️",
-                                playerInfoMenu: PlayerInfoMenu? = nil,
+                                emojiMenu: UIMenu? = nil,
+                                emojiMenuPrimaryAction: Bool = false,
+                                cellMenu: UIMenu? = nil,
+                                cellMenuPrimaryAction: Bool = false,
                                 emojiAction: (() -> Void)? = nil,
                                 contentAction: (() -> Void)? = nil) {
     avatarImageView.image = avatar
@@ -116,14 +95,12 @@ public final class PlayerInfoTableViewCell: UITableViewCell {
       emojiButton.setTitle(String(emoji), for: .normal)
     }
     
-    if let playerInfoMenu = playerInfoMenu {
-      if #available(iOS 14.0, *) {
-        emojiButton.menu = playerInfoMenu.emojiMenu
-        emojiButton.showsMenuAsPrimaryAction = playerInfoMenu.emojiMenuPrimaryAction
-        
-        cellButton.menu = playerInfoMenu.cellMenu
-        cellButton.showsMenuAsPrimaryAction = playerInfoMenu.cellMenuPrimaryAction
-      }
+    if #available(iOS 14.0, *) {
+      emojiButton.menu = emojiMenu
+      emojiButton.showsMenuAsPrimaryAction = emojiMenuPrimaryAction
+      
+      cellButton.menu = cellMenu
+      cellButton.showsMenuAsPrimaryAction = cellMenuPrimaryAction
     }
   }
   

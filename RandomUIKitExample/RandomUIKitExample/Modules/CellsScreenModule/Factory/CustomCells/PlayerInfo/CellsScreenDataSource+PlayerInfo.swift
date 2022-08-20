@@ -74,12 +74,10 @@ extension CellsScreenDataSource where Model == PlayerInfoModel {
         namePlayer: model.namePlayer,
         nameTeam: model.nameTeam,
         emoji: model.emoji,
-        playerInfoMenu: PlayerInfoTableViewCell.PlayerInfoMenu(
-          cellMenu: model.menu,
-          cellMenuPrimaryAction: true,
-          emojiMenu: model.menu,
-          emojiMenuPrimaryAction: true
-        ),
+        emojiMenu: model.menu,
+        emojiMenuPrimaryAction: true,
+        cellMenu: model.menu,
+        cellMenuPrimaryAction: true,
         emojiAction: {
           print("emojiAction")
         },
