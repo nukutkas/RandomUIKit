@@ -51,11 +51,6 @@ public final class LabelAndSwitchWithSegmentedCell: UITableViewCell {
     fatalError()
   }
   
-  public override func prepareForReuse() {
-    super.prepareForReuse()
-    layer.cornerRadius = .zero
-  }
-  
   // MARK: - Public func
   
   /// Добавить сегмент по индексу

@@ -47,11 +47,6 @@ public final class LabelAndSwitchCell: UITableViewCell {
     resultSwitch.isOn = isResultSwitch
   }
   
-  public override func prepareForReuse() {
-    super.prepareForReuse()
-    layer.cornerRadius = .zero
-  }
-  
   // MARK: - Private func
   
   private func configureLayout() {
