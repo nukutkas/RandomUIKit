@@ -12,19 +12,35 @@ import UIKit
 public final class PlayerInfoTableViewCell: UITableViewCell {
   
   /// Моделька для создания меню по нажатию на кнопку
+  @available(iOS 13.0, *)
   public struct PlayerInfoMenu {
     
     /// Меню, отображаемое кнопкой.
     var cellMenu: UIMenu?
     
     /// Показывает меню как основное действие
-    var cellMenuPrimaryAction = false
+    var cellMenuPrimaryAction: Bool
     
     /// Меню, отображаемое кнопкой.
     var emojiMenu: UIMenu?
     
     /// Показывает меню как основное действие
-    var emojiMenuPrimaryAction = false
+    var emojiMenuPrimaryAction: Bool
+    
+    /// - Parameters:
+    ///  - cellMenu: Меню, отображаемое кнопкой
+    ///  - cellMenuPrimaryAction: Показывает меню как основное действие
+    ///  - emojiMenu: Меню, отображаемое кнопкой
+    ///  - emojiMenuPrimaryAction: Показывает меню как основное действие
+    public init(cellMenu: UIMenu?,
+                cellMenuPrimaryAction: Bool = false,
+                emojiMenu: UIMenu?,
+                emojiMenuPrimaryAction: Bool = false) {
+      self.cellMenu = cellMenu
+      self.cellMenuPrimaryAction = cellMenuPrimaryAction
+      self.emojiMenu = emojiMenu
+      self.emojiMenuPrimaryAction = emojiMenuPrimaryAction
+    }
   }
   
   /// Identifier для ячейки
@@ -76,6 +92,7 @@ public final class PlayerInfoTableViewCell: UITableViewCell {
   ///  - playerInfoMenu: Меню, отображаемое кнопкой.
   ///  - emojiAction: Действие по нажатию на смайл
   ///  - contentAction: Действие по нажатию на контент
+  @available(iOS 13.0, *)
   public func configureCellWith(avatar: UIImage?,
                                 namePlayer: String?,
                                 namePlayerColor: UIColor = RandomColor.primaryGray,
