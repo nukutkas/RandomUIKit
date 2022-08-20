@@ -43,6 +43,12 @@ public final class PlayerInfoTableViewCell: UITableViewCell {
   public override func prepareForReuse() {
     super.prepareForReuse()
     layer.cornerRadius = .zero
+    
+    emojiButton.menu = nil
+    emojiButton.showsMenuAsPrimaryAction = false
+    
+    cellButton.menu = nil
+    cellButton.showsMenuAsPrimaryAction = false
   }
   
   // MARK: - Public func
