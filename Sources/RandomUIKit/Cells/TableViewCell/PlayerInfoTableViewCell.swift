@@ -181,10 +181,7 @@ public final class PlayerInfoTableViewCell: UITableViewCell {
     stackView.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
     
     emojiButton.addTarget(self, action: #selector(emojiLabelAction), for: .touchUpInside)
-    emojiButton.isUserInteractionEnabled = true
-    
     cellButton.addTarget(self, action: #selector(contentViewAction), for: .touchUpInside)
-    cellButton.isUserInteractionEnabled = true
   }
   
   @objc
