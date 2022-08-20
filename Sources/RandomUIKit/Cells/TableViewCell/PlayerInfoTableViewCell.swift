@@ -44,11 +44,13 @@ public final class PlayerInfoTableViewCell: UITableViewCell {
     super.prepareForReuse()
     layer.cornerRadius = .zero
     
-    emojiButton.menu = nil
-    emojiButton.showsMenuAsPrimaryAction = false
-    
-    cellButton.menu = nil
-    cellButton.showsMenuAsPrimaryAction = false
+    if #available(iOS 14.0, *) {
+      emojiButton.menu = nil
+      emojiButton.showsMenuAsPrimaryAction = false
+      
+      cellButton.menu = nil
+      cellButton.showsMenuAsPrimaryAction = false
+    }
   }
   
   // MARK: - Public func
