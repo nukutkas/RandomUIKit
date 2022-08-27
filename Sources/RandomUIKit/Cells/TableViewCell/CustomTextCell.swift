@@ -84,6 +84,7 @@ public final class CustomTextCell: UITableViewCell {
     titleLabel.font = RandomFont.primaryRegular18
     titleLabel.textColor = RandomColor.primaryGray
     titleLabel.textAlignment = .center
+    titleLabel.numberOfLines = .zero
   }
 }
 
