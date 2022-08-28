@@ -7,7 +7,7 @@
 import UIKit
 
 /// Удаление View из UIStackView
-extension UIStackView {
+public extension UIStackView {
   
   /// Удаляет конкретную UIView из UIStackView
   func removeFully(view: UIView) {

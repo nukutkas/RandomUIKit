@@ -9,10 +9,10 @@ import UIKit
 
 // MARK: - UITableViewCell
 
-extension UITableViewCell {
+public extension UITableViewCell {
   
   /// Отключить разделитель
-  public var isHiddenSeparator: Bool {
+  var isHiddenSeparator: Bool {
     get {
       return separatorInset.right == UIScreen.main.bounds.size.width ? true : false
     }

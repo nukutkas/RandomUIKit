@@ -9,15 +9,15 @@ import UIKit
 
 // MARK: - UITableView
 
-extension UITableView {
+public extension UITableView {
   
   /// Поиск первой ячейки в табличке
-  public func isFirst(for indexPath: IndexPath) -> Bool {
+  func isFirst(for indexPath: IndexPath) -> Bool {
     indexPath.section == .zero && indexPath.row == .zero
   }
   
   /// Поиск последней ячейки в табличке
-  public func isLast(for indexPath: IndexPath) -> Bool {
+  func isLast(for indexPath: IndexPath) -> Bool {
     let indexOfLastSection = numberOfSections > .zero ? numberOfSections - 1 : .zero
     let indexOfLastRowInLastSection = numberOfRows(inSection: indexOfLastSection) - 1
     
