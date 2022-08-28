@@ -110,6 +110,8 @@ public final class LabelAndImageCell: UITableViewCell {
     contentView.backgroundColor = RandomColor.primaryWhite
     selectionStyle = .none
     
+    imageAsideView.contentMode = .right
+    
     titleLable.font = RandomFont.primaryRegular18
     titleLable.textColor = RandomColor.primaryGray
   }
