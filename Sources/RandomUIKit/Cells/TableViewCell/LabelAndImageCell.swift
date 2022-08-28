@@ -64,9 +64,18 @@ public final class LabelAndImageCell: UITableViewCell {
   /// - Parameters:
   ///  - titleText: Заголовок
   ///  - imageAside: Иконка справого края
-  public func configureCellWith(titleText: String?, imageAside: UIImage?) {
+  ///  - imageColor: Цвет иконки
+  public func configureCellWith(titleText: String?,
+                                imageAside: UIImage? = nil,
+                                imageColor: UIColor = RandomColor.secondaryGray) {
     titleLable.text = titleText
-    imageAsideView.image = imageAside
+    
+    if let imageAside = imageAside {
+      imageAsideView.image = imageAside
+    } else {
+      imageAsideView.image = Appearance().chevronRight
+    }
+    imageAsideView.setImageColor(color: imageColor)
   }
   
   // MARK: - Private func
@@ -103,8 +112,6 @@ public final class LabelAndImageCell: UITableViewCell {
     
     titleLable.font = RandomFont.primaryRegular18
     titleLable.textColor = RandomColor.primaryGray
-    
-    imageAsideView.setImageColor(color: RandomColor.secondaryGray)
   }
 }
 
@@ -114,5 +121,6 @@ private extension LabelAndImageCell {
   struct Appearance {
     let insets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
     let imageAsideSize = CGSize(width: 24, height: 24)
+    let chevronRight = UIImage(named: "chevron_right", in: .module, compatibleWith: nil)
   }
 }

@@ -31,8 +31,7 @@ extension CellsScreenDataSource where Model == LabelAndImageCellModel {
             guard let cell = cell as? LabelAndImageCell else {
                 return
             }
-            cell.configureCellWith(titleText: model.titleText,
-                                   imageAside: model.image)
+            cell.configureCellWith(titleText: model.titleText)
         }
     }
 }
