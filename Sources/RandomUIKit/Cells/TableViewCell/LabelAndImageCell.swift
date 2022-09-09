@@ -43,8 +43,8 @@ public final class LabelAndImageCell: UITableViewCell {
   
   public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     super.touchesBegan(touches, with: event)
-    backgroundColor = RandomColor.primaryDivider
-    contentView.backgroundColor = RandomColor.primaryDivider
+    backgroundColor = RandomColor.secondaryGray.withAlphaComponent(0.1)
+    contentView.backgroundColor = RandomColor.secondaryGray.withAlphaComponent(0.1)
   }
   
   public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -67,7 +67,7 @@ public final class LabelAndImageCell: UITableViewCell {
   ///  - imageColor: Цвет иконки
   public func configureCellWith(titleText: String?,
                                 imageAside: UIImage? = nil,
-                                imageColor: UIColor = RandomColor.secondaryGray) {
+                                imageColor: UIColor = RandomColor.primaryGray) {
     titleLable.text = titleText
     
     if let imageAside = imageAside {

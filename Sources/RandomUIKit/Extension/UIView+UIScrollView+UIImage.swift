@@ -31,7 +31,7 @@ public extension UIView {
 public extension UIScrollView {
   
   /// Сделать изображение видимого контента
-  func asImage(scale: CGFloat = 1) -> UIImage? {
+  func asImage(scale: CGFloat = UIScreen.main.scale) -> UIImage? {
     let currentSize = frame.size
     let currentOffset = contentOffset
     
@@ -39,7 +39,7 @@ public extension UIScrollView {
     setContentOffset(.zero, animated: false)
     
     let rect = CGRect(x: .zero, y: .zero, width: bounds.size.width, height: bounds.size.height)
-    UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
+    UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
     drawHierarchy(in: rect, afterScreenUpdates: true)
     let image = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
@@ -51,7 +51,8 @@ public extension UIScrollView {
   }
   
   /// Сделать изображение всего контента
-  func screenShotFullContent(scale: CGFloat = 1, completion: @escaping (_ screenshot: UIImage?) -> Void) {
+  func screenShotFullContent(scale: CGFloat = UIScreen.main.scale,
+                             completion: @escaping (_ screenshot: UIImage?) -> Void) {
     let pointsAndFrames = getScreenshotRects()
     let points = pointsAndFrames.points
     let frames = pointsAndFrames.frames
@@ -204,21 +205,22 @@ public extension UIScrollView {
                       height: bounds.size.height)
     let currentOffset = contentOffset
     setContentOffset(point_I, animated: false)
-    
-    delay(delay: 0.001) { [weak self] in
+
+    delay(delay: 0.002) { [weak self] in
       guard let self = self else {
         return
       }
-      
+
       UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
       self.drawHierarchy(in: rect, afterScreenUpdates: true)
-      
+
       var image = UIGraphicsGetImageFromCurrentImageContext()
       UIGraphicsEndImageContext()
-      
+
       if scale != 1 {
         image = self.resizeUIImage(image: image, scale: scale)
       }
+      
       self.setContentOffset(currentOffset, animated: false)
       completion(image)
     }
@@ -239,7 +241,7 @@ public extension UIScrollView {
     let targetSize = CGSize(width: size.width * scale, height: size.height * scale)
     let rect = CGRect(x: .zero, y: .zero, width: targetSize.width, height: targetSize.height)
     
-    UIGraphicsBeginImageContextWithOptions(targetSize, false, 1.0)
+    UIGraphicsBeginImageContextWithOptions(targetSize, false, UIScreen.main.scale)
     image.draw(in: rect)
     let newImage = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()

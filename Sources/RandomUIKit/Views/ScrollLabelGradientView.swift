@@ -90,6 +90,7 @@ public final class ScrollLabelGradientView: UIView {
       if index == .zero {
         let primaryLabel = LabelGradientView()
         primaryLabel.configureWith(titleText: textLabel,
+                                   textColor: RandomColor.primaryWhite,
                                    gradientDVLabel: [
                                     RandomColor.primaryGreen,
                                     RandomColor.secondaryGreen
@@ -101,6 +102,7 @@ public final class ScrollLabelGradientView: UIView {
       } else {
         let secondaryLabel = UILabel()
         secondaryLabel.text = textLabel
+        secondaryLabel.textColor = RandomColor.primaryGray
         
         [secondaryLabel].forEach {
           $0.translatesAutoresizingMaskIntoConstraints = false

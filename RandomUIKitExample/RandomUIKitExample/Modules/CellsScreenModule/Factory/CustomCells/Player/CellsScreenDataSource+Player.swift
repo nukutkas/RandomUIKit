@@ -30,6 +30,7 @@ extension CellsScreenDataSource where Model == PlayerModel {
       PlayerModel(
         avatar: UIImage(named: "player3"),
         name: "Илларионов Артур",
+        nameTextColor: RandomColor.primaryGray,
         styleCard: .defaultStyle,
         styleEmoji: .like,
         isBorder: true,

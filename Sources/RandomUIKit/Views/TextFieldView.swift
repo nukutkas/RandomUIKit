@@ -24,10 +24,18 @@ public final class TextFieldView: UITextField {
   // MARK: - Private func
   
   private func applyDefaultBehavior() {
+    let appearance = Appearance()
+    
+    layer.borderWidth = appearance.borderWidth
+    layer.borderColor = RandomColor.primaryGray.cgColor
+    layer.cornerRadius = appearance.cornerRadius
+    clipsToBounds = true
+    
     backgroundColor = RandomColor.primaryWhite
     borderStyle = .roundedRect
     textAlignment = .center
     font = RandomFont.primaryRegular16
+    textColor = RandomColor.primaryGray
   }
 }
 
@@ -35,6 +43,7 @@ public final class TextFieldView: UITextField {
 
 private extension TextFieldView {
   struct Appearance {
-    
+    let cornerRadius: CGFloat = 8
+    let borderWidth: CGFloat = 1
   }
 }

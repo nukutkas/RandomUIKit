@@ -11,10 +11,10 @@ import UIKit
 public struct ColorGuide {
   
   /// Темно-серый цвет
-  public let primaryGray = UIColor(light: .primaryGray, dark: .primaryGray)
+  public let primaryGray = UIColor(light: .primaryGray, dark: .primaryWhite)
   
   /// Светло-серый цвет
-  public let secondaryGray = UIColor(light: .secondaryGray, dark: .secondaryGray)
+  public let secondaryGray = UIColor(light: .secondaryGray, dark: .secondaryWhite)
   
   /// Очень светло-серый цвет
   public let tertiaryGray = UIColor(light: .tertiaryGray, dark: .tertiaryGray)
@@ -26,7 +26,7 @@ public struct ColorGuide {
   public let secondaryGreen = UIColor(light: .secondaryGreen, dark: .secondaryGreen)
   
   /// Очень светло-зеленый цвет
-  public let tertiaryGreen = UIColor(light: .tertiaryGreen, dark: .tertiaryGreen)
+  public let tertiaryGreen = UIColor(light: .tertiaryGreen, dark: .secondaryGreen)
   
   /// Основной синий цвет
   public let primaryBlue = UIColor(light: .primaryBlue, dark: .primaryBlue)
@@ -38,14 +38,14 @@ public struct ColorGuide {
   public let secondaryRed = UIColor(light: .secondaryRed, dark: .secondaryRed)
   
   /// Светло-белый цвет
-  public let primaryWhite = UIColor(light: .primaryWhite, dark: .primaryWhite)
+  public let primaryWhite = UIColor(light: .primaryWhite, dark: .darkApple)
   
   /// Темно-белый цвет
-  public let secondaryWhite = UIColor(light: .secondaryWhite, dark: .secondaryWhite)
+  public let secondaryWhite = UIColor(light: .secondaryWhite, dark: .primaryGray)
   
   /// Основной черный цвет
-  public let primaryBlack = UIColor(light: .primaryBlack, dark: .primaryBlack)
+  public let primaryBlack = UIColor(light: .primaryBlack, dark: .primaryWhite)
   
-  /// Основной цвет разделителя
-  public let primaryDivider = UIColor(light: .primaryDivider, dark: .primaryDivider)
+  /// Темный цвет Apple
+  public let darkApple = UIColor(light: .darkApple, dark: .darkApple)
 }

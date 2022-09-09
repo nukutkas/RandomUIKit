@@ -28,7 +28,7 @@ public final class PlayerView: UIView {
       case .selected:
         return RandomColor.tertiaryGreen
       case .defaultStyle:
-        return RandomColor.tertiaryGray
+        return RandomColor.secondaryWhite
       case .customStyle(let color):
         return color
       }
@@ -134,7 +134,7 @@ public final class PlayerView: UIView {
     }
     
     if isBorder {
-      layer.borderColor = RandomColor.primaryBlack.cgColor
+      layer.borderColor = RandomColor.primaryGray.cgColor
       layer.borderWidth = Appearance().borderWidth
     }
     
@@ -160,9 +160,12 @@ public final class PlayerView: UIView {
       heightAnchor.constraint(equalToConstant: appearance.cardSize.height),
       widthAnchor.constraint(equalToConstant: appearance.cardSize.width),
       
-      avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-      avatarImageView.topAnchor.constraint(equalTo: topAnchor),
-      avatarImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                               constant: appearance.avatarImageInset),
+      avatarImageView.topAnchor.constraint(equalTo: topAnchor,
+                                           constant: appearance.avatarImageInset),
+      avatarImageView.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                constant: -appearance.avatarImageInset),
       avatarImageView.bottomAnchor.constraint(equalTo: nameLabel.topAnchor,
                                               constant: -appearance.minInsets),
       
@@ -238,5 +241,6 @@ private extension PlayerView {
     let minInsets: CGFloat = 4
     let middleInsets: CGFloat = 8
     let numberOfLines = 2
+    let avatarImageInset: CGFloat = 4
   }
 }

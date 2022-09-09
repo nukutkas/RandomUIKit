@@ -74,7 +74,7 @@ public final class DividerTableViewCell: UITableViewCell {
     contentView.backgroundColor = RandomColor.primaryWhite
     selectionStyle = .none
     
-    dividerView.backgroundColor = RandomColor.primaryDivider
+    dividerView.backgroundColor = RandomColor.secondaryGray.withAlphaComponent(0.5)
   }
 }
 

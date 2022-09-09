@@ -60,6 +60,9 @@ enum CellsScreenCell: String {
   /// Ячейка текствого поля с кнопкой
   case textFieldWithButton
   
+  /// Ячейка для добавления нового игрока в команду
+  case textFielAddPlayerCell
+  
   /// Ячейка рфзделителя
   case divider
   
@@ -101,6 +104,8 @@ enum CellsScreenCell: String {
       return TextFieldWithButtonCell.self
     case .divider:
       return DividerTableViewCell.self
+    case .textFielAddPlayerCell:
+      return TextFielAddPlayerCell.self
     }
   }
   
@@ -138,6 +143,8 @@ enum CellsScreenCell: String {
       return CellsScreenDataSource.makeForTextFieldWithButton()
     case .divider:
       return CellsScreenDataSource.makeForDivider()
+    case .textFielAddPlayerCell:
+      return CellsScreenDataSource.makeForTextFielAddPlayer()
     }
   }
 }

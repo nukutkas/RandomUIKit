@@ -87,8 +87,8 @@ final class MainScreenView: MainScreenViewProtocol {
     private func applyDefaultBehavior() {
         let appearance = Appearance()
         
-        backgroundColor = appearance.backgroundColor
-        collectionView.backgroundColor = appearance.backgroundColor
+        backgroundColor = RandomColor.primaryWhite
+        collectionView.backgroundColor = RandomColor.primaryWhite
         
         collectionView.alwaysBounceVertical = true
         collectionView.register(MainScreenCollectionViewCell.self,
@@ -146,7 +146,6 @@ extension MainScreenView: UICollectionViewDataSource {
 private extension MainScreenView {
     struct Appearance {
         let collectionViewInsets: UIEdgeInsets = .zero
-        let backgroundColor = RandomColor.primaryWhite
         let estimatedRowHeight: CGFloat = 95
         let sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         let cellWidthHeightConstant = UIScreen.main.bounds.width * 0.4

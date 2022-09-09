@@ -75,7 +75,7 @@ final class ColorsScreenViewCell: UITableViewCell {
         titleLabel.lineBreakMode = .byTruncatingTail
         
         colorView.layer.cornerRadius = appearance.cornerRadius
-        colorView.layer.borderColor = UIColor.black.cgColor
+        colorView.layer.borderColor = RandomColor.primaryBlack.cgColor
         colorView.layer.borderWidth = appearance.borderWidth
     }
 }

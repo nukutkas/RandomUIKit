@@ -58,6 +58,7 @@ public final class MainCardView: UIView {
     advLabelView.isHidden = !isShowADVLabel
     
     advLabelView.configureWith(titleText: titleADVText,
+                               textColor: RandomColor.primaryWhite,
                                gradientDVLabel: [RandomColor.primaryRed,
                                                  RandomColor.secondaryRed])
     imageView.setImageColor(color: RandomColor.primaryWhite)

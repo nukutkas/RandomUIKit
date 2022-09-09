@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RandomUIKit
 
 /// События которые отправляем из `текущего модуля` в  `другой модуль`
 protocol ColorsScreenModuleOutput: AnyObject {
@@ -61,12 +62,12 @@ final class ColorsScreenViewController: ColorsScreenModule {
         view = moduleView
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        title = Appearance().title
-        interactor.getCells()
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    title = Appearance().title
+    interactor.getCells()
+  }
 }
 
 // MARK: - ColorsScreenViewOutput

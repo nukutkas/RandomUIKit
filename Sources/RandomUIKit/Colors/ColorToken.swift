@@ -46,6 +46,6 @@ public enum ColorToken: String {
   /// Основной черный цвет
   case primaryBlack = "000000"
   
-  /// Основной цвет разделителя
-  case primaryDivider = "F0F0F0"
+  /// Темный цвет Apple
+  case darkApple = "292A2F"
 }

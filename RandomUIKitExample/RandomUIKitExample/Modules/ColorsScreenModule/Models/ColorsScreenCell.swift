@@ -47,9 +47,6 @@ enum ColorsScreenCell: String {
   /// Основной черный цвет
   case primaryBlack
   
-  /// Основной цвет разделителя
-  case primaryDivider
-  
   // MARK: - Properties
   
   /// Текущий цвет
@@ -79,8 +76,6 @@ enum ColorsScreenCell: String {
       return RandomColor.secondaryWhite
     case .primaryBlack:
       return RandomColor.primaryBlack
-    case .primaryDivider:
-      return RandomColor.primaryDivider
     }
   }
 }

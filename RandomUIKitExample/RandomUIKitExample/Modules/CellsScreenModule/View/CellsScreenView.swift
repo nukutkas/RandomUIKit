@@ -75,20 +75,21 @@ final class CellsScreenView: CellsScreenViewProtocol {
     
     [tableView].forEach {
       $0.translatesAutoresizingMaskIntoConstraints = false
-      addSubview(tableView)
+      addSubview($0)
     }
     
     NSLayoutConstraint.activate([
       tableView.topAnchor.constraint(equalTo: topAnchor, constant: appearance.tableViewInsets.top),
       tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: appearance.tableViewInsets.left),
       tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -appearance.tableViewInsets.right),
-      tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -appearance.tableViewInsets.bottom),
+      tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -appearance.tableViewInsets.bottom)
     ])
   }
   
   private func applyDefaultBehavior() {
     let appearance = Appearance()
     backgroundColor = RandomColor.primaryWhite
+    tableView.backgroundColor = RandomColor.primaryWhite
     
     tableView.contentInset = appearance.tableViewInsets
     tableView.delegate = self
