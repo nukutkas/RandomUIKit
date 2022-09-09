@@ -39,7 +39,7 @@ public extension UIScrollView {
     setContentOffset(.zero, animated: false)
     
     let rect = CGRect(x: .zero, y: .zero, width: bounds.size.width, height: bounds.size.height)
-    UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
+    UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
     drawHierarchy(in: rect, afterScreenUpdates: true)
     let image = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
@@ -228,16 +228,6 @@ public extension UIScrollView {
     DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
       closure()
     })
-  }
-  
-  
-  private func crop(image imageI: UIImage,
-                    toRect toRectI: CGRect) -> UIImage? {
-    
-    guard let cgImage = imageI.cgImage, let imageRef: CGImage = cgImage.cropping(to: toRectI) else {
-      return nil
-    }
-    return UIImage(cgImage: imageRef)
   }
   
   private func resizeUIImage(image: UIImage?, scale: CGFloat) -> UIImage? {
