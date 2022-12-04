@@ -43,7 +43,7 @@ public extension UIView {
   /// - Parameters:
   ///  - duration: animation duration.
   ///  - easingOffset easing offset.
-  func zoomInWithEasing(duration: TimeInterval = 0.2, easingOffset: CGFloat = 0.05) {
+  func zoomInWithEasing(duration: TimeInterval = 0.2, easingOffset: CGFloat = 0.02) {
     let easeScale = 1.0 + easingOffset
     let easingDuration = TimeInterval(easingOffset) * duration / TimeInterval(easeScale)
     let scalingDuration = duration - easingDuration
@@ -67,7 +67,7 @@ public extension UIView {
   /// - Parameters:
   ///  - duration: animation duration.
   ///  - easingOffset: easing offset.
-  func zoomOutWithEasing(duration: TimeInterval = 0.2, easingOffset: CGFloat = 0.05) {
+  func zoomOutWithEasing(duration: TimeInterval = 0.2, easingOffset: CGFloat = 0.02) {
     let easeScale = 1.0 + easingOffset
     let easingDuration = TimeInterval(easingOffset) * duration / TimeInterval(easeScale)
     let scalingDuration = duration - easingDuration
