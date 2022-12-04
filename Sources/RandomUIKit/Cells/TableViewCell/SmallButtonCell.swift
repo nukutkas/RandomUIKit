@@ -90,6 +90,7 @@ public final class SmallButtonCell: UITableViewCell {
   @objc private func buttonAction() {
     action?()
     impactFeedback.impactOccurred()
+    button.zoomInWithEasing()
   }
 }
 

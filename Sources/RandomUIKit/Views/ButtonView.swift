@@ -33,6 +33,7 @@ public final class ButtonView: UIButton {
     super.touchesEnded(touches, with: event)
     impactFeedback.impactOccurred()
     applyGradient(colors: gradientBackground)
+    self.zoomInWithEasing()
   }
   
   public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {

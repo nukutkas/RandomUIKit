@@ -76,6 +76,7 @@ public final class MainCardView: UIView {
     impactFeedback.impactOccurred()
     applyGradient(colors: [RandomColor.primaryGreen,
                            RandomColor.secondaryGreen])
+    self.zoomInWithEasing()
   }
   
   // MARK: - Private func
