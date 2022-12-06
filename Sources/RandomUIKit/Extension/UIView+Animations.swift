@@ -7,6 +7,8 @@
 
 import UIKit
 
+// MARK: - Анимации Zoom-In / Zoom-Out
+
 public extension UIView {
   /// Простое увеличение представления: установите масштаб представления на 0 и увеличьте масштаб до
   /// Идентичности на временном интервале «длительность».
@@ -85,5 +87,43 @@ public extension UIView {
       }, completion: { (completed: Bool) -> Void in
       })
     })
+  }
+}
+
+// MARK: - Анимации вращения
+
+public extension UIView {
+  
+  /// Запустить анимацию вращение
+  func startRotation(duration: CFTimeInterval = 0.5) {
+    let rotation = CABasicAnimation(keyPath: "transform.rotation.z")
+    rotation.fromValue = 0
+    rotation.toValue = NSNumber(value: Double.pi)
+    rotation.duration = duration
+    rotation.isCumulative = true
+    rotation.repeatCount = .greatestFiniteMagnitude
+    self.layer.add(rotation, forKey: "rotationAnimation")
+  }
+  
+  /// Остановить анимацию вращения
+  func pauseRotation() {
+    var pausedTime = layer.convertTime(CACurrentMediaTime(), from: nil)
+    self.layer.speed = .zero
+    self.layer.timeOffset = pausedTime
+  }
+  
+  /// Возобновить анимацию  вращения
+  func resumeRotation(view: UIView) {
+    var pausedTime = view.layer.timeOffset
+    view.layer.speed = 1.0
+    view.layer.timeOffset = .zero
+    view.layer.beginTime = .zero
+    let timeSincePause = view.layer.convertTime(CACurrentMediaTime(), from: nil) - pausedTime
+    view.layer.beginTime = timeSincePause
+  }
+  
+  // Удалить анимацию  вращения
+  func stopRotation() {
+    self.layer.removeAnimation(forKey: "rotationAnimation")
   }
 }
