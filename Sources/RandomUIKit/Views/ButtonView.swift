@@ -26,31 +26,24 @@ public final class ButtonView: UIButton {
   
   public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     super.touchesBegan(touches, with: event)
-    applyGradient(colors: gradientBackground, alpha: Appearance().alphaButton)
+    updateStyle()
   }
   
   public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
     super.touchesEnded(touches, with: event)
     impactFeedback.impactOccurred()
-    applyGradient(colors: gradientBackground)
+    updateStyle()
     self.zoomInWithEasing()
   }
   
   public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
     super.touchesCancelled(touches, with: event)
-    applyGradient(colors: gradientBackground)
+    updateStyle()
   }
   
   public func set(isEnabled: Bool) {
     self.isEnabled = isEnabled
-    
-    if isEnabled {
-      applyGradient(colors: [RandomColor.primaryGreen,
-                             RandomColor.secondaryGreen])
-    } else {
-      applyGradient(colors: [RandomColor.primaryGray,
-                             RandomColor.secondaryGray])
-    }
+    updateStyle()
   }
   
   // MARK: - Private properties
@@ -71,6 +64,16 @@ public final class ButtonView: UIButton {
   }
   
   // MARK: - Private func
+  
+  private func updateStyle() {
+    if isEnabled {
+      applyGradient(colors: [RandomColor.primaryGreen,
+                             RandomColor.secondaryGreen])
+    } else {
+      applyGradient(colors: [RandomColor.primaryGray,
+                             RandomColor.secondaryGray])
+    }
+  }
   
   private func configureLayout() {
     NSLayoutConstraint.activate([
