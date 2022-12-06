@@ -113,13 +113,13 @@ public extension UIView {
   }
   
   /// Возобновить анимацию  вращения
-  func resumeRotation(view: UIView) {
-    var pausedTime = view.layer.timeOffset
-    view.layer.speed = 1.0
-    view.layer.timeOffset = .zero
-    view.layer.beginTime = .zero
-    let timeSincePause = view.layer.convertTime(CACurrentMediaTime(), from: nil) - pausedTime
-    view.layer.beginTime = timeSincePause
+  func resumeRotation() {
+    var pausedTime = self.layer.timeOffset
+    self.layer.speed = 1.0
+    self.layer.timeOffset = .zero
+    self.layer.beginTime = .zero
+    let timeSincePause = self.layer.convertTime(CACurrentMediaTime(), from: nil) - pausedTime
+    self.layer.beginTime = timeSincePause
   }
   
   // Удалить анимацию  вращения
