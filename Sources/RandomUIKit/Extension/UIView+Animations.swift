@@ -102,6 +102,9 @@ public extension UIView {
     rotation.duration = duration
     rotation.isCumulative = true
     rotation.repeatCount = .greatestFiniteMagnitude
+    self.layer.speed = 1
+    self.layer.timeOffset = .zero
+    self.layer.beginTime = .zero
     self.layer.add(rotation, forKey: "rotationAnimation")
   }
   
