@@ -41,7 +41,7 @@ public final class ButtonView: UIButton {
     applyGradient(colors: gradientBackground)
   }
   
-  public func setButton(isEnabled: Bool) {
+  public func set(isEnabled: Bool) {
     self.isEnabled = isEnabled
     
     if isEnabled {
