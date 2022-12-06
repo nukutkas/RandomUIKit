@@ -41,6 +41,18 @@ public final class ButtonView: UIButton {
     applyGradient(colors: gradientBackground)
   }
   
+  public func setButton(isEnabled: Bool) {
+    self.isEnabled = isEnabled
+    
+    if isEnabled {
+      applyGradient(colors: [RandomColor.primaryGreen,
+                             RandomColor.secondaryGreen])
+    } else {
+      applyGradient(colors: [RandomColor.primaryGray,
+                             RandomColor.secondaryGray])
+    }
+  }
+  
   // MARK: - Private properties
   
   private let impactFeedback = UIImpactFeedbackGenerator(style: .light)
