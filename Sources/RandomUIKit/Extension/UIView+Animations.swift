@@ -110,14 +110,14 @@ public extension UIView {
   
   /// Остановить анимацию вращения
   func pauseRotation() {
-    var pausedTime = layer.convertTime(CACurrentMediaTime(), from: nil)
+    let pausedTime = layer.convertTime(CACurrentMediaTime(), from: nil)
     self.layer.speed = .zero
     self.layer.timeOffset = pausedTime
   }
   
   /// Возобновить анимацию  вращения
   func resumeRotation() {
-    var pausedTime = self.layer.timeOffset
+    let pausedTime = self.layer.timeOffset
     self.layer.speed = 1.0
     self.layer.timeOffset = .zero
     self.layer.beginTime = .zero
