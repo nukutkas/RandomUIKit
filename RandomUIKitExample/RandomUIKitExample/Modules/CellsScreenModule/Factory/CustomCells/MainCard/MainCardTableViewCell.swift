@@ -39,17 +39,20 @@ final class MainCardTableViewCell: UITableViewCell {
     ///  - titleCard: Заголовок на карточке
     ///  - isShowADVLabel: Включить рекламный лайбл
     ///  - titleADVText: Заголовок на рекламном лайбле
+    ///  - isDisabled: Карточка выключена
     public func configureCellWith(titleCell: String?,
                                   imageCard: UIImage?,
                                   titleCard: String?,
                                   isShowADVLabel: Bool,
-                                  titleADVText: String?) {
+                                  titleADVText: String?,
+                                  isDisabled: Bool) {
         titleLabel.text = titleCell
         
         cardView.configureWith(imageCard: imageCard,
                                titleCard: titleCard,
                                isShowADVLabel: isShowADVLabel,
-                               titleADVText: titleADVText)
+                               titleADVText: titleADVText,
+                               isDisabled: isDisabled)
     }
     
     // MARK: - Private func

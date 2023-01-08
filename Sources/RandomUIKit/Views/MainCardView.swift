@@ -27,6 +27,7 @@ public final class MainCardView: UIView {
   private let titleLabel = UILabel()
   private let advLabelView = LabelGradientView()
   private let impactFeedback = UIImpactFeedbackGenerator(style: .light)
+  private var isDisabledCard = false
   
   // MARK: - Initialization
   
@@ -49,10 +50,12 @@ public final class MainCardView: UIView {
   ///  - titleCard: Заголовок на карточке
   ///  - isShowADVLabel: Включить рекламный лайбл
   ///  - titleADVText: Заголовок на рекламном лайбле
+  ///  - isDisabled: Карточка выключена
   public func configureWith(imageCard: UIImage?,
                             titleCard: String?,
                             isShowADVLabel: Bool,
-                            titleADVText: String?) {
+                            titleADVText: String?,
+                            isDisabled: Bool) {
     imageView.image = imageCard
     titleLabel.text = titleCard
     advLabelView.isHidden = !isShowADVLabel
@@ -62,20 +65,19 @@ public final class MainCardView: UIView {
                                gradientDVLabel: [RandomColor.primaryRed,
                                                  RandomColor.secondaryRed])
     imageView.setImageColor(color: RandomColor.primaryWhite)
+    isDisabledCard = isDisabled
+    applyGradient()
   }
   
   public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     super.touchesBegan(touches, with: event)
-    applyGradient(colors: [RandomColor.primaryGreen,
-                           RandomColor.secondaryGreen],
-                  alpha: Appearance().alphaCard)
+    applyGradient(alpha: Appearance().alphaCard)
   }
   
   public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
     super.touchesEnded(touches, with: event)
     impactFeedback.impactOccurred()
-    applyGradient(colors: [RandomColor.primaryGreen,
-                           RandomColor.secondaryGreen])
+    applyGradient()
     self.zoomInWithEasing()
   }
   
@@ -113,13 +115,24 @@ public final class MainCardView: UIView {
     advLabelView.isHidden = true
     
     layer.cornerRadius = appearance.cornerRadius
-    applyGradient(colors: [
-      RandomColor.primaryGreen,
-      RandomColor.secondaryGreen
-    ])
+    applyGradient()
   }
   
-  private func applyGradient(colors: [UIColor], alpha: CGFloat = 1) {
+  private func applyGradient(alpha: CGFloat = 1) {
+    var colors: [UIColor] = []
+    
+    if isDisabledCard {
+      colors = [
+        UIColor(hexString: ColorToken.secondaryGray.rawValue),
+        UIColor(hexString: ColorToken.secondaryGray.rawValue)
+      ]
+    } else {
+      colors = [
+        RandomColor.primaryGreen,
+        RandomColor.secondaryGreen
+      ]
+    }
+    
     guard let gradientLayer = layer as? CAGradientLayer else { return }
     gradientLayer.colors = colors.map { $0.withAlphaComponent(alpha).cgColor }
   }
