@@ -12,30 +12,20 @@ import RandomUIKit
 
 /// Моделька для ячейки
 struct ButtonModel: CellModel {
-    let titleButton: String?
-    let gradientBackground: [UIColor]
-    
-    var titleCell: String
-    var reuseIdentifier = CellsScreenCell.button.reuseIdentifier
+  var titleCell: String
+  var reuseIdentifier = CellsScreenCell.button.reuseIdentifier
 }
 
 extension CellsScreenDataSource where Model == ButtonModel {
-    static func makeForButton() -> CellsScreenDataSource {
-        let models = [
-            ButtonModel(titleButton: "Сгенерировать",
-                        gradientBackground: [
-                            RandomColor.primaryGreen,
-                            RandomColor.secondaryGreen
-                        ],
-                        titleCell: "ButtonView")
-        ]
-        return CellsScreenDataSource(models: models) { (model, cell) in
-            guard let cell = cell as? ButtonTableViewCell else {
-                return
-            }
-            cell.configureCellWith(titleCell: model.titleCell,
-                                   titleButton: model.titleButton,
-                                   gradientBackground: model.gradientBackground)
-        }
+  static func makeForButton() -> CellsScreenDataSource {
+    
+    return CellsScreenDataSource(models: [ButtonModel(titleCell: "")]) { (model, cell) in
+      guard let cell = cell as? ButtonTableViewCell else {
+        return
+      }
+      cell.configureCellWith { button in
+        button.setTitle("Кнопка", for: .normal)
+      }
     }
+  }
 }

@@ -53,7 +53,8 @@ final class TextFieldTableViewCell: UITableViewCell {
         }
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(greaterThanOrEqualTo: contentView.topAnchor, constant: appearance.insets.top),
+            titleLabel.topAnchor.constraint(greaterThanOrEqualTo: contentView.topAnchor,
+                                            constant: appearance.insets.top),
             titleLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             
             textFieldView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,

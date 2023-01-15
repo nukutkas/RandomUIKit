@@ -53,7 +53,6 @@
 		1B96E0C4281FEE8800A23880 /* LabelGradientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0C3281FEE8800A23880 /* LabelGradientTableViewCell.swift */; };
 		1B96E0C6281FEEC600A23880 /* CellsScreenDataSource+LabelGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0C5281FEEC600A23880 /* CellsScreenDataSource+LabelGradient.swift */; };
 		1B96E0CB281FFB8900A23880 /* CellsScreenDataSource+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0CA281FFB8900A23880 /* CellsScreenDataSource+Button.swift */; };
-		1B96E0CD281FFBA700A23880 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0CC281FFBA700A23880 /* ButtonTableViewCell.swift */; };
 		1B96E0D22820131500A23880 /* CellsScreenDataSource+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0D12820131500A23880 /* CellsScreenDataSource+TextField.swift */; };
 		1B96E0D42820133E00A23880 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0D32820133E00A23880 /* TextFieldTableViewCell.swift */; };
 		1B96E0D8282015F000A23880 /* KeyboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B96E0D7282015F000A23880 /* KeyboardService.swift */; };
@@ -124,7 +123,6 @@
 		1B96E0C3281FEE8800A23880 /* LabelGradientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelGradientTableViewCell.swift; sourceTree = "<group>"; };
 		1B96E0C5281FEEC600A23880 /* CellsScreenDataSource+LabelGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+LabelGradient.swift"; sourceTree = "<group>"; };
 		1B96E0CA281FFB8900A23880 /* CellsScreenDataSource+Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+Button.swift"; sourceTree = "<group>"; };
-		1B96E0CC281FFBA700A23880 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		1B96E0D12820131500A23880 /* CellsScreenDataSource+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+TextField.swift"; sourceTree = "<group>"; };
 		1B96E0D32820133E00A23880 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		1B96E0D7282015F000A23880 /* KeyboardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardService.swift; sourceTree = "<group>"; };
@@ -592,7 +590,6 @@
 			isa = PBXGroup;
 			children = (
 				1B96E0CA281FFB8900A23880 /* CellsScreenDataSource+Button.swift */,
-				1B96E0CC281FFBA700A23880 /* ButtonTableViewCell.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -853,7 +850,6 @@
 				1BB57056281C4F7A00AAF8BD /* AppDelegate.swift in Sources */,
 				1B046169281F5263001141B4 /* CellsScreenCoordinator.swift in Sources */,
 				1B96E0D42820133E00A23880 /* TextFieldTableViewCell.swift in Sources */,
-				1B96E0CD281FFBA700A23880 /* ButtonTableViewCell.swift in Sources */,
 				1B50066C28A6CA9F009AABF2 /* CellsScreenDataSource+Player.swift in Sources */,
 				1B046156281F4CFB001141B4 /* FontsScreenViewCell.swift in Sources */,
 				1B96E0C4281FEE8800A23880 /* LabelGradientTableViewCell.swift in Sources */,
