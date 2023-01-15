@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import RandomUIKit
+import Lottie
 
 /// OnboardingContainerView
 final class OnboardingContainerView: UIView {
@@ -14,18 +14,15 @@ final class OnboardingContainerView: UIView {
   // MARK: - Private properties
   
   private let containerView = UIView()
-  
   private let titleLabel = UILabel()
   private let descriptionLabel = UILabel()
-//  private var lottieAnimationView = LottieAnimationView()
-  private var lottieAnimationView = UIView()
+  private var lottieAnimationView = LottieAnimationView()
   
   // MARK: - Initialization
   
   override init(frame: CGRect) {
     super.init(frame: frame)
     
-    configureLayout()
     applyDefaultBehavior()
   }
   
@@ -36,16 +33,16 @@ final class OnboardingContainerView: UIView {
   // MARK: - Internal func
   
   func configureWith(lottieAnimationJSONName: String, title: String?, description: String?) {
-//    lottieAnimationView = .init(name: lottieAnimationJSONName,
-//                                bundle: .main)
-//    lottieAnimationView.contentMode = .scaleAspectFit
-//    lottieAnimationView.loopMode = .loop
-//    lottieAnimationView.animationSpeed = Appearance().animationSpeed
-//    lottieAnimationView.play()
-
+    lottieAnimationView = LottieAnimationView(name: lottieAnimationJSONName,
+                                              bundle: .main)
+    lottieAnimationView.contentMode = .scaleAspectFit
+    lottieAnimationView.loopMode = .loop
+    lottieAnimationView.animationSpeed = Appearance().animationSpeed
+    lottieAnimationView.play()
+    
     titleLabel.text = title
     descriptionLabel.text = description
-    self.layoutIfNeeded()
+    configureLayout()
   }
 }
 
@@ -66,6 +63,7 @@ private extension OnboardingContainerView {
     }
     
     NSLayoutConstraint.activate([
+      lottieAnimationView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.25),
       containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
       containerView.topAnchor.constraint(equalTo: topAnchor),
       containerView.trailingAnchor.constraint(equalTo: trailingAnchor),
@@ -75,20 +73,15 @@ private extension OnboardingContainerView {
       lottieAnimationView.topAnchor.constraint(equalTo: containerView.topAnchor),
       lottieAnimationView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
       
-      titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor,
-                                          constant: appearance.defaultInset),
+      titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
       titleLabel.topAnchor.constraint(equalTo: lottieAnimationView.bottomAnchor,
                                       constant: appearance.minInset),
-      titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor,
-                                           constant: -appearance.defaultInset),
+      titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
       
-      descriptionLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor,
-                                                constant: appearance.defaultInset),
+      descriptionLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
       descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,
                                             constant: appearance.minInset),
-      descriptionLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor,
-                                                 constant: -appearance.defaultInset),
-      descriptionLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+      descriptionLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
     ])
   }
   
@@ -100,14 +93,16 @@ private extension OnboardingContainerView {
     lottieAnimationView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
     
     titleLabel.textAlignment = .center
-    titleLabel.numberOfLines = .zero
+    titleLabel.numberOfLines = 1
     titleLabel.font = RandomFont.primaryMedium32
     titleLabel.textColor = RandomColor.primaryGray
+    titleLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
+    titleLabel.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
     
     descriptionLabel.textAlignment = .center
-    descriptionLabel.numberOfLines = .zero
+    descriptionLabel.numberOfLines = 2
     descriptionLabel.font = RandomFont.primaryRegular24
-    descriptionLabel.textColor = RandomColor.primaryGray
+    descriptionLabel.textColor = RandomColor.secondaryGray
   }
 }
 

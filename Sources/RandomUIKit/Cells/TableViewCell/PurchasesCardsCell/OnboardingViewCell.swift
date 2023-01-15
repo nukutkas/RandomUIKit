@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import RandomUIKit
 
 // MARK: - OnboardingViewCell
 
@@ -37,9 +36,9 @@ public final class OnboardingViewCell: UITableViewCell {
   // MARK: - Public func
   
   /// Настраиваем ячейку
-  /// - Parameter models: Модельки с карточками
-  public func configureCellWith(_ models: [OnboardingViewModel]) {
-    onboardingView.setOnboardingWith(models)
+  /// - Parameter model: Моделька с данными
+  public func configureCellWith(_ model: OnboardingViewModel) {
+    onboardingView.setOnboardingWith(model)
   }
   
   // MARK: - Private func

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import RandomUIKit
 
 /// OnboardingView
 public final class OnboardingView: UIView {
@@ -16,6 +15,7 @@ public final class OnboardingView: UIView {
   private let pageIndicator = UIPageControl()
   private let scrollView = UIScrollView()
   private let stackView = UIStackView()
+  private var didChangePageAction: ((_ currentPage: Int) -> Void)?
   
   // MARK: - Initialization
   
@@ -37,8 +37,8 @@ public final class OnboardingView: UIView {
     pageIndicatorAction()
   }
   
-  func setOnboardingWith(_ models: [OnboardingViewModel]) {
-    let screensView: [OnboardingContainerView] = models.map { model in
+  func setOnboardingWith(_ model: OnboardingViewModel) {
+    let screensView: [OnboardingContainerView] = model.pageModels.map { model in
       let screen = OnboardingContainerView()
       screen.configureWith(lottieAnimationJSONName: model.lottieAnimationJSONName,
                            title: model.title,
@@ -56,6 +56,7 @@ public final class OnboardingView: UIView {
         screen.heightAnchor.constraint(equalTo: scrollView.heightAnchor)
       ])
     }
+    didChangePageAction = model.didChangePageAction
   }
 }
 
@@ -63,10 +64,10 @@ public final class OnboardingView: UIView {
 
 extension OnboardingView: UIScrollViewDelegate {
   public func scrollViewWillEndDragging(_ scrollView: UIScrollView,
-                                 withVelocity velocity: CGPoint,
-                                 targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+                                        withVelocity velocity: CGPoint,
+                                        targetContentOffset: UnsafeMutablePointer<CGPoint>) {
     pageIndicator.currentPage = Int(targetContentOffset.pointee.x) / Int(frame.size.width)
-//    output?.didChangePage(to: pageIndicator.currentPage)
+    didChangePageAction?(pageIndicator.currentPage)
   }
 }
 
@@ -79,7 +80,7 @@ private extension OnboardingView {
       scrollView.addSubview($0)
     }
     
-    [pageIndicator, scrollView].forEach {
+    [scrollView, pageIndicator].forEach {
       $0.translatesAutoresizingMaskIntoConstraints = false
       addSubview($0)
     }
@@ -88,7 +89,6 @@ private extension OnboardingView {
       scrollView.topAnchor.constraint(equalTo: topAnchor),
       scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
       scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
-      scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
       scrollView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.4),
       
       stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
@@ -97,9 +97,9 @@ private extension OnboardingView {
       stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
       stackView.heightAnchor.constraint(equalTo: scrollView.heightAnchor),
       
-      pageIndicator.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 16),
+      pageIndicator.topAnchor.constraint(equalTo: scrollView.bottomAnchor),
       pageIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
-      pageIndicator.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+      pageIndicator.bottomAnchor.constraint(equalTo: bottomAnchor),
     ])
   }
   
@@ -127,7 +127,7 @@ private extension OnboardingView {
     scrollView.setContentOffset(CGPoint(x: CGFloat(pageIndicator.currentPage) * scrollView.bounds.width,
                                         y: .zero),
                                 animated: true)
-//    output?.didChangePage(to: pageIndicator.currentPage)
+    didChangePageAction?(pageIndicator.currentPage)
   }
 }
 

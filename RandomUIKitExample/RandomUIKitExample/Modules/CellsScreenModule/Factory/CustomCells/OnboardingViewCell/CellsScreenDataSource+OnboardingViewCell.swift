@@ -10,12 +10,16 @@ import RandomUIKit
 
 // MARK: - OnboardingViewCellModel
 
-/// Моделька для ячейки
-struct OnboardingViewCellModel: CellModel, OnboardingViewModel {
- 
+struct OnboardingViewPageCellModel: OnboardingViewPageModel {
   var title: String?
   var description: String?
-  var lottieAnimationJSONName: String = ""
+  var lottieAnimationJSONName: String
+}
+
+/// Моделька для ячейки
+struct OnboardingViewCellModel: CellModel, OnboardingViewModel {
+  var pageModels: [OnboardingViewPageModel]
+  var didChangePageAction: ((Int) -> Void)?
   
   var titleCell: String = ""
   var reuseIdentifier = CellsScreenCell.onboardingViewCell.reuseIdentifier
@@ -23,24 +27,27 @@ struct OnboardingViewCellModel: CellModel, OnboardingViewModel {
 
 extension CellsScreenDataSource where Model == OnboardingViewCellModel {
   static func makeForOnboardingViewCellModel() -> CellsScreenDataSource {
-    let models = [
-      OnboardingViewCellModel(title: "Search History",
-                              description: "Transfer obfuscate traffic via encrypted tunnel",
-                              lottieAnimationJSONName: "test-animate_one"),
-      OnboardingViewCellModel(title: "Search History",
-                              description: "Transfer obfuscate traffic via encrypted tunnel",
-                              lottieAnimationJSONName: "test-animate_two"),
-      OnboardingViewCellModel(title: "Search History",
-                              description: "Transfer obfuscate traffic via encrypted tunnel",
-                              lottieAnimationJSONName: "test-animate_three")
-    ]
+    let model = OnboardingViewCellModel(pageModels: [
+      OnboardingViewPageCellModel(title: "Search History",
+                                  description: "Transfer obfuscate traffic via encrypted tunnel",
+                                  lottieAnimationJSONName: "test-animate_one"),
+      OnboardingViewPageCellModel(title: "Search History",
+                                  description: "Transfer obfuscate traffic via encrypted tunnel",
+                                  lottieAnimationJSONName: "test-animate_two"),
+      OnboardingViewPageCellModel(title: "Search History",
+                                  description: "Transfer obfuscate traffic via encrypted tunnel",
+                                  lottieAnimationJSONName: "test-animate_three")
+    ],
+                                        didChangePageAction: { currentPage in
+      print("Экран изменился на \(currentPage)")
+    })
     
-    return CellsScreenDataSource(models: [OnboardingViewCellModel()]) { (_, cell) in
+    return CellsScreenDataSource(models: [OnboardingViewCellModel(pageModels: [])]) { (_, cell) in
       guard let cell = cell as? OnboardingViewCell else {
         return
       }
       
-      cell.configureCellWith(models)
+      cell.configureCellWith(model)
       
     }
   }

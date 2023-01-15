@@ -67,10 +67,6 @@
 		1BB5705F281C4F7B00AAF8BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BB5705E281C4F7B00AAF8BD /* Assets.xcassets */; };
 		1BB57062281C4F7B00AAF8BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BB57060281C4F7B00AAF8BD /* LaunchScreen.storyboard */; };
 		1BB8624E28A94A31000C0372 /* CellsScreenDataSource+DividerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB8624D28A94A31000C0372 /* CellsScreenDataSource+DividerTableViewCell.swift */; };
-		1BF0613F29745F7D00DD6C76 /* OnboardingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0613B29745F7D00DD6C76 /* OnboardingViewCell.swift */; };
-		1BF0614029745F7D00DD6C76 /* OnboardingContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0613C29745F7D00DD6C76 /* OnboardingContainerView.swift */; };
-		1BF0614129745F7D00DD6C76 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0613D29745F7D00DD6C76 /* OnboardingViewModel.swift */; };
-		1BF0614229745F7D00DD6C76 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0613E29745F7D00DD6C76 /* OnboardingView.swift */; };
 		1BF061442974605F00DD6C76 /* CellsScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF061432974605F00DD6C76 /* CellsScreenCell.swift */; };
 		1BF0614B2974609100DD6C76 /* CellsScreenDataSource+OnboardingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF061462974609100DD6C76 /* CellsScreenDataSource+OnboardingViewCell.swift */; };
 		1BF0614C2974609100DD6C76 /* CellsScreenDataSource+LinkTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF061482974609100DD6C76 /* CellsScreenDataSource+LinkTextViewCell.swift */; };
@@ -144,10 +140,6 @@
 		1BB57061281C4F7B00AAF8BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BB57063281C4F7B00AAF8BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BB8624D28A94A31000C0372 /* CellsScreenDataSource+DividerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+DividerTableViewCell.swift"; sourceTree = "<group>"; };
-		1BF0613B29745F7D00DD6C76 /* OnboardingViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewCell.swift; sourceTree = "<group>"; };
-		1BF0613C29745F7D00DD6C76 /* OnboardingContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingContainerView.swift; sourceTree = "<group>"; };
-		1BF0613D29745F7D00DD6C76 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
-		1BF0613E29745F7D00DD6C76 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		1BF061432974605F00DD6C76 /* CellsScreenCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsScreenCell.swift; sourceTree = "<group>"; };
 		1BF061462974609100DD6C76 /* CellsScreenDataSource+OnboardingViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+OnboardingViewCell.swift"; sourceTree = "<group>"; };
 		1BF061482974609100DD6C76 /* CellsScreenDataSource+LinkTextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+LinkTextViewCell.swift"; sourceTree = "<group>"; };
@@ -677,10 +669,6 @@
 		1BB57054281C4F7A00AAF8BD /* RandomUIKitExample */ = {
 			isa = PBXGroup;
 			children = (
-				1BF0613C29745F7D00DD6C76 /* OnboardingContainerView.swift */,
-				1BF0613E29745F7D00DD6C76 /* OnboardingView.swift */,
-				1BF0613B29745F7D00DD6C76 /* OnboardingViewCell.swift */,
-				1BF0613D29745F7D00DD6C76 /* OnboardingViewModel.swift */,
 				1B96E0D5282015D200A23880 /* ApplicationServices */,
 				1B046102281EE649001141B4 /* Extension */,
 				1B046110281F1711001141B4 /* Modules */,
@@ -852,10 +840,8 @@
 				1B046147281F494A001141B4 /* FontsScreenAssembly.swift in Sources */,
 				1B0ED19D28D48441001BACF6 /* CellsScreenDataSource+TextFielAddPlayer.swift in Sources */,
 				1B046154281F4A77001141B4 /* FontsScreenCoordinator.swift in Sources */,
-				1BF0614229745F7D00DD6C76 /* OnboardingView.swift in Sources */,
 				6C18DB44283AA6630031CC05 /* CellsScreenDataSource+LabelAndSwitchCell.swift in Sources */,
 				1B046161281F51C5001141B4 /* CellsScreenView.swift in Sources */,
-				1BF0613F29745F7D00DD6C76 /* OnboardingViewCell.swift in Sources */,
 				1B04610D281F0443001141B4 /* MainScreenCoordinator.swift in Sources */,
 				1B04613C281F40B9001141B4 /* ColorsScreenCell.swift in Sources */,
 				1B046106281EE842001141B4 /* MainCardTableViewCell.swift in Sources */,
@@ -878,7 +864,6 @@
 				1B046130281F3E5E001141B4 /* ColorsScreenInteractor.swift in Sources */,
 				1B3EF134287B0A4500D667E1 /* CellsScreenDataSource+LabelAndSwitchWithSegmented.swift in Sources */,
 				1B04610E281F0443001141B4 /* RootCoordinator.swift in Sources */,
-				1BF0614129745F7D00DD6C76 /* OnboardingViewModel.swift in Sources */,
 				1B046160281F51C5001141B4 /* CellsScreenInteractor.swift in Sources */,
 				1B04612E281F3E5E001141B4 /* ColorsScreenViewController.swift in Sources */,
 				1B04616E281F5868001141B4 /* CellsScreenDataSource.swift in Sources */,
@@ -891,7 +876,6 @@
 				1B96E0D8282015F000A23880 /* KeyboardService.swift in Sources */,
 				1B7431A428A7B1D500205C2C /* CellsScreenDataSource+PlayerInfo.swift in Sources */,
 				1B96E0C6281FEEC600A23880 /* CellsScreenDataSource+LabelGradient.swift in Sources */,
-				1BF0614029745F7D00DD6C76 /* OnboardingContainerView.swift in Sources */,
 				1B046171281F596D001141B4 /* CellsScreenDataSource+MainCard.swift in Sources */,
 				1B046148281F494A001141B4 /* FontsScreenInteractor.swift in Sources */,
 				1B04613E281F42D0001141B4 /* ColorsScreenViewCell.swift in Sources */,

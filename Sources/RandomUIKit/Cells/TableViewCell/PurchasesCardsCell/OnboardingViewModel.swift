@@ -9,7 +9,15 @@ import Foundation
 
 public protocol OnboardingViewModel {
   
-  /// Заголовок 
+  var pageModels: [OnboardingViewPageModel] { get }
+  
+  /// Событие при изменение экрана
+  var didChangePageAction: ((_ currentPage: Int) -> Void)? { get set }
+}
+
+public protocol OnboardingViewPageModel {
+  
+  /// Заголовок
   var title: String? { get }
   
   /// Описание
