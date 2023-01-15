@@ -29,10 +29,22 @@ public struct FontGuide {
   /// Жирный шрифт, размер 16
   public let primaryBold16 = UIFont.get(font: .primaryBold16)
   
+  /// Жирный шрифт, размер 14
+  public let primaryBold14 = UIFont.get(font: .primaryBold14)
+  
+  /// Жирный шрифт, размер 12
+  public let primaryBold12 = UIFont.get(font: .primaryBold12)
+  
   /// Жирный шрифт, размер 10
   public let primaryBold10 = UIFont.get(font: .primaryBold10)
   
   // MARK: - Medium
+  
+  /// Полу-Жирный шрифт, размер 48
+  public let primaryMedium48 = UIFont.get(font: .primaryMedium48)
+  
+  /// Полу-Жирный шрифт, размер 40
+  public let primaryMedium40 = UIFont.get(font: .primaryMedium40)
   
   /// Полу-Жирный шрифт, размер 32
   public let primaryMedium32 = UIFont.get(font: .primaryMedium32)
@@ -45,6 +57,12 @@ public struct FontGuide {
   
   /// Полу-Жирный шрифт, размер 16
   public let primaryMedium16 = UIFont.get(font: .primaryMedium16)
+  
+  /// Полу-Жирный шрифт, размер 14
+  public let primaryMedium14 = UIFont.get(font: .primaryMedium14)
+  
+  /// Полу-Жирный шрифт, размер 12
+  public let primaryMedium12 = UIFont.get(font: .primaryMedium12)
   
   /// Полу-Жирный шрифт, размер 10
   public let primaryMedium10 = UIFont.get(font: .primaryMedium10)
@@ -62,6 +80,12 @@ public struct FontGuide {
   
   /// Обычный шрифт, размер 16
   public let primaryRegular16 = UIFont.get(font: .primaryRegular16)
+  
+  /// Обычный шрифт, размер 14
+  public let primaryRegular14 = UIFont.get(font: .primaryRegular14)
+  
+  /// Обычный шрифт, размер 12
+  public let primaryRegular12 = UIFont.get(font: .primaryRegular12)
   
   /// Обычный шрифт, размер 10
   public let primaryRegular10 = UIFont.get(font: .primaryRegular10)

@@ -17,6 +17,15 @@ enum CellsScreenCell: String {
   /// Основная карточка на главном экране
   case mainCardTableViewCell
   
+  /// Ячейки с оплатой
+  case purchasesCardsCell
+  
+  /// Ячейка с текстом и ссылками
+  case linkTextViewCell
+  
+  /// Ячейка с онбордингом
+  case onboardingViewCell
+  
   /// Рекламный лайбл
   case labelGradientView
   
@@ -106,6 +115,12 @@ enum CellsScreenCell: String {
       return DividerTableViewCell.self
     case .textFielAddPlayerCell:
       return TextFielAddPlayerCell.self
+    case .purchasesCardsCell:
+      return PurchasesCardsCell.self
+    case .linkTextViewCell:
+      return LinkTextViewCell.self
+    case .onboardingViewCell:
+      return OnboardingViewCell.self
     }
   }
   
@@ -145,6 +160,12 @@ enum CellsScreenCell: String {
       return CellsScreenDataSource.makeForDivider()
     case .textFielAddPlayerCell:
       return CellsScreenDataSource.makeForTextFielAddPlayer()
+    case .purchasesCardsCell:
+      return CellsScreenDataSource.makeForPurchasesCardsCell()
+    case .linkTextViewCell:
+      return CellsScreenDataSource.makeForLinkTextViewCell()
+    case .onboardingViewCell:
+      return CellsScreenDataSource.makeForOnboardingViewCellModel()
     }
   }
 }
