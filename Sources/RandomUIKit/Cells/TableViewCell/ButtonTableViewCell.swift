@@ -11,6 +11,11 @@ import UIKit
 
 public final class ButtonTableViewCell: UITableViewCell {
   
+  // MARK: - Public property
+  
+  /// Identifier для ячейки
+  public static let reuseIdentifier = ButtonTableViewCell.description()
+  
   // MARK: - Private properties
   
   private let buttonView = ButtonView()
