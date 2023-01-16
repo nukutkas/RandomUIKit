@@ -94,15 +94,15 @@ private extension OnboardingContainerView {
     
     titleLabel.textAlignment = .center
     titleLabel.numberOfLines = 1
-    titleLabel.font = RandomFont.primaryMedium32
+    titleLabel.font = RandomFont.primaryBold32
     titleLabel.textColor = RandomColor.primaryGray
     titleLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
     titleLabel.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
     
     descriptionLabel.textAlignment = .center
     descriptionLabel.numberOfLines = 2
-    descriptionLabel.font = RandomFont.primaryRegular24
-    descriptionLabel.textColor = RandomColor.secondaryGray
+    descriptionLabel.font = RandomFont.primaryMedium18
+    descriptionLabel.textColor = RandomColor.primaryGray
   }
 }
 

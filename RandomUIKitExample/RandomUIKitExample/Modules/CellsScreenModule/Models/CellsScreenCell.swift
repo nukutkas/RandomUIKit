@@ -23,6 +23,9 @@ enum CellsScreenCell: String {
   /// Ячейка с текстом и ссылками
   case linkTextViewCell
   
+  /// Заголовок и описание
+  case headerTitleAndSubtitleViewCell
+  
   /// Ячейка с онбордингом
   case onboardingViewCell
   
@@ -121,6 +124,8 @@ enum CellsScreenCell: String {
       return LinkTextViewCell.self
     case .onboardingViewCell:
       return OnboardingViewCell.self
+    case .headerTitleAndSubtitleViewCell:
+      return HeaderTitleAndSubtitleViewCell.self
     }
   }
   
@@ -166,6 +171,8 @@ enum CellsScreenCell: String {
       return CellsScreenDataSource.makeForLinkTextViewCell()
     case .onboardingViewCell:
       return CellsScreenDataSource.makeForOnboardingViewCellModel()
+    case .headerTitleAndSubtitleViewCell:
+      return CellsScreenDataSource.makeForHeaderTitleAndSubtitleViewCell()
     }
   }
 }
