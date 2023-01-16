@@ -37,7 +37,7 @@ public final class OnboardingViewCell: UITableViewCell {
   
   /// Настраиваем ячейку
   /// - Parameter model: Моделька с данными
-  public func configureCellWith(_ model: OnboardingViewModel) {
+  public func configureCellWith(_ model: OnboardingViewModelProtocol) {
     onboardingView.setOnboardingWith(model)
   }
   

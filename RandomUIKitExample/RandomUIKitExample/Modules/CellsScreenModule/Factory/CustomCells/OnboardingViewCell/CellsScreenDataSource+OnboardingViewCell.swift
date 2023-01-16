@@ -10,15 +10,15 @@ import RandomUIKit
 
 // MARK: - OnboardingViewCellModel
 
-struct OnboardingViewPageCellModel: OnboardingViewPageModel {
+struct OnboardingViewPageCellModel: OnboardingViewPageModelProtocol {
   var title: String?
   var description: String?
   var lottieAnimationJSONName: String
 }
 
 /// Моделька для ячейки
-struct OnboardingViewCellModel: CellModel, OnboardingViewModel {
-  var pageModels: [OnboardingViewPageModel]
+struct OnboardingViewCellModel: CellModel, OnboardingViewModelProtocol {
+  var pageModels: [OnboardingViewPageModelProtocol]
   var didChangePageAction: ((Int) -> Void)?
   
   var titleCell: String = ""
