@@ -134,31 +134,40 @@ private extension PurchasesCardView {
     }
     
     NSLayoutConstraint.activate([
-      heightAnchor.constraint(equalToConstant: appearance.heightCard),
       containerView.heightAnchor.constraint(equalToConstant: appearance.containerHeight),
       
       containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
       containerView.topAnchor.constraint(equalTo: topAnchor),
       containerView.trailingAnchor.constraint(equalTo: trailingAnchor),
       
-      headerTitleLabel.topAnchor.constraint(equalTo: containerView.topAnchor),
-      headerTitleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-      headerTitleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-      headerTitleLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+      headerTitleLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+      headerTitleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor,
+                                                constant: appearance.midInset),
+      headerTitleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor,
+                                                 constant: -appearance.midInset),
       
-      titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+      titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                          constant: appearance.minInset),
       titleLabel.topAnchor.constraint(equalTo: containerView.bottomAnchor,
                                       constant: appearance.minInset),
-      titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+      titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                           constant: -appearance.minInset),
       
-      descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-      descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
-      descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+      descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                                constant: appearance.minInset),
+      descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,
+                                            constant: appearance.minInset),
+      descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                 constant: -appearance.minInset),
       
-      amountLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+      amountLabel.leadingAnchor.constraint(equalTo: leadingAnchor,
+                                           constant: appearance.minInset),
+      amountLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor,
+                                       constant: appearance.minInset),
       amountLabel.bottomAnchor.constraint(equalTo: bottomAnchor,
                                           constant: -appearance.midInset),
-      amountLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
+      amountLabel.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                            constant: -appearance.minInset)
     ])
   }
   
@@ -166,24 +175,24 @@ private extension PurchasesCardView {
     let appearance = Appearance()
     
     headerTitleLabel.textAlignment = .center
-    headerTitleLabel.font = RandomFont.primaryBold12
+    headerTitleLabel.font = RandomFont.primaryBold14
     headerTitleLabel.textColor = UIColor(hexString: ColorToken.primaryWhite.rawValue)
-    headerTitleLabel.numberOfLines = 1
+    headerTitleLabel.numberOfLines = appearance.numberOfLines
     
     titleLabel.textAlignment = .center
     titleLabel.font = RandomFont.primaryMedium48
     titleLabel.textColor = RandomColor.primaryGray
-    titleLabel.numberOfLines = 1
+    titleLabel.numberOfLines = appearance.numberOfLines
     
     descriptionLabel.textAlignment = .center
     descriptionLabel.font = RandomFont.primaryMedium18
     descriptionLabel.textColor = RandomColor.primaryGray
-    descriptionLabel.numberOfLines = 1
+    descriptionLabel.numberOfLines = appearance.numberOfLines
     
     amountLabel.textAlignment = .center
     amountLabel.font = RandomFont.primaryBold24
     amountLabel.textColor = RandomColor.primaryGray
-    amountLabel.numberOfLines = 1
+    amountLabel.numberOfLines = appearance.numberOfLines
     
     clipsToBounds = true
     layer.cornerRadius = appearance.cornerRadius
@@ -201,10 +210,10 @@ private extension PurchasesCardView {
   struct Appearance {
     let cornerRadius: CGFloat = 16
     let borderWidth: CGFloat = 1
-    let heightCard: CGFloat = 194
     let widthCard: CGFloat = 129
     let minInset: CGFloat = 4
-    let midInset: CGFloat = 16
-    let containerHeight: CGFloat = 40
+    let midInset: CGFloat = 8
+    let containerHeight: CGFloat = 50
+    let numberOfLines = 2
   }
 }

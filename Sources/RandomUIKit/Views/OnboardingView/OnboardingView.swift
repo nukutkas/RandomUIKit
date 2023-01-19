@@ -37,7 +37,7 @@ public final class OnboardingView: UIView {
     pageIndicatorAction()
   }
   
-  func setOnboardingWith(_ model: OnboardingViewModelProtocol) {
+  func setOnboardingWith(_ model: OnboardingViewModel) {
     let screensView: [OnboardingContainerView] = model.pageModels.map { model in
       let screen = OnboardingContainerView()
       screen.configureWith(lottieAnimationJSONName: model.lottieAnimationJSONName,

@@ -43,7 +43,7 @@ public final class PurchasesCardsCell: UITableViewCell {
   
   /// Настраиваем ячейку
   /// - Parameter models: Модельки с карточками
-  public func configureCellWith(models: [PurchasesCardsCellModelProtocol]) {
+  public func configureCellWith(models: [PurchasesCardsCellModel]) {
     models.enumerated().forEach { model in
       if model.offset == .zero {
         leftSideButton.configureWith(header: model.element.header,
@@ -95,9 +95,9 @@ public final class PurchasesCardsCell: UITableViewCell {
     
     NSLayoutConstraint.activate([
       stackButtons.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
-                                            constant: appearance.defaultInsets),
+                                            constant: appearance.midInset),
       stackButtons.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
-                                             constant: -appearance.defaultInsets),
+                                             constant: -appearance.midInset),
       stackButtons.topAnchor.constraint(equalTo: contentView.topAnchor,
                                         constant: appearance.minInset),
       stackButtons.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,
@@ -112,7 +112,7 @@ public final class PurchasesCardsCell: UITableViewCell {
     
     stackButtons.distribution = .fillEqually
     stackButtons.axis = .horizontal
-    stackButtons.spacing = Appearance().midInset
+    stackButtons.spacing = Appearance().minInset
     
     leftSideButtonAction = { [weak self] in
       UIView.animate(withDuration: 0.2) { [weak self] in

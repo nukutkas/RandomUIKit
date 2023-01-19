@@ -20,7 +20,7 @@ public final class SmallButtonCell: UITableViewCell {
   
   // MARK: - Private property
   
-  private let button = UIButton(type: .system)
+  private let button = SmallButtonView()
   private let impactFeedback = UIImpactFeedbackGenerator(style: .light)
   
   // MARK: - Initilisation
@@ -89,8 +89,6 @@ public final class SmallButtonCell: UITableViewCell {
   
   @objc private func buttonAction() {
     action?()
-    impactFeedback.impactOccurred()
-    button.zoomInWithEasing()
   }
 }
 
