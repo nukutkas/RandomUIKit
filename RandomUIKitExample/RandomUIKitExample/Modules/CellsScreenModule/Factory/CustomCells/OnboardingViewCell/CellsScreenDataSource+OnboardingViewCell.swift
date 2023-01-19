@@ -28,14 +28,14 @@ struct OnboardingViewCellModel: CellModel, OnboardingViewModelProtocol {
 extension CellsScreenDataSource where Model == OnboardingViewCellModel {
   static func makeForOnboardingViewCellModel() -> CellsScreenDataSource {
     let model = OnboardingViewCellModel(pageModels: [
-      OnboardingViewPageCellModel(title: "Search History",
-                                  description: "Transfer obfuscate traffic via encrypted tunnel",
+      OnboardingViewPageCellModel(title: "Search History dsjkn klmvwevwsevsvsevewgf",
+                                  description: "Transfer obfuscate traffic via encrypted tunneltunneltunneltunneltunneltunneltunneltunneltunneltunnel",
                                   lottieAnimationJSONName: "test-animate_one"),
       OnboardingViewPageCellModel(title: "Search History",
                                   description: "Transfer obfuscate traffic via encrypted tunnel",
                                   lottieAnimationJSONName: "test-animate_two"),
       OnboardingViewPageCellModel(title: "Search History",
-                                  description: "Transfer obfuscate traffic via encrypted tunnel",
+                                  description: "Transfer obfuscate traffic via encrypted tunneltunneltunneltunnel",
                                   lottieAnimationJSONName: "test-animate_three")
     ],
                                         didChangePageAction: { currentPage in

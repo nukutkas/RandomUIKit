@@ -86,6 +86,7 @@ public final class LinkTextView: UITextView {
   // MARK: - Private funcs
   
   private func applyDefaultBehavior() {
+    backgroundColor = RandomColor.primaryWhite
     textColor = defaultTextColor
     font = defaultTextFont
     textAlignment = defaultTextAlignment

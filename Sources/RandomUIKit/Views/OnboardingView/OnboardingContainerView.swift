@@ -81,7 +81,8 @@ private extension OnboardingContainerView {
       descriptionLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
       descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,
                                             constant: appearance.minInset),
-      descriptionLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+      descriptionLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+      descriptionLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
     ])
   }
   
@@ -98,6 +99,8 @@ private extension OnboardingContainerView {
     titleLabel.textColor = RandomColor.primaryGray
     titleLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
     titleLabel.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
+    titleLabel.adjustsFontSizeToFitWidth = true
+    titleLabel.minimumScaleFactor = 0.9
     
     descriptionLabel.textAlignment = .center
     descriptionLabel.numberOfLines = 2

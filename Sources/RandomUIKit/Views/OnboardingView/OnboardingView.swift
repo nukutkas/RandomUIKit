@@ -52,8 +52,8 @@ public final class OnboardingView: UIView {
       screen.translatesAutoresizingMaskIntoConstraints = false
       stackView.addArrangedSubview(screen)
       NSLayoutConstraint.activate([
-        screen.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-        screen.heightAnchor.constraint(equalTo: scrollView.heightAnchor)
+        screen.widthAnchor.constraint(equalTo: widthAnchor),
+        scrollView.heightAnchor.constraint(equalTo: screen.heightAnchor)
       ])
     }
     didChangePageAction = model.didChangePageAction
@@ -89,14 +89,13 @@ private extension OnboardingView {
       scrollView.topAnchor.constraint(equalTo: topAnchor),
       scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
       scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
-      scrollView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.4),
+      scrollView.widthAnchor.constraint(equalTo: widthAnchor),
       
       stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
       stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
       stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
       stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-      stackView.heightAnchor.constraint(equalTo: scrollView.heightAnchor),
-      
+
       pageIndicator.topAnchor.constraint(equalTo: scrollView.bottomAnchor),
       pageIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
       pageIndicator.bottomAnchor.constraint(equalTo: bottomAnchor),
@@ -108,7 +107,7 @@ private extension OnboardingView {
     
     pageIndicator.hidesForSinglePage = true
     pageIndicator.currentPageIndicatorTintColor = RandomColor.primaryGray
-    pageIndicator.pageIndicatorTintColor = RandomColor.tertiaryGray
+    pageIndicator.pageIndicatorTintColor = UIColor(hexString: ColorToken.secondaryGray.rawValue)
     pageIndicator.addTarget(self,
                             action: #selector(pageIndicatorAction),
                             for: .valueChanged)

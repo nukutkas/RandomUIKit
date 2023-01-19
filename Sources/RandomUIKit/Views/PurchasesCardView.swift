@@ -22,7 +22,7 @@ public final class PurchasesCardView: UIView {
   
   // MARK: - Private property
   
-  private let containerView = UIView()
+  private let containerView = GradientView()
   private let headerTitleLabel = UILabel()
   private let titleLabel = UILabel()
   private let descriptionLabel = UILabel()
@@ -86,10 +86,13 @@ public final class PurchasesCardView: UIView {
     headerTitleLabel.isHidden = !isSelected
     
     if isSelected {
-      layer.borderColor = RandomColor.primaryGray.cgColor
+      layer.borderColor = UIColor(hexString: ColorToken.secondaryGray.rawValue).cgColor
       layer.borderWidth = appearance.borderWidth
       
-      containerView.backgroundColor = RandomColor.primaryGray
+      containerView.applyGradient(colors:  [
+        UIColor(hexString: ColorToken.primaryGray.rawValue),
+        UIColor(hexString: ColorToken.secondaryGray.rawValue)
+      ])
       
       applyGradient(colors: [RandomColor.primaryGreen,
                              RandomColor.secondaryGreen])
@@ -98,15 +101,18 @@ public final class PurchasesCardView: UIView {
       descriptionLabel.textColor = RandomColor.primaryWhite
       amountLabel.textColor = RandomColor.primaryWhite
     } else {
-      containerView.backgroundColor = .clear
+      containerView.applyGradient(colors:  [
+        RandomColor.primaryWhite,
+        RandomColor.primaryWhite
+      ])
       layer.borderWidth = .zero
       
       applyGradient(colors: [RandomColor.primaryWhite,
                              RandomColor.primaryWhite])
       
-      titleLabel.textColor = RandomColor.secondaryGray
-      descriptionLabel.textColor = RandomColor.secondaryGray
-      amountLabel.textColor = RandomColor.secondaryGray
+      titleLabel.textColor = UIColor(hexString: ColorToken.secondaryGray.rawValue)
+      descriptionLabel.textColor = UIColor(hexString: ColorToken.secondaryGray.rawValue)
+      amountLabel.textColor = UIColor(hexString: ColorToken.secondaryGray.rawValue)
     }
   }
 }
@@ -161,7 +167,7 @@ private extension PurchasesCardView {
     
     headerTitleLabel.textAlignment = .center
     headerTitleLabel.font = RandomFont.primaryBold12
-    headerTitleLabel.textColor = RandomColor.primaryWhite
+    headerTitleLabel.textColor = UIColor(hexString: ColorToken.primaryWhite.rawValue)
     headerTitleLabel.numberOfLines = 1
     
     titleLabel.textAlignment = .center
