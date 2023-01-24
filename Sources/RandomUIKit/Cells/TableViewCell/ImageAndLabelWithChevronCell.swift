@@ -1,24 +1,26 @@
 //
-//  LabelAndChevronCell.swift
+//  ImageAndLabelWithChevronCell.swift
+//  RandomUIKitExample
 //
-//  Created by Tatiana Sosina on 22.05.2022.
+//  Created by Vitalii Sosin on 24.01.2023.
 //
 
 import UIKit
 
-// MARK: - LabelAndChevronCell
+// MARK: - ImageAndLabelWithChevronCell
 
-public final class LabelAndChevronCell: UITableViewCell {
+public final class ImageAndLabelWithChevronCell: UITableViewCell {
   
   // MARK: - Public property
   
   /// Identifier для ячейки
-  public static let reuseIdentifier = LabelAndChevronCell.description()
+  public static let reuseIdentifier = ImageAndLabelWithChevronCell.description()
   
   // MARK: - Private property
   
   private let titleLable = UILabel()
   private let chevronImageView = UIImageView()
+  private let leftSideImageView = UIImageView()
   private let impactFeedback = UIImpactFeedbackGenerator(style: .light)
   
   // MARK: - Initilisation
@@ -62,11 +64,20 @@ public final class LabelAndChevronCell: UITableViewCell {
   
   /// Настраиваем ячейку
   /// - Parameters:
+  ///  - leftSideImage: Картинка слева
+  ///  - leftSideImageColor: Цвет картинки слева
   ///  - titleText: Заголовок
-  public func configureCellWith(titleText: String?) {
+  ///  - isChevron: Шеврон включен
+  public func configureCellWith(leftSideImage: UIImage?,
+                                leftSideImageColor: UIColor?,
+                                titleText: String?,
+                                isChevron: Bool) {
     titleLable.text = titleText
+    chevronImageView.isHidden = !isChevron
     chevronImageView.image = Appearance().chevronRight
     chevronImageView.setImageColor(color: RandomColor.primaryGray)
+    leftSideImageView.image = leftSideImage
+    leftSideImageView.setImageColor(color: leftSideImageColor ?? RandomColor.primaryGray)
   }
   
   // MARK: - Private func
@@ -74,7 +85,7 @@ public final class LabelAndChevronCell: UITableViewCell {
   private func configureLayout() {
     let appearance = Appearance()
     
-    [titleLable, chevronImageView].forEach {
+    [titleLable, chevronImageView, leftSideImageView].forEach {
       $0.translatesAutoresizingMaskIntoConstraints = false
       contentView.addSubview($0)
     }
@@ -82,18 +93,24 @@ public final class LabelAndChevronCell: UITableViewCell {
     NSLayoutConstraint.activate([
       chevronImageView.widthAnchor.constraint(equalToConstant: appearance.imageSize),
       chevronImageView.heightAnchor.constraint(equalToConstant: appearance.imageSize),
+      leftSideImageView.widthAnchor.constraint(equalToConstant: appearance.imageSize),
+      leftSideImageView.heightAnchor.constraint(equalToConstant: appearance.imageSize),
       
-      titleLable.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
+      leftSideImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
+                                                 constant: appearance.insets.left),
+      leftSideImageView.topAnchor.constraint(equalTo: contentView.topAnchor,
+                                             constant: appearance.insets.top),
+      leftSideImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,
+                                                constant: -appearance.insets.bottom),
+      
+      titleLable.leadingAnchor.constraint(equalTo: leftSideImageView.trailingAnchor,
                                           constant: appearance.insets.left),
       titleLable.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
       
       chevronImageView.leadingAnchor.constraint(equalTo: titleLable.trailingAnchor),
       chevronImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
                                                  constant: -appearance.insets.right),
-      chevronImageView.topAnchor.constraint(equalTo: contentView.topAnchor,
-                                            constant: appearance.insets.top),
-      chevronImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,
-                                               constant: -appearance.insets.bottom),
+      chevronImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
     ])
   }
   
@@ -111,7 +128,7 @@ public final class LabelAndChevronCell: UITableViewCell {
 
 // MARK: - Appearance
 
-private extension LabelAndChevronCell {
+private extension ImageAndLabelWithChevronCell {
   struct Appearance {
     let insets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
     let imageSize: CGFloat = 24

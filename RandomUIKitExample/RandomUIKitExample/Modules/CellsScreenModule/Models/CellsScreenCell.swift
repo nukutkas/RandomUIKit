@@ -13,18 +13,6 @@ import RandomUIKit
 enum CellsScreenCell: String {
   
   // MARK: - Cases
-
-  /// Ячейка с текстом и переключателем
-  case labelAndSwitchCell
-
-  /// Ячейка с двумя заголовками
-  case doubleTitleCell
-
-  /// Ячейка с текстом и иконкой
-  case labelAndChevronCell
-
-  /// Ячейка со SquircleView
-  case squircleViewCell
   
   /// Основная карточка на главном экране
   case mainCardTableViewCell
@@ -77,6 +65,36 @@ enum CellsScreenCell: String {
   /// Ячейка рфзделителя
   case divider
   
+  /// Ячейка с текстом и переключателем
+  case labelAndSwitchCell
+  
+  /// Ячейка с двумя заголовками
+  case doubleTitleCell
+  
+  /// Ячейка с текстом и иконкой
+  case labelAndChevronCell
+  
+  /// Ячейка с изображением, текстом и шевроном
+  case imageAndLabelWithChevronCell
+  
+  /// Ячейка с изображением, текстом и переключателем
+  case imageAndLabelWithSwitchCell
+  
+  /// Ячейка с изображением и двумя текстами
+  case imageAndDoubleTitleCell
+  
+  /// Ячейка с squircle, текстом и переключателем
+  case squircleImageAndLabelWithSwitchCell
+  
+  /// Ячейка с squircle, текстом и шевроном
+  case squircleImageAndLabelWithChevronCell
+  
+  /// Ячейка с squircle и двумя текстами
+  case squircleImageAndDoubleTitleCell
+  
+  /// Ячейка со SquircleView
+  case squircleViewCell
+  
   var reuseIdentifier: String {
     return cellClass.description()
   }
@@ -125,6 +143,18 @@ enum CellsScreenCell: String {
       return HeaderTitleAndSubtitleViewCell.self
     case .squircleViewCell:
       return SquircleViewCell.self
+    case .imageAndLabelWithChevronCell:
+      return ImageAndLabelWithChevronCell.self
+    case .imageAndLabelWithSwitchCell:
+      return ImageAndLabelWithSwitchCell.self
+    case .imageAndDoubleTitleCell:
+      return ImageAndDoubleTitleCell.self
+    case .squircleImageAndLabelWithSwitchCell:
+      return SquircleImageAndLabelWithSwitchCell.self
+    case .squircleImageAndLabelWithChevronCell:
+      return SquircleImageAndLabelWithChevronCell.self
+    case .squircleImageAndDoubleTitleCell:
+      return SquircleImageAndDoubleTitleCell.self
     }
   }
   
@@ -172,6 +202,18 @@ enum CellsScreenCell: String {
       return CellsScreenDataSource.makeForHeaderTitleAndSubtitleViewCell()
     case .squircleViewCell:
       return CellsScreenDataSource.makeForSquircleViewCell()
+    case .imageAndLabelWithChevronCell:
+      return CellsScreenDataSource.makeForImageAndLabelWithChevronCell()
+    case .imageAndLabelWithSwitchCell:
+      return CellsScreenDataSource.makeForImageAndLabelWithSwitchCell()
+    case .imageAndDoubleTitleCell:
+      return CellsScreenDataSource.makeForImageAndDoubleTitleCell()
+    case .squircleImageAndLabelWithSwitchCell:
+      return CellsScreenDataSource.makeForSquircleImageAndLabelWithSwitchCell()
+    case .squircleImageAndLabelWithChevronCell:
+      return CellsScreenDataSource.makeForSquircleImageAndLabelWithChevronCell()
+    case .squircleImageAndDoubleTitleCell:
+      return CellsScreenDataSource.makeForSquircleImageAndDoubleTitleCell()
     }
   }
 }
