@@ -13,6 +13,18 @@ import RandomUIKit
 enum CellsScreenCell: String {
   
   // MARK: - Cases
+
+  /// Ячейка с текстом и переключателем
+  case labelAndSwitchCell
+
+  /// Ячейка с двумя заголовками
+  case doubleTitleCell
+
+  /// Ячейка с текстом и иконкой
+  case labelAndChevronCell
+
+  /// Ячейка со SquircleView
+  case squircleViewCell
   
   /// Основная карточка на главном экране
   case mainCardTableViewCell
@@ -41,15 +53,6 @@ enum CellsScreenCell: String {
   /// Список элементов в формате `String`
   case scrollLabelGradientView
   
-  /// Ячейка с текстом и переключателем
-  case labelAndSwitchCell
-  
-  /// Ячейка с двумя заголовками
-  case doubleTitleCell
-  
-  /// Ячейка с текстом и иконкой
-  case labelAndImageCell
-  
   /// Ячейка с маленькой кнопкой
   case smallButtonCell
   
@@ -58,10 +61,6 @@ enum CellsScreenCell: String {
   
   /// Ячейка с настраиваемой высотой
   case customPaddingCell
-  
-  /// Ячейка с текстом, переключателем и
-  /// список элементов в формате `Segmented`
-  case labelAndSwitchWithSegmentedCell
   
   /// Вью и ячейка для коллекции с игроком
   case playerViewAndCell
@@ -98,16 +97,14 @@ enum CellsScreenCell: String {
       return LabelAndSwitchCell.self
     case .doubleTitleCell:
       return DoubleTitleCell.self
-    case .labelAndImageCell:
-      return LabelAndImageCell.self
+    case .labelAndChevronCell:
+      return LabelAndChevronCell.self
     case .smallButtonCell:
       return SmallButtonCell.self
     case .customTextCell:
       return CustomTextCell.self
     case .customPaddingCell:
       return CustomPaddingCell.self
-    case .labelAndSwitchWithSegmentedCell:
-      return LabelAndSwitchWithSegmentedCell.self
     case .playerViewAndCell:
       return PlayerTableViewCell.self
     case .playerInfoCell:
@@ -126,6 +123,8 @@ enum CellsScreenCell: String {
       return OnboardingViewCell.self
     case .headerTitleAndSubtitleViewCell:
       return HeaderTitleAndSubtitleViewCell.self
+    case .squircleViewCell:
+      return SquircleViewCell.self
     }
   }
   
@@ -145,7 +144,7 @@ enum CellsScreenCell: String {
       return CellsScreenDataSource.makeForLabelAndSwitch()
     case .doubleTitleCell:
       return CellsScreenDataSource.makeForDoubleTitle()
-    case .labelAndImageCell:
+    case .labelAndChevronCell:
       return CellsScreenDataSource.makeForLabelAndImage()
     case .smallButtonCell:
       return CellsScreenDataSource.makeForSmallButton()
@@ -153,8 +152,6 @@ enum CellsScreenCell: String {
       return CellsScreenDataSource.makeForCustomText()
     case .customPaddingCell:
       return CellsScreenDataSource.makeForCustomPadding()
-    case .labelAndSwitchWithSegmentedCell:
-      return CellsScreenDataSource.makeForLabelAndSwitchWithSegmented()
     case .playerViewAndCell:
       return CellsScreenDataSource.makeForPlayer()
     case .playerInfoCell:
@@ -173,6 +170,8 @@ enum CellsScreenCell: String {
       return CellsScreenDataSource.makeForOnboardingViewCellModel()
     case .headerTitleAndSubtitleViewCell:
       return CellsScreenDataSource.makeForHeaderTitleAndSubtitleViewCell()
+    case .squircleViewCell:
+      return CellsScreenDataSource.makeForSquircleViewCell()
     }
   }
 }

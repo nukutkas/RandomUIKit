@@ -1,5 +1,5 @@
 //
-//  LabelAndImageCell.swift
+//  LabelAndChevronCell.swift
 //
 //  Created by Tatiana Sosina on 22.05.2022.
 //
@@ -8,12 +8,12 @@ import UIKit
 
 // MARK: - LabelAndImageCell
 
-public final class LabelAndImageCell: UITableViewCell {
+public final class LabelAndChevronCell: UITableViewCell {
   
   // MARK: - Public property
   
   /// Identifier для ячейки
-  public static let reuseIdentifier = LabelAndImageCell.description()
+  public static let reuseIdentifier = LabelAndChevronCell.description()
   
   // MARK: - Private property
   
@@ -63,19 +63,10 @@ public final class LabelAndImageCell: UITableViewCell {
   /// Настраиваем ячейку
   /// - Parameters:
   ///  - titleText: Заголовок
-  ///  - imageAside: Иконка справого края
-  ///  - imageColor: Цвет иконки
-  public func configureCellWith(titleText: String?,
-                                imageAside: UIImage? = nil,
-                                imageColor: UIColor = RandomColor.primaryGray) {
+  public func configureCellWith(titleText: String?) {
     titleLable.text = titleText
-    
-    if let imageAside = imageAside {
-      imageAsideView.image = imageAside
-    } else {
-      imageAsideView.image = Appearance().chevronRight
-    }
-    imageAsideView.setImageColor(color: imageColor)
+    imageAsideView.image = Appearance().chevronRight
+    imageAsideView.setImageColor(color: RandomColor.primaryGray)
   }
   
   // MARK: - Private func
@@ -119,7 +110,7 @@ public final class LabelAndImageCell: UITableViewCell {
 
 // MARK: - Appearance
 
-private extension LabelAndImageCell {
+private extension LabelAndChevronCell {
   struct Appearance {
     let insets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
     let imageAsideSize = CGSize(width: 24, height: 24)
