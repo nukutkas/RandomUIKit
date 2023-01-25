@@ -1,5 +1,5 @@
 //
-//  SquircleImageAndLabelWithChevronCell.swift
+//  LargeImageAndLabelWithCheakmarkCell.swift
 //  RandomUIKitExample
 //
 //  Created by Vitalii Sosin on 25.01.2023.
@@ -7,22 +7,24 @@
 
 import UIKit
 
-// MARK: - SquircleImageAndLabelWithChevronCell
+// MARK: - LargeImageAndLabelWithCheakmarkCell
 
-public final class SquircleImageAndLabelWithChevronCell: UITableViewCell {
+public final class LargeImageAndLabelWithCheakmarkCell: UITableViewCell {
   
   // MARK: - Public property
   
   /// Identifier для ячейки
-  public static let reuseIdentifier = SquircleImageAndLabelWithChevronCell.description()
+  public static let reuseIdentifier = LargeImageAndLabelWithCheakmarkCell.description()
   
   // MARK: - Private property
   
   private let titleLable = UILabel()
-  private let chevronImageView = UIImageView()
+  private let checkmarkImageView = UIImageView()
   private let leftSideImageView = UIImageView()
   private let leftSideSquircleView = SquircleView()
   private let impactFeedback = UIImpactFeedbackGenerator(style: .light)
+  private var action: ((_ isCheckmark: Bool) -> Void)?
+  private let lockLabelView = UILabel()
   
   // MARK: - Initilisation
   
@@ -37,11 +39,6 @@ public final class SquircleImageAndLabelWithChevronCell: UITableViewCell {
     fatalError()
   }
   
-  public override func prepareForReuse() {
-    super.prepareForReuse()
-    layer.cornerRadius = .zero
-  }
-  
   // MARK: - Public func
   
   public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -54,6 +51,7 @@ public final class SquircleImageAndLabelWithChevronCell: UITableViewCell {
     super.touchesEnded(touches, with: event)
     backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
     contentView.backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
+    action?(!checkmarkImageView.isHidden)
     impactFeedback.impactOccurred()
   }
   
@@ -63,28 +61,35 @@ public final class SquircleImageAndLabelWithChevronCell: UITableViewCell {
     contentView.backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
   }
   
+  /// Установить галочку справа
+  public func setIsCheckmark(_ isCheckmark: Bool) {
+    checkmarkImageView.isHidden = !isCheckmark
+  }
+  
+  /// Установить замочек на иконке
+  public func setIsLocked(_ isLocked: Bool) {
+    lockLabelView.isHidden = !isLocked
+  }
+  
   /// Настраиваем ячейку
   /// - Parameters:
-  ///  - squircleBGColors: Squircle цвет фона
-  ///  - squircleBGAlpha: Squircle прозрачность
   ///  - leftSideImage: Картинка слева
-  ///  - leftSideImageColor: Цвет картинки слева
   ///  - titleText: Заголовок
-  ///  - isChevron: Шеврон включен
-  public func configureCellWith(squircleBGColors: [UIColor],
-                                squircleBGAlpha: CGFloat = 1,
-                                leftSideImage: UIImage?,
-                                leftSideImageColor: UIColor?,
+  ///  - setIsCheckmark: Установить галочку справа
+  ///  - setIsLocked: Установить замочек на иконке
+  ///  - action: Действие при нажатии
+  public func configureCellWith(leftSideImage: UIImage?,
                                 titleText: String?,
-                                isChevron: Bool) {
+                                setIsCheckmark: Bool,
+                                setIsLocked: Bool,
+                                action: ((_ isCheckmark: Bool) -> Void)?) {
+    self.action = action
     titleLable.text = titleText
-    chevronImageView.isHidden = !isChevron
-    chevronImageView.image = Appearance().chevronRight
-    chevronImageView.setImageColor(color: RandomColor.only.primaryBlue)
+    checkmarkImageView.isHidden = !setIsCheckmark
+    lockLabelView.isHidden = !setIsLocked
+    checkmarkImageView.image = Appearance().checkmarkImage
+    checkmarkImageView.setImageColor(color: RandomColor.only.primaryBlue)
     leftSideImageView.image = leftSideImage
-    leftSideImageView.setImageColor(color: leftSideImageColor ?? RandomColor.darkAndLightTheme.primaryGray)
-    leftSideSquircleView.applyGradient(colors: squircleBGColors,
-                                       alpha: squircleBGAlpha)
   }
   
   // MARK: - Private func
@@ -96,7 +101,7 @@ public final class SquircleImageAndLabelWithChevronCell: UITableViewCell {
       leftSideSquircleView.addSubview($0)
     }
     
-    [titleLable, chevronImageView, leftSideSquircleView].forEach {
+    [titleLable, checkmarkImageView, leftSideSquircleView, lockLabelView].forEach {
       $0.translatesAutoresizingMaskIntoConstraints = false
       contentView.addSubview($0)
     }
@@ -112,23 +117,24 @@ public final class SquircleImageAndLabelWithChevronCell: UITableViewCell {
       leftSideSquircleView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,
                                                    constant: -appearance.insets.bottom),
       
-      leftSideImageView.leadingAnchor.constraint(equalTo: leftSideSquircleView.leadingAnchor,
-                                                 constant: appearance.minInset),
-      leftSideImageView.topAnchor.constraint(equalTo: leftSideSquircleView.topAnchor,
-                                             constant: appearance.minInset),
-      leftSideImageView.trailingAnchor.constraint(equalTo: leftSideSquircleView.trailingAnchor,
-                                                  constant: -appearance.minInset),
-      leftSideImageView.bottomAnchor.constraint(equalTo: leftSideSquircleView.bottomAnchor,
-                                                constant: -appearance.minInset),
+      leftSideImageView.leadingAnchor.constraint(equalTo: leftSideSquircleView.leadingAnchor),
+      leftSideImageView.topAnchor.constraint(equalTo: leftSideSquircleView.topAnchor),
+      leftSideImageView.trailingAnchor.constraint(equalTo: leftSideSquircleView.trailingAnchor),
+      leftSideImageView.bottomAnchor.constraint(equalTo: leftSideSquircleView.bottomAnchor),
+      
+      lockLabelView.trailingAnchor.constraint(equalTo: leftSideSquircleView.trailingAnchor,
+                                              constant: appearance.midInset),
+      lockLabelView.topAnchor.constraint(equalTo: leftSideSquircleView.topAnchor,
+                                         constant: -appearance.minInset),
       
       titleLable.leadingAnchor.constraint(equalTo: leftSideSquircleView.trailingAnchor,
                                           constant: appearance.insets.left),
       titleLable.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
       
-      chevronImageView.leadingAnchor.constraint(equalTo: titleLable.trailingAnchor),
-      chevronImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
-                                                 constant: -appearance.insets.right),
-      chevronImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+      checkmarkImageView.leadingAnchor.constraint(equalTo: titleLable.trailingAnchor),
+      checkmarkImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
+                                                   constant: -appearance.insets.right),
+      checkmarkImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
     ])
   }
   
@@ -137,20 +143,25 @@ public final class SquircleImageAndLabelWithChevronCell: UITableViewCell {
     contentView.backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
     selectionStyle = .none
     
-    chevronImageView.contentMode = .right
+    checkmarkImageView.contentMode = .right
     
-    titleLable.font = RandomFont.primaryRegular18
+    titleLable.font = RandomFont.primaryRegular16
     titleLable.textColor = RandomColor.darkAndLightTheme.primaryGray
+    leftSideSquircleView.clipsToBounds = true
+    
+    lockLabelView.text = "🔒"
   }
 }
 
 // MARK: - Appearance
 
-private extension SquircleImageAndLabelWithChevronCell {
+private extension LargeImageAndLabelWithCheakmarkCell {
   struct Appearance {
-    let minInset: CGFloat = 3
+    let minInset: CGFloat = 8
+    let midInset: CGFloat = 12
     let insets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
-    let imageSize: CGFloat = 32
-    let chevronRight = UIImage(named: "chevron_right", in: .module, compatibleWith: nil)
+    let imageSize: CGFloat = 56
+    let checkmarkImage = UIImage(systemName: "checkmark",
+                                 withConfiguration: UIImage.SymbolConfiguration(scale: .large))
   }
 }

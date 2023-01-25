@@ -95,6 +95,9 @@ enum CellsScreenCell: String {
   /// Ячейка со SquircleView
   case squircleViewCell
   
+  /// Ячейка с большим изображением, текстом и галочкой справа
+  case largeImageAndLabelWithCheakmarkCell
+  
   var reuseIdentifier: String {
     return cellClass.description()
   }
@@ -155,6 +158,8 @@ enum CellsScreenCell: String {
       return SquircleImageAndLabelWithChevronCell.self
     case .squircleImageAndDoubleTitleCell:
       return SquircleImageAndDoubleTitleCell.self
+    case .largeImageAndLabelWithCheakmarkCell:
+      return LargeImageAndLabelWithCheakmarkCell.self
     }
   }
   
@@ -214,6 +219,8 @@ enum CellsScreenCell: String {
       return CellsScreenDataSource.makeForSquircleImageAndLabelWithChevronCell()
     case .squircleImageAndDoubleTitleCell:
       return CellsScreenDataSource.makeForSquircleImageAndDoubleTitleCell()
+    case .largeImageAndLabelWithCheakmarkCell:
+      return CellsScreenDataSource.makeForLargeImageAndLabelWithCheakmarkCell()
     }
   }
 }

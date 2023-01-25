@@ -75,7 +75,7 @@ public final class ImageAndLabelWithChevronCell: UITableViewCell {
     titleLable.text = titleText
     chevronImageView.isHidden = !isChevron
     chevronImageView.image = Appearance().chevronRight
-    chevronImageView.setImageColor(color: RandomColor.darkAndLightTheme.primaryGray)
+    chevronImageView.setImageColor(color: RandomColor.only.primaryBlue)
     leftSideImageView.image = leftSideImage
     leftSideImageView.setImageColor(color: leftSideImageColor ?? RandomColor.darkAndLightTheme.primaryGray)
   }
@@ -91,8 +91,6 @@ public final class ImageAndLabelWithChevronCell: UITableViewCell {
     }
     
     NSLayoutConstraint.activate([
-      chevronImageView.widthAnchor.constraint(equalToConstant: appearance.imageSize),
-      chevronImageView.heightAnchor.constraint(equalToConstant: appearance.imageSize),
       leftSideImageView.widthAnchor.constraint(equalToConstant: appearance.imageSize),
       leftSideImageView.heightAnchor.constraint(equalToConstant: appearance.imageSize),
       

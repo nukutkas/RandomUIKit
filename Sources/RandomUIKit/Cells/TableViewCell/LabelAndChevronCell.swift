@@ -66,7 +66,7 @@ public final class LabelAndChevronCell: UITableViewCell {
   public func configureCellWith(titleText: String?) {
     titleLable.text = titleText
     chevronImageView.image = Appearance().chevronRight
-    chevronImageView.setImageColor(color: RandomColor.darkAndLightTheme.primaryGray)
+    chevronImageView.setImageColor(color: RandomColor.only.primaryBlue)
   }
   
   // MARK: - Private func
@@ -80,9 +80,6 @@ public final class LabelAndChevronCell: UITableViewCell {
     }
     
     NSLayoutConstraint.activate([
-      chevronImageView.widthAnchor.constraint(equalToConstant: appearance.imageSize),
-      chevronImageView.heightAnchor.constraint(equalToConstant: appearance.imageSize),
-      
       titleLable.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
                                           constant: appearance.insets.left),
       titleLable.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
