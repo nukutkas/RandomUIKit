@@ -7,8 +7,8 @@
 
 import UIKit
 
-extension UIColor {
-  public convenience init(hexString: String) {
+public extension UIColor {
+  convenience init(hexString: String) {
     var r: CGFloat = .zero
     var g: CGFloat = .zero
     var b: CGFloat = .zero

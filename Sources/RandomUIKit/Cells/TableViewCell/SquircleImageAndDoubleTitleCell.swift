@@ -142,7 +142,7 @@ public final class SquircleImageAndDoubleTitleCell: UITableViewCell {
 
 private extension SquircleImageAndDoubleTitleCell {
   struct Appearance {
-    let minInset: CGFloat = 2
+    let minInset: CGFloat = 3
     let insets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
     let imageSize: CGFloat = 32
   }

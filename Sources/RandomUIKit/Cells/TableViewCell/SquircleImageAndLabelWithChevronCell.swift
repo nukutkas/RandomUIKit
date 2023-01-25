@@ -150,7 +150,7 @@ public final class SquircleImageAndLabelWithChevronCell: UITableViewCell {
 
 private extension SquircleImageAndLabelWithChevronCell {
   struct Appearance {
-    let minInset: CGFloat = 2
+    let minInset: CGFloat = 3
     let insets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
     let imageSize: CGFloat = 32
     let chevronRight = UIImage(named: "chevron_right", in: .module, compatibleWith: nil)

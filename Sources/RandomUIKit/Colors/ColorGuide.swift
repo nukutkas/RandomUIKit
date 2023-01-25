@@ -24,8 +24,11 @@ public struct ColorGuide {
     /// Темно-серый цвет
     public let primaryGray = UIColor(hexString: ColorToken.primaryGray.hexString)
     
-    /// Светло-серый цвет
+    /// Cерый цвет
     public let secondaryGray = UIColor(hexString: ColorToken.secondaryGray.hexString)
+    
+    /// Светло-серый цвет
+    public let lightGray = UIColor(hexString: ColorToken.lightGray.hexString)
     
     /// Очень светло-серый цвет
     public let tertiaryGray = UIColor(hexString: ColorToken.tertiaryGray.hexString)
@@ -42,11 +45,26 @@ public struct ColorGuide {
     /// Основной синий цвет
     public let primaryBlue = UIColor(hexString: ColorToken.primaryBlue.hexString)
     
+    /// Светло-синий цвет
+    public let secondaryBlue = UIColor(hexString: ColorToken.secondaryBlue.hexString)
+    
+    /// Светло-синий цвет
+    public let tertiaryBlue = UIColor(hexString: ColorToken.tertiaryBlue.hexString)
+    
     /// Ярко-красный цвет
     public let primaryRed = UIColor(hexString: ColorToken.primaryRed.hexString)
     
     /// Основной розовый цвет
     public let primaryPink = UIColor(hexString: ColorToken.primaryPink.hexString)
+    
+    /// Основной оранжевый
+    public let primaryOrange = UIColor(hexString: ColorToken.primaryOrange.hexString)
+    
+    /// Основной Желтый
+    public let primaryYellow = UIColor(hexString: ColorToken.primaryYellow.hexString)
+    
+    /// Основной фиолетовый
+    public let primaryPurple = UIColor(hexString: ColorToken.primaryPurple.hexString)
     
     /// Светло-белый цвет
     public let primaryWhite = UIColor(hexString: ColorToken.primaryWhite.hexString)

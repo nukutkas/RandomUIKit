@@ -47,7 +47,7 @@ public final class ImageAndLabelWithSwitchCell: UITableViewCell {
   ///  - titleText: Заголовок у ячейки
   ///  - isResultSwitch: Значение у переключателя
   public func configureCellWith(leftSideImage: UIImage?,
-                                leftSideImageColor: UIColor?,
+                                leftSideImageColor: UIColor? = RandomColor.darkAndLightTheme.primaryGray,
                                 titleText: String?,
                                 isResultSwitch: Bool) {
     titleLabel.text = titleText
