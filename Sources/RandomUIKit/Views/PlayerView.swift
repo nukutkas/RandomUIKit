@@ -26,9 +26,9 @@ public final class PlayerView: UIView {
     var backgroundColor: UIColor? {
       switch self {
       case .selected:
-        return RandomColor.tertiaryGreen
+        return RandomColor.darkAndLightTheme.tertiaryGreen
       case .defaultStyle:
-        return RandomColor.secondaryWhite
+        return RandomColor.darkAndLightTheme.secondaryWhite
       case .customStyle(let color):
         return color
       }
@@ -114,7 +114,7 @@ public final class PlayerView: UIView {
   ///  - cardAction: Действие по нажатию на карточку
   public func configureWith(avatar: UIImage?,
                             name: String?,
-                            nameTextColor: UIColor = RandomColor.primaryGray,
+                            nameTextColor: UIColor = RandomColor.darkAndLightTheme.primaryGray,
                             styleCard: StyleCard,
                             styleEmoji: StyleEmoji = .none,
                             isBorder: Bool,
@@ -134,12 +134,12 @@ public final class PlayerView: UIView {
     }
     
     if isBorder {
-      layer.borderColor = RandomColor.primaryGray.cgColor
+      layer.borderColor = RandomColor.darkAndLightTheme.primaryGray.cgColor
       layer.borderWidth = Appearance().borderWidth
     }
     
     if isShadow {
-      layer.shadowColor = RandomColor.primaryGray.cgColor
+      layer.shadowColor = RandomColor.darkAndLightTheme.primaryGray.cgColor
       layer.shadowRadius = appearance.shadowRadius
       layer.shadowOpacity = appearance.shadowOpacity
     }
@@ -185,13 +185,13 @@ public final class PlayerView: UIView {
   
   private func applyDefaultBehavior() {
     let appearance = Appearance()
-    backgroundColor = RandomColor.primaryWhite
+    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
     layer.cornerRadius = appearance.cornerRadius
     
     emojiLabel.font = RandomFont.primaryMedium18
     
     nameLabel.font = RandomFont.primaryBold10
-    nameLabel.textColor = RandomColor.primaryGray
+    nameLabel.textColor = RandomColor.darkAndLightTheme.primaryGray
     nameLabel.numberOfLines = appearance.numberOfLines
     nameLabel.textAlignment = .center
     

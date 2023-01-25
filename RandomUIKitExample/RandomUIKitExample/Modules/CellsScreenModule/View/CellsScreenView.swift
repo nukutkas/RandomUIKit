@@ -88,8 +88,8 @@ final class CellsScreenView: CellsScreenViewProtocol {
   
   private func applyDefaultBehavior() {
     let appearance = Appearance()
-    backgroundColor = RandomColor.primaryWhite
-    tableView.backgroundColor = RandomColor.primaryWhite
+    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
+    tableView.backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
     
     tableView.contentInset = appearance.tableViewInsets
     tableView.delegate = self

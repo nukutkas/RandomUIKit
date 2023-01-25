@@ -29,8 +29,8 @@ extension CellsScreenDataSource where Model == LabelGradientModel {
       LabelGradientModel(
         titleADVText: "23",
         gradientDVLabel: [
-          RandomColor.primaryRed,
-          RandomColor.secondaryRed
+          RandomColor.only.primaryRed,
+          RandomColor.only.primaryPink
         ],
         font: nil,
         textColor: nil,
@@ -41,8 +41,8 @@ extension CellsScreenDataSource where Model == LabelGradientModel {
       LabelGradientModel(
         titleADVText: "ХИТ",
         gradientDVLabel: [
-          RandomColor.primaryGreen,
-          RandomColor.secondaryGreen
+          RandomColor.only.primaryGreen,
+          RandomColor.only.secondaryGreen
         ],
         font: nil,
         textColor: nil,
@@ -53,13 +53,13 @@ extension CellsScreenDataSource where Model == LabelGradientModel {
       LabelGradientModel(
         titleADVText: "10.0",
         gradientDVLabel: [
-          RandomColor.primaryBlue,
-          RandomColor.primaryBlack
+          RandomColor.only.primaryBlue,
+          RandomColor.darkAndLightTheme.primaryBlack
         ],
         font: RandomFont.primaryBold50,
-        textColor: RandomColor.primaryRed,
+        textColor: RandomColor.only.primaryRed,
         borderWidth: 2,
-        borderColor: RandomColor.primaryRed,
+        borderColor: RandomColor.only.primaryRed,
         titleCell: "LabelGradientView"
       )
     ]

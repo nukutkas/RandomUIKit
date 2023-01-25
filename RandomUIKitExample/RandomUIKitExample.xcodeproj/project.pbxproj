@@ -26,14 +26,12 @@
 		1B046130281F3E5E001141B4 /* ColorsScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B04612B281F3E5E001141B4 /* ColorsScreenInteractor.swift */; };
 		1B046131281F3E5E001141B4 /* ColorsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B04612C281F3E5E001141B4 /* ColorsScreenView.swift */; };
 		1B046139281F3EDD001141B4 /* ColorsScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046138281F3EDD001141B4 /* ColorsScreenCoordinator.swift */; };
-		1B04613C281F40B9001141B4 /* ColorsScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B04613B281F40B9001141B4 /* ColorsScreenCell.swift */; };
 		1B04613E281F42D0001141B4 /* ColorsScreenViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B04613D281F42D0001141B4 /* ColorsScreenViewCell.swift */; };
 		1B046145281F494A001141B4 /* FontsScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046140281F494A001141B4 /* FontsScreenFactory.swift */; };
 		1B046146281F494A001141B4 /* FontsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046141281F494A001141B4 /* FontsScreenViewController.swift */; };
 		1B046147281F494A001141B4 /* FontsScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046142281F494A001141B4 /* FontsScreenAssembly.swift */; };
 		1B046148281F494A001141B4 /* FontsScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046143281F494A001141B4 /* FontsScreenInteractor.swift */; };
 		1B046149281F494A001141B4 /* FontsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046144281F494A001141B4 /* FontsScreenView.swift */; };
-		1B046151281F49A4001141B4 /* FontsScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046150281F49A4001141B4 /* FontsScreenCell.swift */; };
 		1B046154281F4A77001141B4 /* FontsScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046153281F4A77001141B4 /* FontsScreenCoordinator.swift */; };
 		1B046156281F4CFB001141B4 /* FontsScreenViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046155281F4CFB001141B4 /* FontsScreenViewCell.swift */; };
 		1B04615D281F51C5001141B4 /* CellsScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B046158281F51C5001141B4 /* CellsScreenFactory.swift */; };
@@ -103,14 +101,12 @@
 		1B04612B281F3E5E001141B4 /* ColorsScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsScreenInteractor.swift; sourceTree = "<group>"; };
 		1B04612C281F3E5E001141B4 /* ColorsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsScreenView.swift; sourceTree = "<group>"; };
 		1B046138281F3EDD001141B4 /* ColorsScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsScreenCoordinator.swift; sourceTree = "<group>"; };
-		1B04613B281F40B9001141B4 /* ColorsScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsScreenCell.swift; sourceTree = "<group>"; };
 		1B04613D281F42D0001141B4 /* ColorsScreenViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsScreenViewCell.swift; sourceTree = "<group>"; };
 		1B046140281F494A001141B4 /* FontsScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsScreenFactory.swift; sourceTree = "<group>"; };
 		1B046141281F494A001141B4 /* FontsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsScreenViewController.swift; sourceTree = "<group>"; };
 		1B046142281F494A001141B4 /* FontsScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsScreenAssembly.swift; sourceTree = "<group>"; };
 		1B046143281F494A001141B4 /* FontsScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsScreenInteractor.swift; sourceTree = "<group>"; };
 		1B046144281F494A001141B4 /* FontsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsScreenView.swift; sourceTree = "<group>"; };
-		1B046150281F49A4001141B4 /* FontsScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsScreenCell.swift; sourceTree = "<group>"; };
 		1B046153281F4A77001141B4 /* FontsScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsScreenCoordinator.swift; sourceTree = "<group>"; };
 		1B046155281F4CFB001141B4 /* FontsScreenViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsScreenViewCell.swift; sourceTree = "<group>"; };
 		1B046158281F51C5001141B4 /* CellsScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellsScreenFactory.swift; sourceTree = "<group>"; };
@@ -288,7 +284,6 @@
 		1B046127281F3E4A001141B4 /* ColorsScreenModule */ = {
 			isa = PBXGroup;
 			children = (
-				1B04613A281F4065001141B4 /* Models */,
 				1B046136281F3E83001141B4 /* Assembly */,
 				1B046135281F3E7A001141B4 /* Factory */,
 				1B046134281F3E72001141B4 /* Presentor */,
@@ -347,18 +342,9 @@
 			path = ColorsScreenCoordinator;
 			sourceTree = "<group>";
 		};
-		1B04613A281F4065001141B4 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				1B04613B281F40B9001141B4 /* ColorsScreenCell.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		1B04613F281F493A001141B4 /* FontsScreenModule */ = {
 			isa = PBXGroup;
 			children = (
-				1B04614F281F498E001141B4 /* Models */,
 				1B04614E281F496C001141B4 /* Assembly */,
 				1B04614D281F4965001141B4 /* Factory */,
 				1B04614C281F495A001141B4 /* Interactor */,
@@ -407,14 +393,6 @@
 				1B046142281F494A001141B4 /* FontsScreenAssembly.swift */,
 			);
 			path = Assembly;
-			sourceTree = "<group>";
-		};
-		1B04614F281F498E001141B4 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				1B046150281F49A4001141B4 /* FontsScreenCell.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		1B046152281F4A57001141B4 /* FontsScreenCoordinator */ = {
@@ -911,7 +889,6 @@
 				1B046149281F494A001141B4 /* FontsScreenView.swift in Sources */,
 				1BF0614D2974609100DD6C76 /* CellsScreenDataSource+PurchasesCardsCell.swift in Sources */,
 				1B046131281F3E5E001141B4 /* ColorsScreenView.swift in Sources */,
-				1B046151281F49A4001141B4 /* FontsScreenCell.swift in Sources */,
 				6C18DB55283AC5620031CC05 /* CellsScreenDataSource+SmallButtonCell.swift in Sources */,
 				1BF0614C2974609100DD6C76 /* CellsScreenDataSource+LinkTextViewCell.swift in Sources */,
 				1B046147281F494A001141B4 /* FontsScreenAssembly.swift in Sources */,
@@ -921,7 +898,6 @@
 				6C18DB44283AA6630031CC05 /* CellsScreenDataSource+LabelAndSwitchCell.swift in Sources */,
 				1B046161281F51C5001141B4 /* CellsScreenView.swift in Sources */,
 				1B04610D281F0443001141B4 /* MainScreenCoordinator.swift in Sources */,
-				1B04613C281F40B9001141B4 /* ColorsScreenCell.swift in Sources */,
 				1B046106281EE842001141B4 /* MainCardTableViewCell.swift in Sources */,
 				1B046108281EF87B001141B4 /* ComposableTableDataSource.swift in Sources */,
 				1BF061442974605F00DD6C76 /* CellsScreenCell.swift in Sources */,

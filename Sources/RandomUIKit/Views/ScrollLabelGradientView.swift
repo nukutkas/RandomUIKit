@@ -71,7 +71,7 @@ public final class ScrollLabelGradientView: UIView {
   
   private func applyDefaultBehavior() {
     let appearance = Appearance()
-    backgroundColor = RandomColor.primaryWhite
+    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
     
     scrollView.keyboardDismissMode = .interactive
     scrollView.showsHorizontalScrollIndicator = false
@@ -90,10 +90,10 @@ public final class ScrollLabelGradientView: UIView {
       if index == .zero {
         let primaryLabel = LabelGradientView()
         primaryLabel.configureWith(titleText: textLabel,
-                                   textColor: RandomColor.primaryWhite,
+                                   textColor: RandomColor.darkAndLightTheme.primaryWhite,
                                    gradientDVLabel: [
-                                    RandomColor.primaryGreen,
-                                    RandomColor.secondaryGreen
+                                    RandomColor.only.primaryGreen,
+                                    RandomColor.only.secondaryGreen
                                    ])
         [primaryLabel].forEach {
           $0.translatesAutoresizingMaskIntoConstraints = false
@@ -102,7 +102,7 @@ public final class ScrollLabelGradientView: UIView {
       } else {
         let secondaryLabel = UILabel()
         secondaryLabel.text = textLabel
-        secondaryLabel.textColor = RandomColor.primaryGray
+        secondaryLabel.textColor = RandomColor.darkAndLightTheme.primaryGray
         
         [secondaryLabel].forEach {
           $0.translatesAutoresizingMaskIntoConstraints = false

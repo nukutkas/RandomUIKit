@@ -10,12 +10,12 @@ import UIKit
 extension UIColor {
   convenience init(light: ColorToken, dark: ColorToken? = nil) {
     guard #available(iOS 13.0, *), let dark = dark else {
-      self.init(hexString: light.rawValue)
+      self.init(hexString: light.hexString)
       return
     }
     
-    let lightColor = UIColor(hexString: light.rawValue)
-    let darkColor = UIColor(hexString: dark.rawValue)
+    let lightColor = UIColor(hexString: light.hexString)
+    let darkColor = UIColor(hexString: dark.hexString)
     
     self.init(dynamicProvider: {
       switch $0.userInterfaceStyle {

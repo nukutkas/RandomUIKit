@@ -77,12 +77,12 @@ public final class SmallButtonCell: UITableViewCell {
   }
   
   private func applyDefaultBehavior() {
-    backgroundColor = RandomColor.primaryWhite
-    contentView.backgroundColor = RandomColor.primaryWhite
+    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
+    contentView.backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
     selectionStyle = .none
     
     button.titleLabel?.font = RandomFont.primaryRegular18
-    button.setTitleColor(RandomColor.primaryBlue, for: .normal)
+    button.setTitleColor(RandomColor.only.primaryBlue, for: .normal)
     button.titleLabel?.textAlignment = .center
     button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
   }

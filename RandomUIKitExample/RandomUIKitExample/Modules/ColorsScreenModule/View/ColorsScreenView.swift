@@ -18,7 +18,7 @@ protocol ColorsScreenViewInput: AnyObject {
   
   /// Настройка главного экрана
   ///  - Parameter colors: Список цветов
-  func configure(with colors: [ColorsScreenCell])
+  func configure(with colors: [ColorToken])
 }
 
 /// Псевдоним протокола UIView & ColorsScreenViewInput
@@ -34,7 +34,7 @@ final class ColorsScreenView: ColorsScreenViewProtocol {
   // MARK: - Private properties
   
   private let tableView = UITableView()
-  private var colors: [ColorsScreenCell] = []
+  private var colors: [ColorToken] = []
   
   // MARK: - Initialization
   
@@ -51,7 +51,7 @@ final class ColorsScreenView: ColorsScreenViewProtocol {
   
   // MARK: - Internal func
   
-  func configure(with colors: [ColorsScreenCell]) {
+  func configure(with colors: [ColorToken]) {
     self.colors = colors
     tableView.reloadData()
   }
@@ -76,8 +76,8 @@ final class ColorsScreenView: ColorsScreenViewProtocol {
   
   private func applyDefaultBehavior() {
     let appearance = Appearance()
-    backgroundColor = RandomColor.primaryWhite
-    tableView.backgroundColor = RandomColor.primaryWhite
+    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
+    tableView.backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
     
     tableView.contentInset = appearance.tableViewInsets
     tableView.delegate = self
@@ -109,9 +109,11 @@ extension ColorsScreenView: UITableViewDataSource {
     }
     
     if let colorsCell = cell as? ColorsScreenViewCell {
+      let titleText = colors[indexPath.row].title
+      let hexString = colors[indexPath.row].hexString
       colorsCell.configure(
-        titleText: colors[indexPath.row].rawValue,
-        color: colors[indexPath.row].color
+        titleText: titleText,
+        color: UIColor(hexString: hexString)
       )
     }
     return cell

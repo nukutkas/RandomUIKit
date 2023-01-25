@@ -40,9 +40,9 @@ public final class LinkTextViewCell: UITableViewCell {
     linkTextView.text = nil
     linkTextView.addLinks([:])
     
-    linkTextView.defaultTextColor = RandomColor.primaryGray
+    linkTextView.defaultTextColor = RandomColor.darkAndLightTheme.primaryGray
     linkTextView.defaultTextFont = RandomFont.primaryMedium14
-    linkTextView.linkColor = RandomColor.primaryBlue
+    linkTextView.linkColor = RandomColor.only.primaryBlue
     linkTextView.defaultTextAlignment = .center
     linkTextView.actionLinkTap = nil
   }
@@ -70,9 +70,9 @@ public final class LinkTextViewCell: UITableViewCell {
     linkTextView.text = fullText
     linkTextView.addLinks(links)
     
-    linkTextView.defaultTextColor = fullTextColor ?? RandomColor.primaryGray
+    linkTextView.defaultTextColor = fullTextColor ?? RandomColor.darkAndLightTheme.primaryGray
     linkTextView.defaultTextFont = fullTextFont
-    linkTextView.linkColor = linkColor ?? RandomColor.primaryBlue
+    linkTextView.linkColor = linkColor ?? RandomColor.only.primaryBlue
     linkTextView.defaultTextAlignment = fullTextAlignment ?? .center
     linkTextView.actionLinkTap = actionLinkTap
   }
@@ -100,8 +100,8 @@ public final class LinkTextViewCell: UITableViewCell {
   }
   
   private func applyDefaultBehavior() {
-    backgroundColor = RandomColor.primaryWhite
-    contentView.backgroundColor = RandomColor.primaryWhite
+    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
+    contentView.backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
     selectionStyle = .none
   }
 }

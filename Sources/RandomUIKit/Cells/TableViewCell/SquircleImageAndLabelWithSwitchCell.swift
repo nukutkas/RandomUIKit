@@ -58,7 +58,7 @@ public final class SquircleImageAndLabelWithSwitchCell: UITableViewCell {
     titleLabel.text = titleText
     resultSwitch.isOn = isResultSwitch
     leftSideImageView.image = leftSideImage
-    leftSideImageView.setImageColor(color: leftSideImageColor ?? RandomColor.primaryGray)
+    leftSideImageView.setImageColor(color: leftSideImageColor ?? RandomColor.darkAndLightTheme.primaryGray)
     leftSideSquircleView.applyGradient(colors: squircleBGColors,
                                        alpha: squircleBGAlpha)
   }
@@ -113,12 +113,12 @@ public final class SquircleImageAndLabelWithSwitchCell: UITableViewCell {
   }
   
   private func applyDefaultBehavior() {
-    backgroundColor = RandomColor.primaryWhite
-    contentView.backgroundColor = RandomColor.primaryWhite
+    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
+    contentView.backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
     selectionStyle = .none
     
     titleLabel.font = RandomFont.primaryRegular18
-    titleLabel.textColor = RandomColor.primaryGray
+    titleLabel.textColor = RandomColor.darkAndLightTheme.primaryGray
     
     resultSwitch.addTarget(self, action: #selector(resultSwitchAction(_:)), for: .valueChanged)
   }

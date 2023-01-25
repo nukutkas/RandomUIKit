@@ -9,16 +9,14 @@ import UIKit
 import RandomUIKit
 
 /// События которые отправляем из View в Presenter
-protocol FontsScreenViewOutput: AnyObject {
-  
-}
+protocol FontsScreenViewOutput: AnyObject {}
 
 /// События которые отправляем от Presenter ко View
 protocol FontsScreenViewInput: AnyObject {
   
   /// Настройка главного экрана
   ///  - Parameter fonts: Список шрифтов
-  func configure(with fonts: [FontsScreenCell])
+  func configure(with fonts: [FontToken])
 }
 
 /// Псевдоним протокола UIView & FontsScreenViewInput
@@ -34,7 +32,7 @@ final class FontsScreenView: FontsScreenViewProtocol {
   // MARK: - Private properties
   
   private let tableView = UITableView()
-  private var fonts: [FontsScreenCell] = []
+  private var fonts: [FontToken] = []
   
   // MARK: - Initialization
   
@@ -51,7 +49,7 @@ final class FontsScreenView: FontsScreenViewProtocol {
   
   // MARK: - Internal func
   
-  func configure(with fonts: [FontsScreenCell]) {
+  func configure(with fonts: [FontToken]) {
     self.fonts = fonts
     tableView.reloadData()
   }
@@ -76,8 +74,8 @@ final class FontsScreenView: FontsScreenViewProtocol {
   
   private func applyDefaultBehavior() {
     let appearance = Appearance()
-    tableView.backgroundColor = RandomColor.primaryWhite
-    backgroundColor = RandomColor.primaryWhite
+    tableView.backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
+    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
     
     tableView.contentInset = appearance.tableViewInsets
     tableView.delegate = self
@@ -110,8 +108,7 @@ extension FontsScreenView: UITableViewDataSource {
     }
     
     if let fontsCell = cell as? FontsScreenViewCell {
-      fontsCell.configure(titleText: fonts[indexPath.row].rawValue,
-                          font: fonts[indexPath.row].font)
+      fontsCell.configure(fontToken: fonts[indexPath.row])
     }
     return cell
   }

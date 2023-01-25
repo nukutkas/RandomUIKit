@@ -49,10 +49,10 @@ public final class DoubleTitleCell: UITableViewCell {
   ///  - secondaryTextColor: Вторичный цвет текст
   ///  - secondaryTextFont: Вторичный шрифт текст
   public func configureCellWith(primaryText: String?,
-                                primaryTextColor: UIColor = RandomColor.primaryGray,
+                                primaryTextColor: UIColor = RandomColor.darkAndLightTheme.primaryGray,
                                 primaryTextFont: UIFont = RandomFont.primaryRegular18,
                                 secondaryText: String?,
-                                secondaryTextColor: UIColor = RandomColor.primaryGray,
+                                secondaryTextColor: UIColor = RandomColor.darkAndLightTheme.primaryGray,
                                 secondaryTextFont: UIFont = RandomFont.primaryRegular18) {
     primaryLable.text = primaryText
     primaryLable.textColor = primaryTextColor
@@ -91,17 +91,17 @@ public final class DoubleTitleCell: UITableViewCell {
   }
   
   private func applyDefaultBehavior() {
-    backgroundColor = RandomColor.primaryWhite
-    contentView.backgroundColor = RandomColor.primaryWhite
+    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
+    contentView.backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
     selectionStyle = .none
     
     secondaryLabel.font = RandomFont.primaryRegular18
-    secondaryLabel.textColor = RandomColor.primaryGray
+    secondaryLabel.textColor = RandomColor.darkAndLightTheme.primaryGray
     secondaryLabel.textAlignment = .right
     secondaryLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     
     primaryLable.font = RandomFont.primaryRegular18
-    primaryLable.textColor = RandomColor.primaryGray
+    primaryLable.textColor = RandomColor.darkAndLightTheme.primaryGray
     primaryLable.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
   }
 }

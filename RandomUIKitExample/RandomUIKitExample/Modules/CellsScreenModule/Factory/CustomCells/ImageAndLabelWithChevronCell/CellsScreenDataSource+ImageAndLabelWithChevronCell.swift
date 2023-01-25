@@ -25,7 +25,7 @@ extension CellsScreenDataSource where Model == ImageAndLabelWithChevronCellModel
   static func makeForImageAndLabelWithChevronCell() -> CellsScreenDataSource {
     let models = [
       ImageAndLabelWithChevronCellModel(leftSideImage: UIImage(systemName: "phone"),
-                                        leftSideImageColor: RandomColor.primaryBlue,
+                                        leftSideImageColor: RandomColor.only.primaryBlue,
                                         titleText: "ImageAndLabelWithChevronCell",
                                         isChevron: true),
       ImageAndLabelWithChevronCellModel(leftSideImage: UIImage(systemName: "cursorarrow.click.2"),

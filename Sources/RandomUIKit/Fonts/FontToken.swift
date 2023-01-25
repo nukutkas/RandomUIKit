@@ -7,7 +7,7 @@
 import UIKit
 
 /// Список ширифтов
-public enum FontToken {
+public enum FontToken: String, CaseIterable {
   
   // MARK: - Bold
   

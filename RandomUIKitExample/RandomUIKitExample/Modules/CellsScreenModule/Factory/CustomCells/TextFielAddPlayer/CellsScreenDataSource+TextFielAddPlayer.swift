@@ -31,7 +31,7 @@ extension CellsScreenDataSource where Model == TextFielAddPlayerModel {
     let models = [
       TextFielAddPlayerModel(
         buttonImage: circle,
-        buttonImageColor: RandomColor.primaryGreen,
+        buttonImageColor: RandomColor.only.primaryGreen,
         titleCell: ""
       )
     ]

@@ -20,4 +20,5 @@ public var RandomColor: ColorGuide { colorGuide }
 
 // MARK: - Private property
 
-private let colorGuide = ColorGuide()
+private let colorGuide = ColorGuide(darkAndLightTheme: ColorGuide.DarkAndLightTheme(),
+                                    only: ColorGuide.Only())

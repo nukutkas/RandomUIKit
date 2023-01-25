@@ -43,21 +43,21 @@ public final class LabelAndChevronCell: UITableViewCell {
   
   public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     super.touchesBegan(touches, with: event)
-    backgroundColor = RandomColor.secondaryGray.withAlphaComponent(0.1)
-    contentView.backgroundColor = RandomColor.secondaryGray.withAlphaComponent(0.1)
+    backgroundColor = RandomColor.darkAndLightTheme.secondaryGray.withAlphaComponent(0.1)
+    contentView.backgroundColor = RandomColor.darkAndLightTheme.secondaryGray.withAlphaComponent(0.1)
   }
   
   public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
     super.touchesEnded(touches, with: event)
-    backgroundColor = RandomColor.primaryWhite
-    contentView.backgroundColor = RandomColor.primaryWhite
+    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
+    contentView.backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
     impactFeedback.impactOccurred()
   }
   
   public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
     super.touchesCancelled(touches, with: event)
-    backgroundColor = RandomColor.primaryWhite
-    contentView.backgroundColor = RandomColor.primaryWhite
+    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
+    contentView.backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
   }
   
   /// Настраиваем ячейку
@@ -66,7 +66,7 @@ public final class LabelAndChevronCell: UITableViewCell {
   public func configureCellWith(titleText: String?) {
     titleLable.text = titleText
     chevronImageView.image = Appearance().chevronRight
-    chevronImageView.setImageColor(color: RandomColor.primaryGray)
+    chevronImageView.setImageColor(color: RandomColor.darkAndLightTheme.primaryGray)
   }
   
   // MARK: - Private func
@@ -98,14 +98,14 @@ public final class LabelAndChevronCell: UITableViewCell {
   }
   
   private func applyDefaultBehavior() {
-    backgroundColor = RandomColor.primaryWhite
-    contentView.backgroundColor = RandomColor.primaryWhite
+    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
+    contentView.backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
     selectionStyle = .none
     
     chevronImageView.contentMode = .right
     
     titleLable.font = RandomFont.primaryRegular18
-    titleLable.textColor = RandomColor.primaryGray
+    titleLable.textColor = RandomColor.darkAndLightTheme.primaryGray
   }
 }
 

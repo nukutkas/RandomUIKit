@@ -36,6 +36,6 @@ public final class GradientView: UIView {
   }
   
   private func applyDefaultBehavior() {
-    backgroundColor = RandomColor.primaryWhite
+    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
   }
 }

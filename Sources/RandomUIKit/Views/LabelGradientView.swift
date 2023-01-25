@@ -85,7 +85,7 @@ public final class LabelGradientView: UIView {
   private func applyDefaultBehavior() {
     layer.cornerRadius = Appearance().cornerRadius
     
-    titleLabel.textColor = RandomColor.primaryWhite
+    titleLabel.textColor = RandomColor.darkAndLightTheme.primaryWhite
     titleLabel.font =  RandomFont.primaryRegular16
   }
   

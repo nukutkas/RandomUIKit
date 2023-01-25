@@ -64,7 +64,7 @@ public final class ButtonTableViewCell: UITableViewCell {
   }
   
   private func applyDefaultBehavior() {
-    backgroundColor = RandomColor.primaryWhite
+    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
     selectionStyle = .none
   }
 }

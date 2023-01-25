@@ -25,8 +25,8 @@ struct SquircleImageAndLabelWithSwitchCellModel: CellModel {
 extension CellsScreenDataSource where Model == SquircleImageAndLabelWithSwitchCellModel {
   static func makeForSquircleImageAndLabelWithSwitchCell() -> CellsScreenDataSource {
     let models = [
-      SquircleImageAndLabelWithSwitchCellModel(squircleBGColors: [RandomColor.primaryGreen,
-                                                                  RandomColor.primaryGray],
+      SquircleImageAndLabelWithSwitchCellModel(squircleBGColors: [RandomColor.only.primaryGreen,
+                                                                  RandomColor.darkAndLightTheme.primaryGray],
                                                squircleBGAlpha: 1,
                                                leftSideImage: UIImage(systemName: "cursorarrow.click.2"),
                                                leftSideImageColor: .white,

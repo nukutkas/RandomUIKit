@@ -80,12 +80,12 @@ public final class LabelAndSwitchCell: UITableViewCell {
   }
   
   private func applyDefaultBehavior() {
-    backgroundColor = RandomColor.primaryWhite
-    contentView.backgroundColor = RandomColor.primaryWhite
+    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
+    contentView.backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
     selectionStyle = .none
     
     titleLabel.font = RandomFont.primaryRegular18
-    titleLabel.textColor = RandomColor.primaryGray
+    titleLabel.textColor = RandomColor.darkAndLightTheme.primaryGray
     
     resultSwitch.addTarget(self, action: #selector(resultSwitchAction(_:)), for: .valueChanged)
   }

@@ -61,15 +61,15 @@ final class MainScreenCollectionViewCell: UICollectionViewCell {
   
   private func applyDefaultBehavior() {
     let appearance = Appearance()
-    backgroundColor = RandomColor.primaryWhite
-    contentView.backgroundColor = RandomColor.primaryWhite
+    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
+    contentView.backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
   
     roundedBackgroundView.layer.cornerRadius = appearance.cornerRadius
-    roundedBackgroundView.layer.borderColor = RandomColor.primaryGray.cgColor
+    roundedBackgroundView.layer.borderColor = RandomColor.darkAndLightTheme.primaryGray.cgColor
     roundedBackgroundView.layer.borderWidth = appearance.borderWidth
     
     titleLabel.font = RandomFont.primaryMedium18
-    titleLabel.textColor = RandomColor.primaryGray
+    titleLabel.textColor = RandomColor.darkAndLightTheme.primaryGray
   }
 }
 

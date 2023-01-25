@@ -46,7 +46,7 @@ public final class PlayerCollectionViewCell: UICollectionViewCell {
   ///  - cardAction: Действие по нажатию на карточку
   public func configureCellWith(avatar: UIImage?,
                                 name: String?,
-                                nameTextColor: UIColor = RandomColor.primaryGray,
+                                nameTextColor: UIColor = RandomColor.darkAndLightTheme.primaryGray,
                                 styleCard: PlayerView.StyleCard,
                                 styleEmoji: PlayerView.StyleEmoji = .none,
                                 isBorder: Bool,
@@ -83,8 +83,8 @@ public final class PlayerCollectionViewCell: UICollectionViewCell {
   }
   
   private func applyDefaultBehavior() {
-    backgroundColor = RandomColor.primaryWhite
-    contentView.backgroundColor = RandomColor.primaryWhite
+    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
+    contentView.backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
   }
 }
 

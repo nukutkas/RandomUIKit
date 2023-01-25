@@ -112,18 +112,18 @@ public final class HeaderTitleAndSubtitleViewCell: UITableViewCell {
   }
   
   private func applyDefaultBehavior() {
-    backgroundColor = RandomColor.primaryWhite
-    contentView.backgroundColor = RandomColor.primaryWhite
+    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
+    contentView.backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
     selectionStyle = .none
     
     titleLabel.numberOfLines = .zero
     titleLabel.font = RandomFont.primaryBold32
-    titleLabel.textColor = RandomColor.primaryGray
+    titleLabel.textColor = RandomColor.darkAndLightTheme.primaryGray
     titleLabel.textAlignment = .center
     
     subtitleLabel.numberOfLines = .zero
     subtitleLabel.font = RandomFont.primaryMedium18
-    subtitleLabel.textColor = RandomColor.primaryGray
+    subtitleLabel.textColor = RandomColor.darkAndLightTheme.primaryGray
     subtitleLabel.textAlignment = .center
   }
 }

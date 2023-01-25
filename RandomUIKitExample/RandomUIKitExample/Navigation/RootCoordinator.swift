@@ -33,11 +33,11 @@ final class RootCoordinator: Coordinator {
     mainScreenCoordinator.start()
     
     let appearance = UINavigationBarAppearance()
-    appearance.backgroundColor = RandomColor.primaryWhite
-    appearance.titleTextAttributes = [.foregroundColor: RandomColor.primaryBlack]
-    appearance.largeTitleTextAttributes = [.foregroundColor: RandomColor.primaryBlack]
+    appearance.backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
+    appearance.titleTextAttributes = [.foregroundColor: RandomColor.darkAndLightTheme.primaryBlack]
+    appearance.largeTitleTextAttributes = [.foregroundColor: RandomColor.darkAndLightTheme.primaryBlack]
     
-    navigationController.navigationBar.tintColor = RandomColor.primaryBlack
+    navigationController.navigationBar.tintColor = RandomColor.darkAndLightTheme.primaryBlack
     navigationController.navigationBar.standardAppearance = appearance
     navigationController.navigationBar.compactAppearance = appearance
     navigationController.navigationBar.scrollEdgeAppearance = appearance

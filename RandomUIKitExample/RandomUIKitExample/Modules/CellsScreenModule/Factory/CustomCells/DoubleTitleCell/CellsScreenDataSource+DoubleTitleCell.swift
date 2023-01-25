@@ -27,7 +27,7 @@ extension CellsScreenDataSource where Model == DoubleTitleCellModel {
     let models = [
       DoubleTitleCellModel(primaryText: "DoubleTitleCell",
                            secondaryText: "10",
-                           secondaryTextColor: RandomColor.primaryRed,
+                           secondaryTextColor: RandomColor.only.primaryRed,
                            secondaryTextFont: RandomFont.primaryBold18,
                            titleCell: "")
     ]

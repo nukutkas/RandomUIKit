@@ -80,7 +80,7 @@ final class LabelGradientTableViewCell: UITableViewCell {
   }
   
   private func applyDefaultBehavior() {
-    backgroundColor = RandomColor.primaryWhite
+    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
     selectionStyle = .none
     
     titleLabel.textColor = .black

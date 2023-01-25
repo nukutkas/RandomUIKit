@@ -6,11 +6,10 @@
 //
 
 import UIKit
+import RandomUIKit
 
 /// События которые отправляем из `текущего модуля` в  `другой модуль`
-protocol FontsScreenModuleOutput: AnyObject {
-    
-}
+protocol FontsScreenModuleOutput: AnyObject {}
 
 /// События которые отправляем из `другого модуля` в  `текущий модуль`
 protocol FontsScreenModuleInput {
@@ -78,7 +77,7 @@ extension FontsScreenViewController: FontsScreenViewOutput {
 // MARK: - FontsScreenInteractorOutput
 
 extension FontsScreenViewController: FontsScreenInteractorOutput {
-    func didRecive(fonts: [FontsScreenCell]) {
+    func didRecive(fonts: [FontToken]) {
         moduleView.configure(with: fonts)
     }
 }

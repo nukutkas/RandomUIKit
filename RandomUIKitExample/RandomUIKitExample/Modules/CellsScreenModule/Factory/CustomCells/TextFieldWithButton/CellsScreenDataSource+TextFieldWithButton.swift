@@ -33,17 +33,17 @@ extension CellsScreenDataSource where Model == TextFieldWithButtonModel {
     let models = [
       TextFieldWithButtonModel(
         buttonImage: circle,
-        buttonImageColor: RandomColor.primaryGreen,
+        buttonImageColor: RandomColor.only.primaryGreen,
         titleCell: ""
       ),
       TextFieldWithButtonModel(
         buttonImage: checkmark,
-        buttonImageColor: RandomColor.primaryRed,
+        buttonImageColor: RandomColor.only.primaryRed,
         titleCell: ""
       ),
       TextFieldWithButtonModel(
         buttonImage: seal,
-        buttonImageColor: RandomColor.primaryBlue,
+        buttonImageColor: RandomColor.only.primaryBlue,
         titleCell: ""
       )
     ]

@@ -70,11 +70,11 @@ public final class DividerTableViewCell: UITableViewCell {
   }
   
   private func applyDefaultBehavior() {
-    backgroundColor = RandomColor.primaryWhite
-    contentView.backgroundColor = RandomColor.primaryWhite
+    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
+    contentView.backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
     selectionStyle = .none
     
-    dividerView.backgroundColor = RandomColor.secondaryGray.withAlphaComponent(0.5)
+    dividerView.backgroundColor = RandomColor.darkAndLightTheme.secondaryGray.withAlphaComponent(0.5)
   }
 }
 

@@ -28,14 +28,14 @@ struct SquircleImageAndDoubleTitleCellModel: CellModel {
 extension CellsScreenDataSource where Model == SquircleImageAndDoubleTitleCellModel {
   static func makeForSquircleImageAndDoubleTitleCell() -> CellsScreenDataSource {
     let models = [
-      SquircleImageAndDoubleTitleCellModel(squircleBGColors: [RandomColor.primaryGreen,
-                                                              RandomColor.primaryGray],
+      SquircleImageAndDoubleTitleCellModel(squircleBGColors: [RandomColor.only.primaryGreen,
+                                                              RandomColor.darkAndLightTheme.primaryGray],
                                            squircleBGAlpha: 1,
                                            leftSideImage: UIImage(systemName: "cursorarrow.click.2"),
                                            leftSideImageColor: .white,
                                            primaryText: "SquircleImageAndDoubleTitleCell",
                                            secondaryText: "10",
-                                           secondaryTextColor: RandomColor.primaryRed,
+                                           secondaryTextColor: RandomColor.only.primaryRed,
                                            secondaryTextFont: RandomFont.primaryBold18)
     ]
     

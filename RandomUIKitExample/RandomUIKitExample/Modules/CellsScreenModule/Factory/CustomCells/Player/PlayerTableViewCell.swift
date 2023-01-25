@@ -47,7 +47,7 @@ final class PlayerTableViewCell: UITableViewCell {
   public func configureCellWith(titleCell: String?,
                                 avatar: UIImage?,
                                 name: String?,
-                                nameTextColor: UIColor = RandomColor.darkApple,
+                                nameTextColor: UIColor = RandomColor.only.darkApple,
                                 styleCard: PlayerView.StyleCard,
                                 styleEmoji: PlayerView.StyleEmoji = .none,
                                 isBorder: Bool,
@@ -91,7 +91,7 @@ final class PlayerTableViewCell: UITableViewCell {
   }
   
   private func applyDefaultBehavior() {
-    backgroundColor = RandomColor.primaryWhite
+    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
     selectionStyle = .none
     
     titleLabel.textColor = .black

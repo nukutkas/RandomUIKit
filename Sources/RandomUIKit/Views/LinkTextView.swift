@@ -19,14 +19,14 @@ public final class LinkTextView: UITextView {
   public var actionLinkTap: ((URL) -> Bool)?
   
   /// Цвет текста ссылки. Цвет по умолчанию`primaryBlue`
-  public var linkColor: UIColor = RandomColor.primaryBlue {
+  public var linkColor: UIColor = RandomColor.only.primaryBlue {
     didSet {
       configureStyleTextLink(linkColor: linkColor)
     }
   }
   
   /// Полный цвет текста. Цвет по умолчанию`primaryGray`
-  public var defaultTextColor: UIColor? = RandomColor.primaryGray {
+  public var defaultTextColor: UIColor? = RandomColor.darkAndLightTheme.primaryGray {
     didSet {
       textColor = defaultTextColor
     }
@@ -86,7 +86,7 @@ public final class LinkTextView: UITextView {
   // MARK: - Private funcs
   
   private func applyDefaultBehavior() {
-    backgroundColor = RandomColor.primaryWhite
+    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
     textColor = defaultTextColor
     font = defaultTextFont
     textAlignment = defaultTextAlignment

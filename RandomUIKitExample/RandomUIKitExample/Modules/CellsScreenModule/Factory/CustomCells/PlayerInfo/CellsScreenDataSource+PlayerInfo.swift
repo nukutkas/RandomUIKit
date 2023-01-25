@@ -14,10 +14,10 @@ import RandomUIKit
 struct PlayerInfoModel: CellModel {
   let avatar: UIImage?
   let namePlayer: String?
-  var namePlayerColor: UIColor = RandomColor.primaryGray
+  var namePlayerColor: UIColor = RandomColor.darkAndLightTheme.primaryGray
   var namePlayerFont: UIFont = RandomFont.primaryMedium18
   let nameTeam: String?
-  var nameTeamColor: UIColor = RandomColor.primaryBlue
+  var nameTeamColor: UIColor = RandomColor.only.primaryBlue
   var nameTeamFont: UIFont = RandomFont.primaryRegular16
   let emoji: Character?
   

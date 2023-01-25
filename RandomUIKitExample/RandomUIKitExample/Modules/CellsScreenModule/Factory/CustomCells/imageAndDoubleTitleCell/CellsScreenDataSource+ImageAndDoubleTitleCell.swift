@@ -30,7 +30,7 @@ extension CellsScreenDataSource where Model == ImageAndDoubleTitleCellModel {
                                    leftSideImageColor: nil,
                                    primaryText: "ImageAndDoubleTitleCellModel",
                                    secondaryText: "10",
-                                   secondaryTextColor: RandomColor.primaryRed,
+                                   secondaryTextColor: RandomColor.only.primaryRed,
                                    secondaryTextFont: RandomFont.primaryBold18)
     ]
     

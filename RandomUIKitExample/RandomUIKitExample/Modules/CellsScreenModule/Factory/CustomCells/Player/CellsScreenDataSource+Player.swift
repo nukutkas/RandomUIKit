@@ -14,7 +14,7 @@ import RandomUIKit
 struct PlayerModel: CellModel {
   let avatar: UIImage?
   let name: String?
-  var nameTextColor = RandomColor.primaryGray
+  var nameTextColor = RandomColor.darkAndLightTheme.primaryGray
   let styleCard: PlayerView.StyleCard
   let styleEmoji: PlayerView.StyleEmoji
   let isBorder: Bool
@@ -30,7 +30,7 @@ extension CellsScreenDataSource where Model == PlayerModel {
       PlayerModel(
         avatar: UIImage(named: "player3"),
         name: "Илларионов Артур",
-        nameTextColor: RandomColor.primaryGray,
+        nameTextColor: RandomColor.darkAndLightTheme.primaryGray,
         styleCard: .defaultStyle,
         styleEmoji: .like,
         isBorder: true,
@@ -48,8 +48,8 @@ extension CellsScreenDataSource where Model == PlayerModel {
       PlayerModel(
         avatar: UIImage(named: "player1"),
         name: "Зимин Максим",
-        nameTextColor: RandomColor.primaryWhite,
-        styleCard: .customStyle(RandomColor.secondaryRed),
+        nameTextColor: RandomColor.darkAndLightTheme.primaryWhite,
+        styleCard: .customStyle(RandomColor.only.primaryPink),
         styleEmoji: .none,
         isBorder: true,
         isShadow: true,

@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import RandomUIKit
 
 /// События которые отправляем из Interactor в Presenter
 protocol FontsScreenInteractorOutput: AnyObject {
     
     /// Были получены шрифты
-    func didRecive(fonts: [FontsScreenCell])
+    func didRecive(fonts: [FontToken])
 }
 
 /// События которые отправляем от Presenter к Interactor
@@ -31,7 +32,7 @@ final class FontsScreenInteractor: FontsScreenInteractorInput {
     // MARK: - Internal func
     
     func getCells() {
-        let fonts = FontsScreenCell.allCases
+        let fonts = FontToken.allCases
         output?.didRecive(fonts: fonts)
     }
 }

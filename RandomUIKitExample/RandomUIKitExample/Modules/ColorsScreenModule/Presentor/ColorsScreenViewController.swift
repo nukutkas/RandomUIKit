@@ -79,7 +79,7 @@ extension ColorsScreenViewController: ColorsScreenViewOutput {
 // MARK: - ColorsScreenInteractorOutput
 
 extension ColorsScreenViewController: ColorsScreenInteractorOutput {
-    func didRecive(cells: [ColorsScreenCell]) {
+    func didRecive(cells: [ColorToken]) {
         moduleView.configure(with: cells)
     }
 }

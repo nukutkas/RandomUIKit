@@ -26,15 +26,15 @@ struct SquircleImageAndLabelWithChevronCellModel: CellModel {
 extension CellsScreenDataSource where Model == SquircleImageAndLabelWithChevronCellModel {
   static func makeForSquircleImageAndLabelWithChevronCell() -> CellsScreenDataSource {
     let models = [
-      SquircleImageAndLabelWithChevronCellModel(squircleBGColors: [RandomColor.primaryGreen,
-                                                                   RandomColor.primaryGray],
+      SquircleImageAndLabelWithChevronCellModel(squircleBGColors: [RandomColor.only.primaryGreen,
+                                                                   RandomColor.darkAndLightTheme.primaryGray],
                                                 squircleBGAlpha: 1,
                                                 leftSideImage: UIImage(systemName: "cursorarrow.click.2"),
                                                 leftSideImageColor: .white,
                                                 titleText: "SquircleImageAndLabelWithChevronCell",
                                                 isChevron: true),
-      SquircleImageAndLabelWithChevronCellModel(squircleBGColors: [RandomColor.primaryGreen,
-                                                                   RandomColor.primaryGray],
+      SquircleImageAndLabelWithChevronCellModel(squircleBGColors: [RandomColor.only.primaryGreen,
+                                                                   RandomColor.darkAndLightTheme.primaryGray],
                                                 squircleBGAlpha: 1,
                                                 leftSideImage: UIImage(systemName: "cursorarrow.click.2"),
                                                 leftSideImageColor: .white,

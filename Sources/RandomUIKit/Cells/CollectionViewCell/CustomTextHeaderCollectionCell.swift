@@ -74,10 +74,10 @@ public final class CustomTextHeaderCollectionCell: UICollectionReusableView {
   }
   
   private func applyDefaultBehavior() {
-    backgroundColor = RandomColor.primaryWhite
+    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
     
     titleLabel.font = RandomFont.primaryRegular18
-    titleLabel.textColor = RandomColor.primaryGray
+    titleLabel.textColor = RandomColor.darkAndLightTheme.primaryGray
     titleLabel.textAlignment = .center
   }
 }

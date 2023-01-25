@@ -53,7 +53,7 @@ public final class ImageAndLabelWithSwitchCell: UITableViewCell {
     titleLabel.text = titleText
     resultSwitch.isOn = isResultSwitch
     leftSideImageView.image = leftSideImage
-    leftSideImageView.setImageColor(color: leftSideImageColor ?? RandomColor.primaryGray)
+    leftSideImageView.setImageColor(color: leftSideImageColor ?? RandomColor.darkAndLightTheme.primaryGray)
   }
   
   public override func prepareForReuse() {
@@ -93,12 +93,12 @@ public final class ImageAndLabelWithSwitchCell: UITableViewCell {
   }
   
   private func applyDefaultBehavior() {
-    backgroundColor = RandomColor.primaryWhite
-    contentView.backgroundColor = RandomColor.primaryWhite
+    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
+    contentView.backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
     selectionStyle = .none
     
     titleLabel.font = RandomFont.primaryRegular18
-    titleLabel.textColor = RandomColor.primaryGray
+    titleLabel.textColor = RandomColor.darkAndLightTheme.primaryGray
     
     resultSwitch.addTarget(self, action: #selector(resultSwitchAction(_:)), for: .valueChanged)
   }

@@ -86,33 +86,33 @@ public final class PurchasesCardView: UIView {
     headerTitleLabel.isHidden = !isSelected
     
     if isSelected {
-      layer.borderColor = UIColor(hexString: ColorToken.secondaryGray.rawValue).cgColor
+      layer.borderColor = RandomColor.only.secondaryGray.cgColor
       layer.borderWidth = appearance.borderWidth
       
       containerView.applyGradient(colors:  [
-        UIColor(hexString: ColorToken.primaryGray.rawValue),
-        UIColor(hexString: ColorToken.secondaryGray.rawValue)
+        RandomColor.only.primaryGray,
+        RandomColor.only.secondaryGray
       ])
       
-      applyGradient(colors: [RandomColor.primaryGreen,
-                             RandomColor.secondaryGreen])
+      applyGradient(colors: [RandomColor.only.primaryGreen,
+                             RandomColor.only.secondaryGreen])
       
-      titleLabel.textColor = RandomColor.primaryWhite
-      descriptionLabel.textColor = RandomColor.primaryWhite
-      amountLabel.textColor = RandomColor.primaryWhite
+      titleLabel.textColor = RandomColor.darkAndLightTheme.primaryWhite
+      descriptionLabel.textColor = RandomColor.darkAndLightTheme.primaryWhite
+      amountLabel.textColor = RandomColor.darkAndLightTheme.primaryWhite
     } else {
       containerView.applyGradient(colors:  [
-        RandomColor.primaryWhite,
-        RandomColor.primaryWhite
+        RandomColor.darkAndLightTheme.primaryWhite,
+        RandomColor.darkAndLightTheme.primaryWhite
       ])
       layer.borderWidth = .zero
       
-      applyGradient(colors: [RandomColor.primaryWhite,
-                             RandomColor.primaryWhite])
+      applyGradient(colors: [RandomColor.darkAndLightTheme.primaryWhite,
+                             RandomColor.darkAndLightTheme.primaryWhite])
       
-      titleLabel.textColor = UIColor(hexString: ColorToken.secondaryGray.rawValue)
-      descriptionLabel.textColor = UIColor(hexString: ColorToken.secondaryGray.rawValue)
-      amountLabel.textColor = UIColor(hexString: ColorToken.secondaryGray.rawValue)
+      titleLabel.textColor = RandomColor.only.secondaryGray
+      descriptionLabel.textColor = RandomColor.only.secondaryGray
+      amountLabel.textColor = RandomColor.only.secondaryGray
     }
   }
 }
@@ -176,22 +176,22 @@ private extension PurchasesCardView {
     
     headerTitleLabel.textAlignment = .center
     headerTitleLabel.font = RandomFont.primaryBold14
-    headerTitleLabel.textColor = UIColor(hexString: ColorToken.primaryWhite.rawValue)
+    headerTitleLabel.textColor = RandomColor.only.primaryWhite
     headerTitleLabel.numberOfLines = appearance.numberOfLines
     
     titleLabel.textAlignment = .center
     titleLabel.font = RandomFont.primaryMedium48
-    titleLabel.textColor = RandomColor.primaryGray
+    titleLabel.textColor = RandomColor.darkAndLightTheme.primaryGray
     titleLabel.numberOfLines = appearance.numberOfLines
     
     descriptionLabel.textAlignment = .center
     descriptionLabel.font = RandomFont.primaryMedium18
-    descriptionLabel.textColor = RandomColor.primaryGray
+    descriptionLabel.textColor = RandomColor.darkAndLightTheme.primaryGray
     descriptionLabel.numberOfLines = appearance.numberOfLines
     
     amountLabel.textAlignment = .center
     amountLabel.font = RandomFont.primaryBold24
-    amountLabel.textColor = RandomColor.primaryGray
+    amountLabel.textColor = RandomColor.darkAndLightTheme.primaryGray
     amountLabel.numberOfLines = appearance.numberOfLines
     
     clipsToBounds = true
