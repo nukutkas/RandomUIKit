@@ -104,6 +104,8 @@ private extension OnboardingContainerView {
     
     descriptionLabel.textAlignment = .center
     descriptionLabel.numberOfLines = 2
+    descriptionLabel.adjustsFontSizeToFitWidth = true
+    descriptionLabel.minimumScaleFactor = 0.9
     descriptionLabel.font = RandomFont.primaryMedium18
     descriptionLabel.textColor = RandomColor.darkAndLightTheme.primaryGray
   }

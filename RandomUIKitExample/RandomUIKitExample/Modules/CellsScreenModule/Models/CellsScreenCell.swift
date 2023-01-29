@@ -98,6 +98,9 @@ enum CellsScreenCell: String {
   /// Ячейка с большим изображением, текстом и галочкой справа
   case largeImageAndLabelWithCheakmarkCell
   
+  /// Ячейка с вьюшкой для фильмов
+  case filmViewCell
+  
   var reuseIdentifier: String {
     return cellClass.description()
   }
@@ -160,6 +163,8 @@ enum CellsScreenCell: String {
       return SquircleImageAndDoubleTitleCell.self
     case .largeImageAndLabelWithCheakmarkCell:
       return LargeImageAndLabelWithCheakmarkCell.self
+    case .filmViewCell:
+      return FilmViewCell.self
     }
   }
   
@@ -221,6 +226,8 @@ enum CellsScreenCell: String {
       return CellsScreenDataSource.makeForSquircleImageAndDoubleTitleCell()
     case .largeImageAndLabelWithCheakmarkCell:
       return CellsScreenDataSource.makeForLargeImageAndLabelWithCheakmarkCell()
+    case .filmViewCell:
+      return CellsScreenDataSource.makeForFilmViewCell()
     }
   }
 }

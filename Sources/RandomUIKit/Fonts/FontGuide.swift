@@ -40,6 +40,9 @@ public struct FontGuide {
   
   // MARK: - Medium
   
+  /// Полу-Жирный шрифт, размер 80
+  public let primaryMedium80 = UIFont.get(font: .primaryMedium80)
+  
   /// Полу-Жирный шрифт, размер 48
   public let primaryMedium48 = UIFont.get(font: .primaryMedium48)
   

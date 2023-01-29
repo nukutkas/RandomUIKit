@@ -53,6 +53,8 @@ final class FontsScreenViewCell: UITableViewCell {
       titleLabel.font = RandomFont.primaryBold12
     case .primaryBold10:
       titleLabel.font = RandomFont.primaryBold10
+    case .primaryMedium80:
+      titleLabel.font = RandomFont.primaryMedium80
     case .primaryMedium48:
       titleLabel.font = RandomFont.primaryMedium48
     case .primaryMedium40:

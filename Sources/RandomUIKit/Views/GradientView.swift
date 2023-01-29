@@ -32,10 +32,16 @@ public final class GradientView: UIView {
   
   public func applyGradient(colors: [UIColor], alpha: CGFloat = 1) {
     guard let gradientLayer = layer as? CAGradientLayer else { return }
-    gradientLayer.colors = colors.map { $0.withAlphaComponent(alpha).cgColor }
+    gradientLayer.colors = colors.map {
+      if $0 == UIColor.clear {
+        return $0.withAlphaComponent(.zero).cgColor
+      } else {
+        return $0.withAlphaComponent(alpha).cgColor
+      }
+    }
   }
   
   private func applyDefaultBehavior() {
-    backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
+    backgroundColor = .clear
   }
 }

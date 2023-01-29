@@ -27,6 +27,8 @@ extension UIFont {
       return UIFont.systemFont(ofSize: 12, weight: .bold)
     case .primaryBold10:
       return UIFont.systemFont(ofSize: 10, weight: .bold)
+    case .primaryMedium80:
+      return UIFont.systemFont(ofSize: 80, weight: .medium)
     case .primaryMedium48:
       return UIFont.systemFont(ofSize: 48, weight: .medium)
     case .primaryMedium40:

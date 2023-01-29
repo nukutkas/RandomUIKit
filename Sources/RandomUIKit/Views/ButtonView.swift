@@ -67,8 +67,7 @@ public final class ButtonView: UIButton {
   
   private func updateStyle() {
     if isEnabled {
-      applyGradient(colors: [RandomColor.only.primaryGreen,
-                             RandomColor.only.secondaryGreen])
+      applyGradient(colors: gradientBackground)
     } else {
       applyGradient(colors: [RandomColor.darkAndLightTheme.primaryGray,
                              RandomColor.darkAndLightTheme.secondaryGray])

@@ -40,6 +40,9 @@ public enum FontToken: String, CaseIterable {
   
   // MARK: - Medium
   
+  /// Полу-Жирный шрифт, размер 80
+  case primaryMedium80
+  
   /// Полу-Жирный шрифт, размер 48
   case primaryMedium48
   
