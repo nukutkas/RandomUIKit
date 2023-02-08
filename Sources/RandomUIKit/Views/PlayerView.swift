@@ -11,26 +11,69 @@ import UIKit
 public final class PlayerView: UIView {
   
   /// Стиль карточки
-  public enum StyleCard {
-    
-    /// Стиль выбранной ячейки
-    case selected
+  public enum StyleCard: CaseIterable, Equatable & Codable {
     
     /// Стиль по умолчанию
     case defaultStyle
     
-    /// Настраиваемый стиль
-    case customStyle(UIColor?)
+    /// Стиль темно-зеленый
+    case darkGreen
+    
+    /// Стиль темно-синий
+    case darkBlue
+    
+    /// Стиль темно-оранжевый
+    case darkOrange
+    
+    /// Стиль темно-красный
+    case darkRed
+    
+    /// Стиль темно-фиолетовый
+    case darkPurple
+    
+    /// Стиль темно-розовый
+    case darkPink
+    
+    /// Стиль темно-желтый
+    case darkYellow
+    
+    /// Цвет текста на карточке
+    var nameTextColor: UIColor {
+      switch self {
+      case .defaultStyle:
+        return RandomColor.only.primaryWhite
+      default:
+        return RandomColor.only.primaryWhite
+      }
+    }
     
     /// Цвет фона карточки
-    var backgroundColor: UIColor? {
+    var backgroundColor: [UIColor] {
       switch self {
-      case .selected:
-        return RandomColor.darkAndLightTheme.tertiaryGreen
+      case .darkGreen:
+        return [RandomColor.only.primaryGray,
+                RandomColor.only.primaryGreen]
       case .defaultStyle:
-        return RandomColor.darkAndLightTheme.secondaryWhite
-      case .customStyle(let color):
-        return color
+        return [RandomColor.only.lightGray,
+                RandomColor.only.lightGray]
+      case .darkBlue:
+        return [RandomColor.only.primaryGray,
+                RandomColor.only.secondaryBlue]
+      case .darkOrange:
+        return [RandomColor.only.primaryGray,
+                RandomColor.only.primaryOrange]
+      case .darkRed:
+        return [RandomColor.only.primaryGray,
+                RandomColor.only.primaryRed]
+      case .darkPurple:
+        return [RandomColor.only.primaryGray,
+                RandomColor.only.primaryPurple]
+      case .darkPink:
+        return [RandomColor.only.primaryGray,
+                RandomColor.only.primaryPink]
+      case .darkYellow:
+        return [RandomColor.only.primaryGray,
+                RandomColor.only.primaryYellow]
       }
     }
   }
@@ -80,6 +123,9 @@ public final class PlayerView: UIView {
   private let avatarImageView = UIImageView()
   private let emojiLabel = UILabel()
   private let nameLabel = UILabel()
+  private let gradientView = GradientView()
+  private let lockLabelView = UILabel()
+  private let checkmarkView = UILabel()
   
   private var emojiAction: (() -> Void)?
   private var cardAction: (() -> Void)?
@@ -105,45 +151,42 @@ public final class PlayerView: UIView {
   /// - Parameters:
   ///  - avatar: Аватарка
   ///  - name: Имя
-  ///  - nameTextColor: Цвет имени
   ///  - styleCard: Стиль карточки
   ///  - styleEmoji: Стиль смайликов
-  ///  - isBorder: Включить границу у карточки
-  ///  - isShadow: Включить тень у карточки
+  ///  - setIsCheckmark: Установить галочку
+  ///  - setIsLocked: Установить замочек на иконке
   ///  - emojiAction: Действие по нажатию на смайл
   ///  - cardAction: Действие по нажатию на карточку
   public func configureWith(avatar: UIImage?,
                             name: String?,
-                            nameTextColor: UIColor = RandomColor.darkAndLightTheme.primaryGray,
                             styleCard: StyleCard,
                             styleEmoji: StyleEmoji = .none,
-                            isBorder: Bool,
-                            isShadow: Bool,
+                            setIsCheckmark: Bool = false,
+                            setIsLocked: Bool = false,
                             emojiAction: (() -> Void)? = nil,
                             cardAction: (() -> Void)? = nil) {
-    let appearance = Appearance()
-    backgroundColor = styleCard.backgroundColor
+    gradientView.applyGradient(colors: styleCard.backgroundColor)
     nameLabel.text = name
-    nameLabel.textColor = nameTextColor
+    nameLabel.textColor = styleCard.nameTextColor
     avatarImageView.image = avatar
     self.emojiAction = emojiAction
     self.cardAction = cardAction
+    lockLabelView.isHidden = !setIsLocked
+    checkmarkView.isHidden = !setIsCheckmark
     
     if let emoji = styleEmoji.emoji {
       emojiLabel.text = String(emoji)
     }
-    
-    if isBorder {
-      layer.borderColor = RandomColor.darkAndLightTheme.primaryGray.cgColor
-      layer.borderWidth = Appearance().borderWidth
-    }
-    
-    if isShadow {
-      layer.shadowColor = RandomColor.darkAndLightTheme.primaryGray.cgColor
-      layer.shadowRadius = appearance.shadowRadius
-      layer.shadowOpacity = appearance.shadowOpacity
-    }
-    clipsToBounds = !isShadow
+  }
+  
+  /// Установить замочек на иконке
+  public func setIsLocked(_ isLocked: Bool) {
+    lockLabelView.isHidden = !isLocked
+  }
+  
+  /// Установить галочку справа
+  public func setIsCheckmark(_ isCheckmark: Bool) {
+    checkmarkView.isHidden = !isCheckmark
   }
   
   // MARK: - Private func
@@ -153,6 +196,11 @@ public final class PlayerView: UIView {
     
     [avatarImageView, emojiLabel, nameLabel].forEach {
       $0.translatesAutoresizingMaskIntoConstraints = false
+      gradientView.addSubview($0)
+    }
+    
+    [gradientView, lockLabelView, checkmarkView].forEach {
+      $0.translatesAutoresizingMaskIntoConstraints = false
       addSubview($0)
     }
     
@@ -160,26 +208,41 @@ public final class PlayerView: UIView {
       heightAnchor.constraint(equalToConstant: appearance.cardSize.height),
       widthAnchor.constraint(equalToConstant: appearance.cardSize.width),
       
-      avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor,
+      gradientView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      gradientView.topAnchor.constraint(equalTo: topAnchor),
+      gradientView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      gradientView.bottomAnchor.constraint(equalTo: bottomAnchor),
+      
+      avatarImageView.leadingAnchor.constraint(equalTo: gradientView.leadingAnchor,
                                                constant: appearance.avatarImageInset),
-      avatarImageView.topAnchor.constraint(equalTo: topAnchor,
+      avatarImageView.topAnchor.constraint(equalTo: gradientView.topAnchor,
                                            constant: appearance.avatarImageInset),
-      avatarImageView.trailingAnchor.constraint(equalTo: trailingAnchor,
+      avatarImageView.trailingAnchor.constraint(equalTo: gradientView.trailingAnchor,
                                                 constant: -appearance.avatarImageInset),
       avatarImageView.bottomAnchor.constraint(equalTo: nameLabel.topAnchor,
                                               constant: -appearance.minInsets),
       
-      emojiLabel.topAnchor.constraint(equalTo: topAnchor,
+      emojiLabel.topAnchor.constraint(equalTo: gradientView.topAnchor,
                                       constant: appearance.minInsets),
-      emojiLabel.trailingAnchor.constraint(equalTo: trailingAnchor,
+      emojiLabel.trailingAnchor.constraint(equalTo: gradientView.trailingAnchor,
                                            constant: -appearance.minInsets),
       
-      nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor,
+      nameLabel.leadingAnchor.constraint(equalTo: gradientView.leadingAnchor,
                                          constant: appearance.middleInsets),
-      nameLabel.bottomAnchor.constraint(equalTo: bottomAnchor,
+      nameLabel.bottomAnchor.constraint(equalTo: gradientView.bottomAnchor,
                                         constant: -appearance.middleInsets),
-      nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor,
+      nameLabel.trailingAnchor.constraint(equalTo: gradientView.trailingAnchor,
                                           constant: -appearance.middleInsets),
+      
+      lockLabelView.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                              constant: appearance.middleInsets),
+      lockLabelView.topAnchor.constraint(equalTo: topAnchor,
+                                         constant: -appearance.middleInsets),
+      
+      checkmarkView.trailingAnchor.constraint(equalTo: trailingAnchor,
+                                                   constant: appearance.middleInsets),
+      checkmarkView.topAnchor.constraint(equalTo: topAnchor,
+                                              constant: -appearance.middleInsets)
     ])
   }
   
@@ -187,6 +250,7 @@ public final class PlayerView: UIView {
     let appearance = Appearance()
     backgroundColor = RandomColor.darkAndLightTheme.primaryWhite
     layer.cornerRadius = appearance.cornerRadius
+    gradientView.layer.cornerRadius = appearance.cornerRadius
     
     emojiLabel.font = RandomFont.primaryMedium18
     
@@ -196,6 +260,12 @@ public final class PlayerView: UIView {
     nameLabel.textAlignment = .center
     
     avatarImageView.contentMode = .scaleAspectFit
+    gradientView.clipsToBounds = true
+    lockLabelView.text = "🔒"
+    checkmarkView.text = "✅"
+    
+    nameLabel.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
+    avatarImageView.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
     
     let emojiTap = UITapGestureRecognizer(target: self, action: #selector(emojiLabelAction))
     emojiTap.cancelsTouchesInView = false
@@ -235,12 +305,14 @@ private extension PlayerView {
   struct Appearance {
     let cornerRadius: CGFloat = 16
     let cardSize = CGSize(width: 90, height: 100)
-    let borderWidth: CGFloat = 1
     let shadowRadius: CGFloat = 4
     let shadowOpacity: Float = 0.2
     let minInsets: CGFloat = 4
     let middleInsets: CGFloat = 8
     let numberOfLines = 2
     let avatarImageInset: CGFloat = 4
+    
+    let checkmarkImage = UIImage(systemName: "checkmark.circle.fill",
+                                 withConfiguration: UIImage.SymbolConfiguration(scale: .large))
   }
 }

@@ -14,6 +14,9 @@ enum CellsScreenCell: String {
   
   // MARK: - Cases
   
+  /// Вью и ячейка для коллекции с игроком
+  case playerViewAndCell
+  
   /// Основная карточка на главном экране
   case mainCardTableViewCell
   
@@ -49,9 +52,6 @@ enum CellsScreenCell: String {
   
   /// Ячейка с настраиваемой высотой
   case customPaddingCell
-  
-  /// Вью и ячейка для коллекции с игроком
-  case playerViewAndCell
   
   /// Ячейка с информацией об игроке
   case playerInfoCell

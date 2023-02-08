@@ -37,32 +37,27 @@ final class PlayerTableViewCell: UITableViewCell {
   ///  - titleCell: Заголовок для ячейки
   ///  - avatar: Аватарка
   ///  - name: Имя
-  ///  - nameTextColor: Цвет имени
   ///  - styleCard: Стиль карточки
   ///  - styleEmoji: Стиль смайликов
-  ///  - isBorder: Включить границу у карточки
-  ///  - isShadow: Включить тень у карточки
   ///  - emojiAction: Действие по нажатию на смайл
   ///  - cardAction: Действие по нажатию на карточку
   public func configureCellWith(titleCell: String?,
                                 avatar: UIImage?,
                                 name: String?,
-                                nameTextColor: UIColor = RandomColor.only.darkApple,
                                 styleCard: PlayerView.StyleCard,
                                 styleEmoji: PlayerView.StyleEmoji = .none,
-                                isBorder: Bool,
-                                isShadow: Bool,
+                                setIsCheckmark: Bool = false,
+                                setIsLocked: Bool = false,
                                 emojiAction: (() -> Void)? = nil,
                                 cardAction: (() -> Void)? = nil) {
     titleLabel.text = titleCell
     playerView.configureWith(
       avatar: avatar,
       name: name,
-      nameTextColor: nameTextColor,
       styleCard: styleCard,
       styleEmoji: styleEmoji,
-      isBorder: isBorder,
-      isShadow: isShadow,
+      setIsCheckmark: setIsCheckmark,
+      setIsLocked: setIsLocked,
       emojiAction: emojiAction,
       cardAction: cardAction
     )

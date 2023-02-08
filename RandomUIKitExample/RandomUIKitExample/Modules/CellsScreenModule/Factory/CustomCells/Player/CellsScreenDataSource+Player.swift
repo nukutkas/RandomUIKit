@@ -14,11 +14,10 @@ import RandomUIKit
 struct PlayerModel: CellModel {
   let avatar: UIImage?
   let name: String?
-  var nameTextColor = RandomColor.darkAndLightTheme.primaryGray
   let styleCard: PlayerView.StyleCard
   let styleEmoji: PlayerView.StyleEmoji
-  let isBorder: Bool
-  var isShadow = false
+  var setIsCheckmark: Bool = false
+  var setIsLocked: Bool = false
   
   var titleCell: String
   var reuseIdentifier = CellsScreenCell.playerViewAndCell.reuseIdentifier
@@ -30,29 +29,61 @@ extension CellsScreenDataSource where Model == PlayerModel {
       PlayerModel(
         avatar: UIImage(named: "player3"),
         name: "Илларионов Артур",
-        nameTextColor: RandomColor.darkAndLightTheme.primaryGray,
         styleCard: .defaultStyle,
         styleEmoji: .like,
-        isBorder: true,
         titleCell: "PlayerView"
       ),
       PlayerModel(
         avatar: UIImage(named: "player2"),
         name: "Сосин Виталий",
-        styleCard: .selected,
+        styleCard: .darkGreen,
         styleEmoji: .customEmoji("🔥"),
-        isBorder: false,
-        isShadow: true,
         titleCell: "PlayerView"
       ),
       PlayerModel(
-        avatar: UIImage(named: "player1"),
-        name: "Зимин Максим",
-        nameTextColor: RandomColor.darkAndLightTheme.primaryWhite,
-        styleCard: .customStyle(RandomColor.only.primaryPink),
+        avatar: UIImage(named: "player2"),
+        name: "Сосин Виталий",
+        styleCard: .darkBlue,
         styleEmoji: .none,
-        isBorder: true,
-        isShadow: true,
+        titleCell: "PlayerView"
+      ),
+      PlayerModel(
+        avatar: UIImage(named: "player2"),
+        name: "Сосин Виталий",
+        styleCard: .darkOrange,
+        styleEmoji: .none,
+        setIsCheckmark: true,
+        setIsLocked: false,
+        titleCell: "PlayerView"
+      ),
+      PlayerModel(
+        avatar: UIImage(named: "player2"),
+        name: "Сосин Виталий",
+        styleCard: .darkRed,
+        styleEmoji: .none,
+        setIsCheckmark: false,
+        setIsLocked: true,
+        titleCell: "PlayerView"
+      ),
+      PlayerModel(
+        avatar: UIImage(named: "player2"),
+        name: "Сосин Виталий",
+        styleCard: .darkPurple,
+        styleEmoji: .none,
+        titleCell: "PlayerView"
+      ),
+      PlayerModel(
+        avatar: UIImage(named: "player2"),
+        name: "Сосин Виталий",
+        styleCard: .darkPink,
+        styleEmoji: .none,
+        titleCell: "PlayerView"
+      ),
+      PlayerModel(
+        avatar: UIImage(named: "player2"),
+        name: "Сосин Виталий",
+        styleCard: .darkYellow,
+        styleEmoji: .none,
         titleCell: "PlayerView"
       )
     ]
@@ -64,11 +95,10 @@ extension CellsScreenDataSource where Model == PlayerModel {
         titleCell: model.titleCell,
         avatar: model.avatar,
         name: model.name,
-        nameTextColor: model.nameTextColor,
         styleCard: model.styleCard,
         styleEmoji: model.styleEmoji,
-        isBorder: model.isBorder,
-        isShadow: model.isShadow,
+        setIsCheckmark: model.setIsCheckmark,
+        setIsLocked: model.setIsLocked,
         emojiAction: {
           print("emojiAction")
         },
