@@ -8,7 +8,7 @@
 import UIKit
 
 /// View для экрана
-public final class TextFieldMultilineView: UITextView{
+public final class TextFieldMultilineView: UITextView {
 
   // MARK: - Initialization
 

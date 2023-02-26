@@ -17,7 +17,7 @@ public final class TextFielAddPlayerCell: UITableViewCell {
   
   // MARK: - Private property
   
-  private var textField: TextFieldView?
+  private var textField: TextFieldMultilineView?
   private let buttonImageView = UIImageView()
   private var buttonAction: (() -> Void)?
   private let impactFeedback = UIImpactFeedbackGenerator(style: .light)
@@ -52,7 +52,7 @@ public final class TextFielAddPlayerCell: UITableViewCell {
   ///  - listGender: Список Женского и Мужского пола
   ///  - buttonAction: Действие по нажатию на кнопку
   ///  - genderValueChanged: Пол игрока изменился
-  public func configureCellWith(textField: TextFieldView,
+  public func configureCellWith(textField: TextFieldMultilineView,
                                 textFieldBorderColor: UIColor? = nil,
                                 buttonImage: UIImage?,
                                 buttonImageColor: UIColor? = RandomColor.only.primaryGreen,
@@ -86,7 +86,7 @@ public final class TextFielAddPlayerCell: UITableViewCell {
   
   // MARK: - Private func
   
-  private func configureLayout(textField: TextFieldView) {
+  private func configureLayout(textField: TextFieldMultilineView) {
     let appearance = Appearance()
     
     [textField, buttonImageView, segmentedGender].forEach {

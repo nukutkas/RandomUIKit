@@ -40,8 +40,8 @@ extension CellsScreenDataSource where Model == TextFielAddPlayerModel {
         return
       }
       
-      let textField = TextFieldView()
-      textField.placeholder = "TextFielAddPlayerCell"
+      let textField = TextFieldMultilineView()
+//      textField.placeholder = "TextFielAddPlayerCell"
       
       cell.configureCellWith(
         textField: textField,
