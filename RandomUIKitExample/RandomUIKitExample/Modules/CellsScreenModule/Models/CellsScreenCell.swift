@@ -40,7 +40,10 @@ enum CellsScreenCell: String {
   
   /// Текстовое поле
   case textField
-  
+
+  /// Ячейка с вьюшкой Multiline для секции список
+  case textFieldMultilineViewCell
+
   /// Список элементов в формате `String`
   case scrollLabelGradientView
   
@@ -115,6 +118,8 @@ enum CellsScreenCell: String {
       return ButtonTableViewCell.self
     case .textField:
       return TextFieldTableViewCell.self
+    case .textFieldMultilineViewCell:
+      return TextFieldMultilineViewCell.self
     case .scrollLabelGradientView:
       return ScrollLabelGradientTableViewCell.self
     case .labelAndSwitchCell:
@@ -178,6 +183,8 @@ enum CellsScreenCell: String {
       return CellsScreenDataSource.makeForButton()
     case .textField:
       return CellsScreenDataSource.makeForTextField()
+    case .textFieldMultilineViewCell:
+      return CellsScreenDataSource.makeForTextFieldMultilineViewCell()
     case .scrollLabelGradientView:
       return CellsScreenDataSource.makeForScrollLabelGradient()
     case .labelAndSwitchCell:

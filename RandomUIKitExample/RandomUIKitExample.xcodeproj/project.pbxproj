@@ -83,6 +83,8 @@
 		6C18DB4B283AB9D50031CC05 /* CellsScreenDataSource+DoubleTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C18DB4A283AB9D50031CC05 /* CellsScreenDataSource+DoubleTitleCell.swift */; };
 		6C18DB50283AC04D0031CC05 /* CellsScreenDataSource+LabelAndChevronCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C18DB4F283AC04D0031CC05 /* CellsScreenDataSource+LabelAndChevronCell.swift */; };
 		6C18DB55283AC5620031CC05 /* CellsScreenDataSource+SmallButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C18DB54283AC5620031CC05 /* CellsScreenDataSource+SmallButtonCell.swift */; };
+		E5EB2AA829AA386D002DE2F3 /* TextFieldMultilineViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EB2AA729AA386D002DE2F3 /* TextFieldMultilineViewCell.swift */; };
+		E5EB2AAA29AA6E41002DE2F3 /* TCellsScreenDataSource+TextFieldMultilineViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EB2AA929AA6E41002DE2F3 /* TCellsScreenDataSource+TextFieldMultilineViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -164,6 +166,8 @@
 		6C18DB4A283AB9D50031CC05 /* CellsScreenDataSource+DoubleTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+DoubleTitleCell.swift"; sourceTree = "<group>"; };
 		6C18DB4F283AC04D0031CC05 /* CellsScreenDataSource+LabelAndChevronCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+LabelAndChevronCell.swift"; sourceTree = "<group>"; };
 		6C18DB54283AC5620031CC05 /* CellsScreenDataSource+SmallButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellsScreenDataSource+SmallButtonCell.swift"; sourceTree = "<group>"; };
+		E5EB2AA729AA386D002DE2F3 /* TextFieldMultilineViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldMultilineViewCell.swift; sourceTree = "<group>"; };
+		E5EB2AA929AA6E41002DE2F3 /* TCellsScreenDataSource+TextFieldMultilineViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TCellsScreenDataSource+TextFieldMultilineViewCell.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -483,6 +487,7 @@
 		1B04616F281F5942001141B4 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
+				E5EB2AA629AA3008002DE2F3 /* TextFieldMultilineViewCell */,
 				1B4F5BFA298712ED0003457E /* FilmViewCell */,
 				1B295AEA2981A945003349FC /* LargeImageAndLabelWithCheakmarkCell */,
 				1B295ADD29812E6F003349FC /* SquircleImageAndLabelWithChevronCell */,
@@ -822,6 +827,15 @@
 			path = SmallButton;
 			sourceTree = "<group>";
 		};
+		E5EB2AA629AA3008002DE2F3 /* TextFieldMultilineViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E5EB2AA729AA386D002DE2F3 /* TextFieldMultilineViewCell.swift */,
+				E5EB2AA929AA6E41002DE2F3 /* TCellsScreenDataSource+TextFieldMultilineViewCell.swift */,
+			);
+			path = TextFieldMultilineViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -904,6 +918,7 @@
 				1B04611B281F1754001141B4 /* MainScreenView.swift in Sources */,
 				1B046123281F1B50001141B4 /* MainScreenCollectionViewCell.swift in Sources */,
 				1BABD3F1283ACB0500816B8C /* CellsScreenDataSource+CustomTextCell.swift in Sources */,
+				E5EB2AAA29AA6E41002DE2F3 /* TCellsScreenDataSource+TextFieldMultilineViewCell.swift in Sources */,
 				1B04611A281F1754001141B4 /* MainScreenInteractor.swift in Sources */,
 				1B9D456D283C3AA700A85F25 /* CellsScreenDataSource+CustomPaddingCell.swift in Sources */,
 				1B04612F281F3E5E001141B4 /* ColorsScreenAssembly.swift in Sources */,
@@ -953,6 +968,7 @@
 				1B046118281F1754001141B4 /* MainScreenViewController.swift in Sources */,
 				1B96E0D22820131500A23880 /* CellsScreenDataSource+TextField.swift in Sources */,
 				1B046117281F1754001141B4 /* MainScreenFactory.swift in Sources */,
+				E5EB2AA829AA386D002DE2F3 /* TextFieldMultilineViewCell.swift in Sources */,
 				1B50066E28A6CAB2009AABF2 /* PlayerTableViewCell.swift in Sources */,
 				1B295ADF29812E8E003349FC /* CellsScreenDataSource+SquircleImageAndLabelWithChevronCell.swift in Sources */,
 				1B295AE129812E99003349FC /* CellsScreenDataSource+SquircleImageAndDoubleTitleCell.swift in Sources */,
